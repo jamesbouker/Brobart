@@ -12,6 +12,9 @@ struct MapState: Codable, StateType {
     var width: Int
     var height: Int
     var walls: [MapLocation]
+
+    // Items
+    var stairLoc: MapLocation
     var switchLoc: MapLocation
     var switchToggled: Bool
 
@@ -21,6 +24,7 @@ struct MapState: Codable, StateType {
         self.walls = walls
         self.switchLoc = .init(x: 0, y: 0)
         switchToggled = false
+        stairLoc = .init(x: 0, y: 0)
 
         guard let switchLoc = noWalls.randomItem() else {
             fatalError("Cannot place switch!")

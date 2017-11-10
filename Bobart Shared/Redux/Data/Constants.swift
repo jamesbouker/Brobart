@@ -18,6 +18,7 @@ let frameTime = 0.20
 
 // MARK: - Tile types
 enum TileType {
+    static let blank = "blank"
     static let floor = "floor"
     static let vert_wall = "vert_wall"
     static let horz_wall = "horz_wall"
@@ -29,6 +30,7 @@ enum TileType {
     static let chest_empty = "chest_empty"
     static let switch_off = "switch_off"
     static let switch_on = "switch_on"
+    static let stairs_down_solo = "stairs_down_solo"
 }
 
 enum Atlas {

@@ -47,6 +47,15 @@ fileprivate extension GameScene {
         items.setTile(tile: switchTile, forLocation: mapState.switchLoc)
     }
 
+    func addStairs(mapState: MapState) {
+        if mapState.switchToggled {
+            tileMap.setTile(tile: TileType.stairs_down_solo, forLocation: mapState.stairLoc, atlas: Atlas.stone)
+            grass.setTile(tile: TileType.blank, forLocation: mapState.stairLoc)
+            shadows.setTile(tile: TileType.blank, forLocation: mapState.stairLoc)
+            sfx.setTile(tile: TileType.blank, forLocation: mapState.stairLoc)
+        }
+    }
+
     func positionThePlayer(playerState: PlayerState) {
         let loc = playerState.loc
         player.position = CGPoint(x: CGFloat(loc.x) * tileSize,
@@ -63,10 +72,12 @@ extension GameScene {
         let noWalls = state.mapState.noWalls
         let grassMax = noWalls.count / 2 + 1
 
+        // ORDER IS IMPORTANT!
         resizeTheMap(mapState: mapState)
-        addSwitch(mapState: mapState)
         addWalls(walls: walls, map: map)
         addGrass(grassMax: grassMax, noWalls: noWalls)
+        addSwitch(mapState: mapState)
+        addStairs(mapState: mapState)
         positionThePlayer(playerState: playerState)
     }
 }

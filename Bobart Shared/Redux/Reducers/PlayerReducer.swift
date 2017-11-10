@@ -33,6 +33,8 @@ private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: 
     // Check if hitting switch!
     if map.switchLoc == next.loc {
         map.switchToggled = true
+        let stairLoc = map.noWalls.filter { $0 != state.loc }.randomItem()
+        map.stairLoc = stairLoc!
         return state
     }
 
