@@ -1,0 +1,52 @@
+//
+//  GameScene.swift
+//  1 Bit Rogue
+//
+//  Created by james bouker on 7/29/17.
+//  Copyright © 2017 Jimmy Bouker. All rights reserved.
+//
+// swiftlint:disable cyclomatic_complexity
+
+import SpriteKit
+import ReSwift
+
+class GameScene: SKScene {
+    
+    var tileMap: SKTileMapNode!
+    var shadows: SKTileMapNode!
+    var grass: SKTileMapNode!
+    var items: SKTileMapNode!
+    var sfx: SKTileMapNode!
+
+    var player: SKSpriteNode!
+    var playerSquare: SKShapeNode!
+
+    var monsters = [SKSpriteNode]()
+
+    #if os(watchOS)
+        override func sceneDidLoad() { setupView() }
+    #else
+        override func didMove(to _: SKView) { setupView() }
+    #endif
+    func setupView() {
+        grabOutlets()
+        store.subscribe(self)
+    }
+
+    func grabOutlets() {
+        tileMap = childNode(withName: SceneNode.base) as? SKTileMapNode
+        shadows = tileMap.childNode(withName: SceneNode.shadows) as? SKTileMapNode
+        grass = tileMap.childNode(withName: SceneNode.grass) as? SKTileMapNode
+        items = tileMap.childNode(withName: SceneNode.items) as? SKTileMapNode
+        sfx = tileMap.childNode(withName: SceneNode.sfx) as? SKTileMapNode
+        player = tileMap?.childNode(withName: SceneNode.player) as? SKSpriteNode
+        playerSquare = player.childNode(withName: SceneNode.square) as? SKShapeNode
+        playerSquare.isHidden = true
+    }
+}
+
+extension GameScene: StoreSubscriber {
+    func newState(state: GameState) {
+        layout(state: state)
+    }
+}

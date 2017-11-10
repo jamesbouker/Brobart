@@ -1,0 +1,6 @@
+framework module Pods_Bobart_iOS {
+  umbrella header "Pods-Bobart iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

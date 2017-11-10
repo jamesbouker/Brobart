@@ -1,0 +1,6 @@
+framework module Pods_Bobart_watchOS_App {
+  umbrella header "Pods-Bobart watchOS App-umbrella.h"
+
+  export *
+  module * { export * }
+}

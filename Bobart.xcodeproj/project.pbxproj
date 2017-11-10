@@ -1,0 +1,1617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54C8F0586351F89D64429938 /* Pods_Bobart_watchOS_App_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0216DA5DACC6EF2682A0C5 /* Pods_Bobart_watchOS_App_Extension.framework */; };
+		9D03CA7474ABDA02A4332572 /* Pods_Bobart_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4ADE3256EAD277A1D3FEE5 /* Pods_Bobart_tvOS.framework */; };
+		AB3174000223ADDA21363A68 /* Pods_Bobart_watchOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F548929185E6252B2F9B37 /* Pods_Bobart_watchOS_App.framework */; };
+		D6239609FD11BFD6D2D7CAEC /* Pods_Bobart_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F38EB7B443A5802C3B5761 /* Pods_Bobart_Tests.framework */; };
+		F500EC5B1FB2AAC90057C05F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFCB461FB2932B00DB8195 /* GameViewController.swift */; };
+		F500EC5E1FB2B1510057C05F /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500EC5D1FB2B1510057C05F /* MapLocation.swift */; };
+		F500EC5F1FB2B1590057C05F /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500EC5D1FB2B1510057C05F /* MapLocation.swift */; };
+		F500EC601FB2B1590057C05F /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500EC5D1FB2B1510057C05F /* MapLocation.swift */; };
+		F500EC621FB2B3A20057C05F /* GameReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500EC611FB2B3A20057C05F /* GameReducer.swift */; };
+		F500EC631FB2B3A20057C05F /* GameReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500EC611FB2B3A20057C05F /* GameReducer.swift */; };
+		F500EC641FB2B3A20057C05F /* GameReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500EC611FB2B3A20057C05F /* GameReducer.swift */; };
+		F50A650A1FB55A890076245E /* Bobart_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A65091FB55A890076245E /* Bobart_Tests.swift */; };
+		F51095ED1FB2BFD30075F6EF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F51095EC1FB2BFD30075F6EF /* GameScene.sks */; };
+		F51095EE1FB2C02E0075F6EF /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608931FB29A2000F42D2B /* GameState.swift */; };
+		F516BD0A1FB2BBB1001E8173 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F516BD091FB2BBB1001E8173 /* GameScene.sks */; };
+		F525B5651FB4128600982E71 /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5641FB4128600982E71 /* PlayerReducer.swift */; };
+		F525B5661FB4128600982E71 /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5641FB4128600982E71 /* PlayerReducer.swift */; };
+		F525B5671FB4128600982E71 /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5641FB4128600982E71 /* PlayerReducer.swift */; };
+		F525B5691FB412A200982E71 /* MapReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5681FB412A200982E71 /* MapReducer.swift */; };
+		F525B56A1FB412A200982E71 /* MapReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5681FB412A200982E71 /* MapReducer.swift */; };
+		F525B56B1FB412A200982E71 /* MapReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5681FB412A200982E71 /* MapReducer.swift */; };
+		F55C9788B2AF8CFCE6A66F85 /* Pods_Bobart_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11698892DD5A0658D6F1163D /* Pods_Bobart_iOS.framework */; };
+		F59608571FB295B200F42D2B /* Default.sks in Resources */ = {isa = PBXBuildFile; fileRef = F59608471FB295B200F42D2B /* Default.sks */; };
+		F59608581FB295B200F42D2B /* Default.sks in Resources */ = {isa = PBXBuildFile; fileRef = F59608471FB295B200F42D2B /* Default.sks */; };
+		F59608591FB295B200F42D2B /* Default.sks in Resources */ = {isa = PBXBuildFile; fileRef = F59608471FB295B200F42D2B /* Default.sks */; };
+		F596085A1FB295B200F42D2B /* Death.json in Resources */ = {isa = PBXBuildFile; fileRef = F59608491FB295B200F42D2B /* Death.json */; };
+		F596085B1FB295B200F42D2B /* Death.json in Resources */ = {isa = PBXBuildFile; fileRef = F59608491FB295B200F42D2B /* Death.json */; };
+		F596085C1FB295B200F42D2B /* Death.json in Resources */ = {isa = PBXBuildFile; fileRef = F59608491FB295B200F42D2B /* Death.json */; };
+		F596085D1FB295B200F42D2B /* Levels.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084A1FB295B200F42D2B /* Levels.json */; };
+		F596085E1FB295B200F42D2B /* Levels.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084A1FB295B200F42D2B /* Levels.json */; };
+		F596085F1FB295B200F42D2B /* Levels.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084A1FB295B200F42D2B /* Levels.json */; };
+		F59608601FB295B200F42D2B /* Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084B1FB295B200F42D2B /* Monsters.json */; };
+		F59608611FB295B200F42D2B /* Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084B1FB295B200F42D2B /* Monsters.json */; };
+		F59608621FB295B200F42D2B /* Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084B1FB295B200F42D2B /* Monsters.json */; };
+		F59608631FB295B200F42D2B /* Spells.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* Spells.json */; };
+		F59608641FB295B200F42D2B /* Spells.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* Spells.json */; };
+		F59608651FB295B200F42D2B /* Spells.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* Spells.json */; };
+		F59608661FB295B200F42D2B /* brick.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084E1FB295B200F42D2B /* brick.atlas */; };
+		F59608671FB295B200F42D2B /* brick.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084E1FB295B200F42D2B /* brick.atlas */; };
+		F59608681FB295B200F42D2B /* brick.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084E1FB295B200F42D2B /* brick.atlas */; };
+		F59608691FB295B200F42D2B /* Grass.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084F1FB295B200F42D2B /* Grass.atlas */; };
+		F596086A1FB295B200F42D2B /* Grass.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084F1FB295B200F42D2B /* Grass.atlas */; };
+		F596086B1FB295B200F42D2B /* Grass.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084F1FB295B200F42D2B /* Grass.atlas */; };
+		F596086C1FB295B200F42D2B /* Items.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608501FB295B200F42D2B /* Items.atlas */; };
+		F596086D1FB295B200F42D2B /* Items.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608501FB295B200F42D2B /* Items.atlas */; };
+		F596086E1FB295B200F42D2B /* Items.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608501FB295B200F42D2B /* Items.atlas */; };
+		F596086F1FB295B200F42D2B /* sand.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608511FB295B200F42D2B /* sand.atlas */; };
+		F59608701FB295B200F42D2B /* sand.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608511FB295B200F42D2B /* sand.atlas */; };
+		F59608711FB295B200F42D2B /* sand.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608511FB295B200F42D2B /* sand.atlas */; };
+		F59608721FB295B200F42D2B /* Shadows.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608521FB295B200F42D2B /* Shadows.atlas */; };
+		F59608731FB295B200F42D2B /* Shadows.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608521FB295B200F42D2B /* Shadows.atlas */; };
+		F59608741FB295B200F42D2B /* Shadows.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608521FB295B200F42D2B /* Shadows.atlas */; };
+		F59608751FB295B200F42D2B /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608531FB295B200F42D2B /* Sprites.atlas */; };
+		F59608761FB295B200F42D2B /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608531FB295B200F42D2B /* Sprites.atlas */; };
+		F59608771FB295B200F42D2B /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608531FB295B200F42D2B /* Sprites.atlas */; };
+		F59608781FB295B200F42D2B /* stone.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608541FB295B200F42D2B /* stone.atlas */; };
+		F59608791FB295B200F42D2B /* stone.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608541FB295B200F42D2B /* stone.atlas */; };
+		F596087A1FB295B200F42D2B /* stone.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608541FB295B200F42D2B /* stone.atlas */; };
+		F596087B1FB295B200F42D2B /* vine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608551FB295B200F42D2B /* vine.atlas */; };
+		F596087C1FB295B200F42D2B /* vine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608551FB295B200F42D2B /* vine.atlas */; };
+		F596087D1FB295B200F42D2B /* vine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608551FB295B200F42D2B /* vine.atlas */; };
+		F596087E1FB295B200F42D2B /* weapons.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608561FB295B200F42D2B /* weapons.atlas */; };
+		F596087F1FB295B200F42D2B /* weapons.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608561FB295B200F42D2B /* weapons.atlas */; };
+		F59608801FB295B200F42D2B /* weapons.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F59608561FB295B200F42D2B /* weapons.atlas */; };
+		F59608821FB2961300F42D2B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F59608811FB2961300F42D2B /* GameScene.sks */; };
+		F596088B1FB2968400F42D2B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608861FB2968400F42D2B /* GameScene.swift */; };
+		F596088C1FB2968400F42D2B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608861FB2968400F42D2B /* GameScene.swift */; };
+		F596088D1FB2968400F42D2B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608861FB2968400F42D2B /* GameScene.swift */; };
+		F59608941FB29A2000F42D2B /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608931FB29A2000F42D2B /* GameState.swift */; };
+		F59608961FB29A2000F42D2B /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608931FB29A2000F42D2B /* GameState.swift */; };
+		F59608BB1FB2A07600F42D2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596089B1FB2A07600F42D2B /* Constants.swift */; };
+		F59608BC1FB2A07600F42D2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596089B1FB2A07600F42D2B /* Constants.swift */; };
+		F59608BD1FB2A07600F42D2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596089B1FB2A07600F42D2B /* Constants.swift */; };
+		F59608C11FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596089D1FB2A07600F42D2B /* SKSpriteNode+Extensions.swift */; };
+		F59608C21FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596089D1FB2A07600F42D2B /* SKSpriteNode+Extensions.swift */; };
+		F59608C31FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596089D1FB2A07600F42D2B /* SKSpriteNode+Extensions.swift */; };
+		F59608C71FB2A07600F42D2B /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A01FB2A07600F42D2B /* Array+Extensions.swift */; };
+		F59608C81FB2A07600F42D2B /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A01FB2A07600F42D2B /* Array+Extensions.swift */; };
+		F59608C91FB2A07600F42D2B /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A01FB2A07600F42D2B /* Array+Extensions.swift */; };
+		F59608CA1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A11FB2A07600F42D2B /* CGFloat+Extensions.swift */; };
+		F59608CB1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A11FB2A07600F42D2B /* CGFloat+Extensions.swift */; };
+		F59608CC1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A11FB2A07600F42D2B /* CGFloat+Extensions.swift */; };
+		F59608CD1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A21FB2A07600F42D2B /* CGPoint+Extensions.swift */; };
+		F59608CE1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A21FB2A07600F42D2B /* CGPoint+Extensions.swift */; };
+		F59608CF1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A21FB2A07600F42D2B /* CGPoint+Extensions.swift */; };
+		F59608D01FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A31FB2A07600F42D2B /* CGVector+Extensions.swift */; };
+		F59608D11FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A31FB2A07600F42D2B /* CGVector+Extensions.swift */; };
+		F59608D21FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A31FB2A07600F42D2B /* CGVector+Extensions.swift */; };
+		F59608D61FB2A07600F42D2B /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A51FB2A07600F42D2B /* Int+Extensions.swift */; };
+		F59608D71FB2A07600F42D2B /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A51FB2A07600F42D2B /* Int+Extensions.swift */; };
+		F59608D81FB2A07600F42D2B /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A51FB2A07600F42D2B /* Int+Extensions.swift */; };
+		F59608D91FB2A07600F42D2B /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A61FB2A07600F42D2B /* JSONLoader.swift */; };
+		F59608DA1FB2A07600F42D2B /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A61FB2A07600F42D2B /* JSONLoader.swift */; };
+		F59608DB1FB2A07600F42D2B /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A61FB2A07600F42D2B /* JSONLoader.swift */; };
+		F59608DC1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A71FB2A07600F42D2B /* SKAction+Extensions.swift */; };
+		F59608DD1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A71FB2A07600F42D2B /* SKAction+Extensions.swift */; };
+		F59608DE1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A71FB2A07600F42D2B /* SKAction+Extensions.swift */; };
+		F59608DF1FB2A07600F42D2B /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A81FB2A07600F42D2B /* SKAction+SpecialEffects.swift */; };
+		F59608E01FB2A07600F42D2B /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A81FB2A07600F42D2B /* SKAction+SpecialEffects.swift */; };
+		F59608E11FB2A07600F42D2B /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A81FB2A07600F42D2B /* SKAction+SpecialEffects.swift */; };
+		F59608E21FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A91FB2A07600F42D2B /* SKColor+Extensions.swift */; };
+		F59608E31FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A91FB2A07600F42D2B /* SKColor+Extensions.swift */; };
+		F59608E41FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608A91FB2A07600F42D2B /* SKColor+Extensions.swift */; };
+		F59608E51FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AA1FB2A07600F42D2B /* SKNode+Extensions.swift */; };
+		F59608E61FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AA1FB2A07600F42D2B /* SKNode+Extensions.swift */; };
+		F59608E71FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AA1FB2A07600F42D2B /* SKNode+Extensions.swift */; };
+		F59608EB1FB2A07600F42D2B /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AC1FB2A07600F42D2B /* SKTEffects.swift */; };
+		F59608EC1FB2A07600F42D2B /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AC1FB2A07600F42D2B /* SKTEffects.swift */; };
+		F59608ED1FB2A07600F42D2B /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AC1FB2A07600F42D2B /* SKTEffects.swift */; };
+		F59608EE1FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AD1FB2A07600F42D2B /* SKTTimingFunctions.swift */; };
+		F59608EF1FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AD1FB2A07600F42D2B /* SKTTimingFunctions.swift */; };
+		F59608F01FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AD1FB2A07600F42D2B /* SKTTimingFunctions.swift */; };
+		F59608F11FB2A07600F42D2B /* TextureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AE1FB2A07600F42D2B /* TextureExtensions.swift */; };
+		F59608F21FB2A07600F42D2B /* TextureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AE1FB2A07600F42D2B /* TextureExtensions.swift */; };
+		F59608F31FB2A07600F42D2B /* TextureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AE1FB2A07600F42D2B /* TextureExtensions.swift */; };
+		F59608F41FB2A07600F42D2B /* TileMapExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AF1FB2A07600F42D2B /* TileMapExtensions.swift */; };
+		F59608F51FB2A07600F42D2B /* TileMapExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AF1FB2A07600F42D2B /* TileMapExtensions.swift */; };
+		F59608F61FB2A07600F42D2B /* TileMapExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608AF1FB2A07600F42D2B /* TileMapExtensions.swift */; };
+		F59608F71FB2A07600F42D2B /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608B01FB2A07600F42D2B /* Vector3.swift */; };
+		F59608F81FB2A07600F42D2B /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608B01FB2A07600F42D2B /* Vector3.swift */; };
+		F59608F91FB2A07600F42D2B /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608B01FB2A07600F42D2B /* Vector3.swift */; };
+		F5A1026D1FB2C16600A2F4EE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1026C1FB2C16600A2F4EE /* Actions.swift */; };
+		F5A1026E1FB2C16600A2F4EE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1026C1FB2C16600A2F4EE /* Actions.swift */; };
+		F5A1026F1FB2C16600A2F4EE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1026C1FB2C16600A2F4EE /* Actions.swift */; };
+		F5A102711FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */; };
+		F5A102721FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */; };
+		F5A102731FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */; };
+		F5A102741FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
+		F5A102751FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
+		F5A102761FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
+		F5AE446D1FB4C19000538E98 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE446C1FB4C19000538E98 /* Characters.swift */; };
+		F5AE446E1FB4C19000538E98 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE446C1FB4C19000538E98 /* Characters.swift */; };
+		F5AE446F1FB4C19000538E98 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE446C1FB4C19000538E98 /* Characters.swift */; };
+		F5C108E01FB4160A00F2F771 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C108DF1FB4160A00F2F771 /* MapState.swift */; };
+		F5C108E11FB4160A00F2F771 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C108DF1FB4160A00F2F771 /* MapState.swift */; };
+		F5C108E21FB4160A00F2F771 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C108DF1FB4160A00F2F771 /* MapState.swift */; };
+		F5C108E41FB4162E00F2F771 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C108E31FB4162E00F2F771 /* PlayerState.swift */; };
+		F5C108E51FB4162E00F2F771 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C108E31FB4162E00F2F771 /* PlayerState.swift */; };
+		F5C108E61FB4162E00F2F771 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C108E31FB4162E00F2F771 /* PlayerState.swift */; };
+		F5DFCB451FB2932B00DB8195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFCB441FB2932B00DB8195 /* AppDelegate.swift */; };
+		F5DFCB471FB2932B00DB8195 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFCB461FB2932B00DB8195 /* GameViewController.swift */; };
+		F5DFCB4A1FB2932B00DB8195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB481FB2932B00DB8195 /* Main.storyboard */; };
+		F5DFCB4D1FB2932B00DB8195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB4B1FB2932B00DB8195 /* LaunchScreen.storyboard */; };
+		F5DFCB521FB2932B00DB8195 /* Bobart.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F5DFCB511FB2932B00DB8195 /* Bobart.app */; };
+		F5DFCB581FB2932B00DB8195 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB561FB2932B00DB8195 /* Interface.storyboard */; };
+		F5DFCB5F1FB2932B00DB8195 /* Bobart Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F5DFCB5E1FB2932B00DB8195 /* Bobart Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5DFCB641FB2932B00DB8195 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFCB631FB2932B00DB8195 /* InterfaceController.swift */; };
+		F5DFCB661FB2932B00DB8195 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFCB651FB2932B00DB8195 /* ExtensionDelegate.swift */; };
+		F5DFCB6F1FB2932B00DB8195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFCB6E1FB2932B00DB8195 /* AppDelegate.swift */; };
+		F5DFCB741FB2932B00DB8195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB721FB2932B00DB8195 /* Main.storyboard */; };
+		F5DFCB7E1FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
+		F5DFCB7F1FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
+		F5DFCB801FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F50A650C1FB55A890076245E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5DFCB341FB2932B00DB8195 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5DFCB401FB2932B00DB8195;
+			remoteInfo = "Bobart iOS";
+		};
+		F5DFCB531FB2932B00DB8195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5DFCB341FB2932B00DB8195 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5DFCB501FB2932B00DB8195;
+			remoteInfo = "Bobart watchOS App";
+		};
+		F5DFCB601FB2932B00DB8195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5DFCB341FB2932B00DB8195 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5DFCB5D1FB2932B00DB8195;
+			remoteInfo = "Bobart watchOS App Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F5DFCB861FB2932B00DB8195 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F5DFCB5F1FB2932B00DB8195 /* Bobart Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB8A1FB2932B00DB8195 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F5DFCB521FB2932B00DB8195 /* Bobart.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		047C8B965A60A69022E68BAD /* Pods-Bobart Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart Tests/Pods-Bobart Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		06E14EC9F8230155E1E1F654 /* Pods-Bobart watchOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App/Pods-Bobart watchOS App.release.xcconfig"; sourceTree = "<group>"; };
+		0C4ADE3256EAD277A1D3FEE5 /* Pods_Bobart_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11698892DD5A0658D6F1163D /* Pods_Bobart_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E266F10D908CA499F464F09 /* Pods-Bobart tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart tvOS/Pods-Bobart tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		2E8A61BD9AE940B7C3C88026 /* Pods-Bobart iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart iOS/Pods-Bobart iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		42F38EB7B443A5802C3B5761 /* Pods_Bobart_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44F548929185E6252B2F9B37 /* Pods_Bobart_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_watchOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48B5477E2C3EC4C8B15C01F7 /* Pods-Bobart iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart iOS/Pods-Bobart iOS.release.xcconfig"; sourceTree = "<group>"; };
+		7A0216DA5DACC6EF2682A0C5 /* Pods_Bobart_watchOS_App_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_watchOS_App_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4B9C402379826F88D92F54F /* Pods-Bobart Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart Tests/Pods-Bobart Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B5B85DF04039C5EEC6B0F16D /* Pods-Bobart watchOS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App/Pods-Bobart watchOS App.debug.xcconfig"; sourceTree = "<group>"; };
+		B86D5B1CFB663FAC077F5AB1 /* Pods-Bobart watchOS App Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App Extension/Pods-Bobart watchOS App Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		E26B61DAF4250B6B37252B5B /* Pods-Bobart tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart tvOS/Pods-Bobart tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E3A7FC1A38B0BBDA830461C0 /* Pods-Bobart watchOS App Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App Extension/Pods-Bobart watchOS App Extension.release.xcconfig"; sourceTree = "<group>"; };
+		F500EC5D1FB2B1510057C05F /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
+		F500EC611FB2B3A20057C05F /* GameReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameReducer.swift; sourceTree = "<group>"; };
+		F50A65071FB55A890076245E /* Bobart Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bobart Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50A65091FB55A890076245E /* Bobart_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bobart_Tests.swift; sourceTree = "<group>"; };
+		F50A650B1FB55A890076245E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51095EC1FB2BFD30075F6EF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		F516BD091FB2BBB1001E8173 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		F525B5641FB4128600982E71 /* PlayerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerReducer.swift; sourceTree = "<group>"; };
+		F525B5681FB412A200982E71 /* MapReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReducer.swift; sourceTree = "<group>"; };
+		F59608471FB295B200F42D2B /* Default.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Default.sks; sourceTree = "<group>"; };
+		F59608491FB295B200F42D2B /* Death.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Death.json; sourceTree = "<group>"; };
+		F596084A1FB295B200F42D2B /* Levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Levels.json; sourceTree = "<group>"; };
+		F596084B1FB295B200F42D2B /* Monsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Monsters.json; sourceTree = "<group>"; };
+		F596084C1FB295B200F42D2B /* Spells.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spells.json; sourceTree = "<group>"; };
+		F596084E1FB295B200F42D2B /* brick.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = brick.atlas; sourceTree = "<group>"; };
+		F596084F1FB295B200F42D2B /* Grass.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Grass.atlas; sourceTree = "<group>"; };
+		F59608501FB295B200F42D2B /* Items.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Items.atlas; sourceTree = "<group>"; };
+		F59608511FB295B200F42D2B /* sand.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sand.atlas; sourceTree = "<group>"; };
+		F59608521FB295B200F42D2B /* Shadows.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Shadows.atlas; sourceTree = "<group>"; };
+		F59608531FB295B200F42D2B /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		F59608541FB295B200F42D2B /* stone.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = stone.atlas; sourceTree = "<group>"; };
+		F59608551FB295B200F42D2B /* vine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = vine.atlas; sourceTree = "<group>"; };
+		F59608561FB295B200F42D2B /* weapons.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = weapons.atlas; sourceTree = "<group>"; };
+		F59608811FB2961300F42D2B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		F59608861FB2968400F42D2B /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		F59608871FB2968400F42D2B /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
+		F59608931FB29A2000F42D2B /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		F596089B1FB2A07600F42D2B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F596089D1FB2A07600F42D2B /* SKSpriteNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Extensions.swift"; sourceTree = "<group>"; };
+		F59608A01FB2A07600F42D2B /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		F59608A11FB2A07600F42D2B /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		F59608A21FB2A07600F42D2B /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		F59608A31FB2A07600F42D2B /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		F59608A51FB2A07600F42D2B /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		F59608A61FB2A07600F42D2B /* JSONLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
+		F59608A71FB2A07600F42D2B /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
+		F59608A81FB2A07600F42D2B /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
+		F59608A91FB2A07600F42D2B /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
+		F59608AA1FB2A07600F42D2B /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		F59608AC1FB2A07600F42D2B /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
+		F59608AD1FB2A07600F42D2B /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
+		F59608AE1FB2A07600F42D2B /* TextureExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureExtensions.swift; sourceTree = "<group>"; };
+		F59608AF1FB2A07600F42D2B /* TileMapExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapExtensions.swift; sourceTree = "<group>"; };
+		F59608B01FB2A07600F42D2B /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		F5A1026C1FB2C16600A2F4EE /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneLayout.swift; sourceTree = "<group>"; };
+		F5AE446C1FB4C19000538E98 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		F5C108DF1FB4160A00F2F771 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
+		F5C108E31FB4162E00F2F771 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
+		F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5DFCB411FB2932B00DB8195 /* Bobart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bobart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DFCB441FB2932B00DB8195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5DFCB461FB2932B00DB8195 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		F5DFCB491FB2932B00DB8195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5DFCB4C1FB2932B00DB8195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5DFCB4E1FB2932B00DB8195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DFCB511FB2932B00DB8195 /* Bobart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bobart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DFCB571FB2932B00DB8195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F5DFCB591FB2932B00DB8195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DFCB5E1FB2932B00DB8195 /* Bobart Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bobart Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DFCB631FB2932B00DB8195 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F5DFCB651FB2932B00DB8195 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F5DFCB671FB2932B00DB8195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DFCB6C1FB2932B00DB8195 /* Bobart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bobart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DFCB6E1FB2932B00DB8195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5DFCB731FB2932B00DB8195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5DFCB751FB2932B00DB8195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1288AACD69F265AC47C569C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB3174000223ADDA21363A68 /* Pods_Bobart_watchOS_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50A65041FB55A890076245E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6239609FD11BFD6D2D7CAEC /* Pods_Bobart_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB3E1FB2932B00DB8195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55C9788B2AF8CFCE6A66F85 /* Pods_Bobart_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB5B1FB2932B00DB8195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54C8F0586351F89D64429938 /* Pods_Bobart_watchOS_App_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB691FB2932B00DB8195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D03CA7474ABDA02A4332572 /* Pods_Bobart_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E539EB1CB75AA91AF78D09B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E8A61BD9AE940B7C3C88026 /* Pods-Bobart iOS.debug.xcconfig */,
+				48B5477E2C3EC4C8B15C01F7 /* Pods-Bobart iOS.release.xcconfig */,
+				E26B61DAF4250B6B37252B5B /* Pods-Bobart tvOS.debug.xcconfig */,
+				2E266F10D908CA499F464F09 /* Pods-Bobart tvOS.release.xcconfig */,
+				B5B85DF04039C5EEC6B0F16D /* Pods-Bobart watchOS App.debug.xcconfig */,
+				06E14EC9F8230155E1E1F654 /* Pods-Bobart watchOS App.release.xcconfig */,
+				B86D5B1CFB663FAC077F5AB1 /* Pods-Bobart watchOS App Extension.debug.xcconfig */,
+				E3A7FC1A38B0BBDA830461C0 /* Pods-Bobart watchOS App Extension.release.xcconfig */,
+				047C8B965A60A69022E68BAD /* Pods-Bobart Tests.debug.xcconfig */,
+				A4B9C402379826F88D92F54F /* Pods-Bobart Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C40F7690F5537A1C646FE92A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11698892DD5A0658D6F1163D /* Pods_Bobart_iOS.framework */,
+				0C4ADE3256EAD277A1D3FEE5 /* Pods_Bobart_tvOS.framework */,
+				44F548929185E6252B2F9B37 /* Pods_Bobart_watchOS_App.framework */,
+				7A0216DA5DACC6EF2682A0C5 /* Pods_Bobart_watchOS_App_Extension.framework */,
+				42F38EB7B443A5802C3B5761 /* Pods_Bobart_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F500EC5C1FB2B1470057C05F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F596089B1FB2A07600F42D2B /* Constants.swift */,
+				F500EC5D1FB2B1510057C05F /* MapLocation.swift */,
+				F59608871FB2968400F42D2B /* Maze.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F50A65081FB55A890076245E /* Bobart Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F50A65091FB55A890076245E /* Bobart_Tests.swift */,
+				F50A650B1FB55A890076245E /* Info.plist */,
+			);
+			path = "Bobart Tests";
+			sourceTree = "<group>";
+		};
+		F525B5611FB4124B00982E71 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				F500EC611FB2B3A20057C05F /* GameReducer.swift */,
+				F525B5681FB412A200982E71 /* MapReducer.swift */,
+				F525B5641FB4128600982E71 /* PlayerReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		F525B5621FB4125500982E71 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				F59608931FB29A2000F42D2B /* GameState.swift */,
+				F5C108DF1FB4160A00F2F771 /* MapState.swift */,
+				F5C108E31FB4162E00F2F771 /* PlayerState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		F525B5631FB4125F00982E71 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				F5A1026C1FB2C16600A2F4EE /* Actions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		F59608461FB2956D00F42D2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F59608471FB295B200F42D2B /* Default.sks */,
+				F59608481FB295B200F42D2B /* JSON */,
+				F596084D1FB295B200F42D2B /* Sprite Sheets */,
+				F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F59608481FB295B200F42D2B /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F59608491FB295B200F42D2B /* Death.json */,
+				F596084A1FB295B200F42D2B /* Levels.json */,
+				F596084B1FB295B200F42D2B /* Monsters.json */,
+				F596084C1FB295B200F42D2B /* Spells.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		F596084D1FB295B200F42D2B /* Sprite Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				F596084E1FB295B200F42D2B /* brick.atlas */,
+				F596084F1FB295B200F42D2B /* Grass.atlas */,
+				F59608501FB295B200F42D2B /* Items.atlas */,
+				F59608511FB295B200F42D2B /* sand.atlas */,
+				F59608521FB295B200F42D2B /* Shadows.atlas */,
+				F59608531FB295B200F42D2B /* Sprites.atlas */,
+				F59608541FB295B200F42D2B /* stone.atlas */,
+				F59608551FB295B200F42D2B /* vine.atlas */,
+				F59608561FB295B200F42D2B /* weapons.atlas */,
+			);
+			path = "Sprite Sheets";
+			sourceTree = "<group>";
+		};
+		F59608841FB2968400F42D2B /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				F59608861FB2968400F42D2B /* GameScene.swift */,
+				F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		F59608921FB2999F00F42D2B /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				F500EC5C1FB2B1470057C05F /* Data */,
+				F525B5631FB4125F00982E71 /* Actions */,
+				F525B5611FB4124B00982E71 /* Reducers */,
+				F525B5621FB4125500982E71 /* States */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		F59608971FB2A07600F42D2B /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE446C1FB4C19000538E98 /* Characters.swift */,
+				F596089E1FB2A07600F42D2B /* SKTUtils */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		F596089E1FB2A07600F42D2B /* SKTUtils */ = {
+			isa = PBXGroup;
+			children = (
+				F596089D1FB2A07600F42D2B /* SKSpriteNode+Extensions.swift */,
+				F59608A01FB2A07600F42D2B /* Array+Extensions.swift */,
+				F59608A11FB2A07600F42D2B /* CGFloat+Extensions.swift */,
+				F59608A21FB2A07600F42D2B /* CGPoint+Extensions.swift */,
+				F59608A31FB2A07600F42D2B /* CGVector+Extensions.swift */,
+				F59608A51FB2A07600F42D2B /* Int+Extensions.swift */,
+				F59608A61FB2A07600F42D2B /* JSONLoader.swift */,
+				F59608A71FB2A07600F42D2B /* SKAction+Extensions.swift */,
+				F59608A81FB2A07600F42D2B /* SKAction+SpecialEffects.swift */,
+				F59608A91FB2A07600F42D2B /* SKColor+Extensions.swift */,
+				F59608AA1FB2A07600F42D2B /* SKNode+Extensions.swift */,
+				F59608AC1FB2A07600F42D2B /* SKTEffects.swift */,
+				F59608AD1FB2A07600F42D2B /* SKTTimingFunctions.swift */,
+				F59608AE1FB2A07600F42D2B /* TextureExtensions.swift */,
+				F59608AF1FB2A07600F42D2B /* TileMapExtensions.swift */,
+				F59608B01FB2A07600F42D2B /* Vector3.swift */,
+			);
+			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+		F5DFCB331FB2932B00DB8195 = {
+			isa = PBXGroup;
+			children = (
+				F5DFCB381FB2932B00DB8195 /* Bobart Shared */,
+				F5DFCB431FB2932B00DB8195 /* Bobart iOS */,
+				F5DFCB551FB2932B00DB8195 /* Bobart watchOS App */,
+				F5DFCB621FB2932B00DB8195 /* Bobart watchOS App Extension */,
+				F5DFCB6D1FB2932B00DB8195 /* Bobart tvOS */,
+				F50A65081FB55A890076245E /* Bobart Tests */,
+				F5DFCB421FB2932B00DB8195 /* Products */,
+				1E539EB1CB75AA91AF78D09B /* Pods */,
+				C40F7690F5537A1C646FE92A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F5DFCB381FB2932B00DB8195 /* Bobart Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F59608461FB2956D00F42D2B /* Resources */,
+				F59608921FB2999F00F42D2B /* Redux */,
+				F59608841FB2968400F42D2B /* Game */,
+				F59608971FB2A07600F42D2B /* SDK */,
+			);
+			path = "Bobart Shared";
+			sourceTree = "<group>";
+		};
+		F5DFCB421FB2932B00DB8195 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5DFCB411FB2932B00DB8195 /* Bobart.app */,
+				F5DFCB511FB2932B00DB8195 /* Bobart.app */,
+				F5DFCB5E1FB2932B00DB8195 /* Bobart Extension.appex */,
+				F5DFCB6C1FB2932B00DB8195 /* Bobart.app */,
+				F50A65071FB55A890076245E /* Bobart Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5DFCB431FB2932B00DB8195 /* Bobart iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F59608811FB2961300F42D2B /* GameScene.sks */,
+				F5DFCB441FB2932B00DB8195 /* AppDelegate.swift */,
+				F5DFCB461FB2932B00DB8195 /* GameViewController.swift */,
+				F5DFCB481FB2932B00DB8195 /* Main.storyboard */,
+				F5DFCB4B1FB2932B00DB8195 /* LaunchScreen.storyboard */,
+				F5DFCB4E1FB2932B00DB8195 /* Info.plist */,
+			);
+			path = "Bobart iOS";
+			sourceTree = "<group>";
+		};
+		F5DFCB551FB2932B00DB8195 /* Bobart watchOS App */ = {
+			isa = PBXGroup;
+			children = (
+				F5DFCB561FB2932B00DB8195 /* Interface.storyboard */,
+				F5DFCB591FB2932B00DB8195 /* Info.plist */,
+			);
+			path = "Bobart watchOS App";
+			sourceTree = "<group>";
+		};
+		F5DFCB621FB2932B00DB8195 /* Bobart watchOS App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F51095EC1FB2BFD30075F6EF /* GameScene.sks */,
+				F5DFCB631FB2932B00DB8195 /* InterfaceController.swift */,
+				F5DFCB651FB2932B00DB8195 /* ExtensionDelegate.swift */,
+				F5DFCB671FB2932B00DB8195 /* Info.plist */,
+			);
+			path = "Bobart watchOS App Extension";
+			sourceTree = "<group>";
+		};
+		F5DFCB6D1FB2932B00DB8195 /* Bobart tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				F516BD091FB2BBB1001E8173 /* GameScene.sks */,
+				F5DFCB6E1FB2932B00DB8195 /* AppDelegate.swift */,
+				F5DFCB721FB2932B00DB8195 /* Main.storyboard */,
+				F5DFCB751FB2932B00DB8195 /* Info.plist */,
+			);
+			path = "Bobart tvOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F50A65061FB55A890076245E /* Bobart Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F50A65101FB55A890076245E /* Build configuration list for PBXNativeTarget "Bobart Tests" */;
+			buildPhases = (
+				857CFF12C794627F2383109A /* [CP] Check Pods Manifest.lock */,
+				F50A65031FB55A890076245E /* Sources */,
+				F50A65041FB55A890076245E /* Frameworks */,
+				F50A65051FB55A890076245E /* Resources */,
+				37E52BC8317281B24FB1F570 /* [CP] Embed Pods Frameworks */,
+				9E9E4281A10B410E32B91B11 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F50A650D1FB55A890076245E /* PBXTargetDependency */,
+			);
+			name = "Bobart Tests";
+			productName = "Bobart Tests";
+			productReference = F50A65071FB55A890076245E /* Bobart Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F5DFCB401FB2932B00DB8195 /* Bobart iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5DFCB8B1FB2932B00DB8195 /* Build configuration list for PBXNativeTarget "Bobart iOS" */;
+			buildPhases = (
+				7B3F138EDBA8087F4708895C /* [CP] Check Pods Manifest.lock */,
+				F5DFCB3D1FB2932B00DB8195 /* Sources */,
+				F5DFCB3E1FB2932B00DB8195 /* Frameworks */,
+				F5DFCB3F1FB2932B00DB8195 /* Resources */,
+				F5DFCB8A1FB2932B00DB8195 /* Embed Watch Content */,
+				6791F5792B4D6DF334B20DF7 /* [CP] Embed Pods Frameworks */,
+				9E29C691143B48214F20F553 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5DFCB541FB2932B00DB8195 /* PBXTargetDependency */,
+			);
+			name = "Bobart iOS";
+			productName = "Bobart iOS";
+			productReference = F5DFCB411FB2932B00DB8195 /* Bobart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5DFCB501FB2932B00DB8195 /* Bobart watchOS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5DFCB871FB2932B00DB8195 /* Build configuration list for PBXNativeTarget "Bobart watchOS App" */;
+			buildPhases = (
+				E6D661A4D2B803B30F0F31FE /* [CP] Check Pods Manifest.lock */,
+				F5DFCB4F1FB2932B00DB8195 /* Resources */,
+				F5DFCB861FB2932B00DB8195 /* Embed App Extensions */,
+				C1288AACD69F265AC47C569C /* Frameworks */,
+				E0D33A245627C501F94E961B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5DFCB611FB2932B00DB8195 /* PBXTargetDependency */,
+			);
+			name = "Bobart watchOS App";
+			productName = "Bobart watchOS App";
+			productReference = F5DFCB511FB2932B00DB8195 /* Bobart.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F5DFCB5D1FB2932B00DB8195 /* Bobart watchOS App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5DFCB831FB2932B00DB8195 /* Build configuration list for PBXNativeTarget "Bobart watchOS App Extension" */;
+			buildPhases = (
+				DC64E61ACD3EA1D195FFC2B0 /* [CP] Check Pods Manifest.lock */,
+				F5DFCB5A1FB2932B00DB8195 /* Sources */,
+				F5DFCB5B1FB2932B00DB8195 /* Frameworks */,
+				F5DFCB5C1FB2932B00DB8195 /* Resources */,
+				EC08A54D81DD0818DB05789D /* [CP] Embed Pods Frameworks */,
+				6D875E727D2449B3948D2073 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bobart watchOS App Extension";
+			productName = "Bobart watchOS App Extension";
+			productReference = F5DFCB5E1FB2932B00DB8195 /* Bobart Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		F5DFCB6B1FB2932B00DB8195 /* Bobart tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5DFCB8E1FB2932B00DB8195 /* Build configuration list for PBXNativeTarget "Bobart tvOS" */;
+			buildPhases = (
+				0287B7642148437A63C5645F /* [CP] Check Pods Manifest.lock */,
+				F5DFCB681FB2932B00DB8195 /* Sources */,
+				F5DFCB691FB2932B00DB8195 /* Frameworks */,
+				F5DFCB6A1FB2932B00DB8195 /* Resources */,
+				41A40D8DA2615EF5FA7554AC /* [CP] Embed Pods Frameworks */,
+				FD15673E17942526C6131D14 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bobart tvOS";
+			productName = "Bobart tvOS";
+			productReference = F5DFCB6C1FB2932B00DB8195 /* Bobart.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5DFCB341FB2932B00DB8195 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = JimmyBouker;
+				TargetAttributes = {
+					F50A65061FB55A890076245E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F5DFCB401FB2932B00DB8195;
+					};
+					F5DFCB401FB2932B00DB8195 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F5DFCB501FB2932B00DB8195 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F5DFCB5D1FB2932B00DB8195 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F5DFCB6B1FB2932B00DB8195 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F5DFCB371FB2932B00DB8195 /* Build configuration list for PBXProject "Bobart" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5DFCB331FB2932B00DB8195;
+			productRefGroup = F5DFCB421FB2932B00DB8195 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5DFCB401FB2932B00DB8195 /* Bobart iOS */,
+				F5DFCB501FB2932B00DB8195 /* Bobart watchOS App */,
+				F5DFCB5D1FB2932B00DB8195 /* Bobart watchOS App Extension */,
+				F5DFCB6B1FB2932B00DB8195 /* Bobart tvOS */,
+				F50A65061FB55A890076245E /* Bobart Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F50A65051FB55A890076245E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB3F1FB2932B00DB8195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59608691FB295B200F42D2B /* Grass.atlas in Resources */,
+				F59608781FB295B200F42D2B /* stone.atlas in Resources */,
+				F596085D1FB295B200F42D2B /* Levels.json in Resources */,
+				F5DFCB4A1FB2932B00DB8195 /* Main.storyboard in Resources */,
+				F596087E1FB295B200F42D2B /* weapons.atlas in Resources */,
+				F59608661FB295B200F42D2B /* brick.atlas in Resources */,
+				F5DFCB4D1FB2932B00DB8195 /* LaunchScreen.storyboard in Resources */,
+				F59608601FB295B200F42D2B /* Monsters.json in Resources */,
+				F59608721FB295B200F42D2B /* Shadows.atlas in Resources */,
+				F596085A1FB295B200F42D2B /* Death.json in Resources */,
+				F59608751FB295B200F42D2B /* Sprites.atlas in Resources */,
+				F5DFCB7E1FB2932B00DB8195 /* Assets.xcassets in Resources */,
+				F596086C1FB295B200F42D2B /* Items.atlas in Resources */,
+				F59608631FB295B200F42D2B /* Spells.json in Resources */,
+				F59608571FB295B200F42D2B /* Default.sks in Resources */,
+				F596086F1FB295B200F42D2B /* sand.atlas in Resources */,
+				F59608821FB2961300F42D2B /* GameScene.sks in Resources */,
+				F596087B1FB295B200F42D2B /* vine.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB4F1FB2932B00DB8195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DFCB7F1FB2932B00DB8195 /* Assets.xcassets in Resources */,
+				F5DFCB581FB2932B00DB8195 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB5C1FB2932B00DB8195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F596086D1FB295B200F42D2B /* Items.atlas in Resources */,
+				F51095ED1FB2BFD30075F6EF /* GameScene.sks in Resources */,
+				F59608611FB295B200F42D2B /* Monsters.json in Resources */,
+				F596085E1FB295B200F42D2B /* Levels.json in Resources */,
+				F59608731FB295B200F42D2B /* Shadows.atlas in Resources */,
+				F596085B1FB295B200F42D2B /* Death.json in Resources */,
+				F59608761FB295B200F42D2B /* Sprites.atlas in Resources */,
+				F596087C1FB295B200F42D2B /* vine.atlas in Resources */,
+				F59608641FB295B200F42D2B /* Spells.json in Resources */,
+				F59608791FB295B200F42D2B /* stone.atlas in Resources */,
+				F596087F1FB295B200F42D2B /* weapons.atlas in Resources */,
+				F59608701FB295B200F42D2B /* sand.atlas in Resources */,
+				F596086A1FB295B200F42D2B /* Grass.atlas in Resources */,
+				F59608581FB295B200F42D2B /* Default.sks in Resources */,
+				F59608671FB295B200F42D2B /* brick.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB6A1FB2932B00DB8195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59608651FB295B200F42D2B /* Spells.json in Resources */,
+				F59608771FB295B200F42D2B /* Sprites.atlas in Resources */,
+				F59608741FB295B200F42D2B /* Shadows.atlas in Resources */,
+				F596087D1FB295B200F42D2B /* vine.atlas in Resources */,
+				F596087A1FB295B200F42D2B /* stone.atlas in Resources */,
+				F59608681FB295B200F42D2B /* brick.atlas in Resources */,
+				F596086E1FB295B200F42D2B /* Items.atlas in Resources */,
+				F596085C1FB295B200F42D2B /* Death.json in Resources */,
+				F596085F1FB295B200F42D2B /* Levels.json in Resources */,
+				F5DFCB741FB2932B00DB8195 /* Main.storyboard in Resources */,
+				F59608711FB295B200F42D2B /* sand.atlas in Resources */,
+				F59608591FB295B200F42D2B /* Default.sks in Resources */,
+				F59608621FB295B200F42D2B /* Monsters.json in Resources */,
+				F516BD0A1FB2BBB1001E8173 /* GameScene.sks in Resources */,
+				F59608801FB295B200F42D2B /* weapons.atlas in Resources */,
+				F5DFCB801FB2932B00DB8195 /* Assets.xcassets in Resources */,
+				F596086B1FB295B200F42D2B /* Grass.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0287B7642148437A63C5645F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bobart tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37E52BC8317281B24FB1F570 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart Tests/Pods-Bobart Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41A40D8DA2615EF5FA7554AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bobart tvOS/Pods-Bobart tvOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReSwift-tvOS/ReSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart tvOS/Pods-Bobart tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6791F5792B4D6DF334B20DF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bobart iOS/Pods-Bobart iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReSwift-iOS/ReSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart iOS/Pods-Bobart iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D875E727D2449B3948D2073 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart watchOS App Extension/Pods-Bobart watchOS App Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3F138EDBA8087F4708895C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bobart iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		857CFF12C794627F2383109A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bobart Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E29C691143B48214F20F553 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart iOS/Pods-Bobart iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E9E4281A10B410E32B91B11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart Tests/Pods-Bobart Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC64E61ACD3EA1D195FFC2B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bobart watchOS App Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0D33A245627C501F94E961B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart watchOS App/Pods-Bobart watchOS App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6D661A4D2B803B30F0F31FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bobart watchOS App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC08A54D81DD0818DB05789D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bobart watchOS App Extension/Pods-Bobart watchOS App Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReSwift-watchOS/ReSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart watchOS App Extension/Pods-Bobart watchOS App Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD15673E17942526C6131D14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bobart tvOS/Pods-Bobart tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F50A65031FB55A890076245E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50A650A1FB55A890076245E /* Bobart_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB3D1FB2932B00DB8195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F500EC621FB2B3A20057C05F /* GameReducer.swift in Sources */,
+				F525B5651FB4128600982E71 /* PlayerReducer.swift in Sources */,
+				F59608CD1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */,
+				F59608DC1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */,
+				F5DFCB471FB2932B00DB8195 /* GameViewController.swift in Sources */,
+				F59608D91FB2A07600F42D2B /* JSONLoader.swift in Sources */,
+				F59608CA1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
+				F59608F11FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
+				F59608F71FB2A07600F42D2B /* Vector3.swift in Sources */,
+				F5AE446D1FB4C19000538E98 /* Characters.swift in Sources */,
+				F59608D61FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
+				F5A102711FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */,
+				F5A102741FB2C72600A2F4EE /* Maze.swift in Sources */,
+				F59608DF1FB2A07600F42D2B /* SKAction+SpecialEffects.swift in Sources */,
+				F59608D01FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */,
+				F59608EB1FB2A07600F42D2B /* SKTEffects.swift in Sources */,
+				F596088B1FB2968400F42D2B /* GameScene.swift in Sources */,
+				F59608941FB29A2000F42D2B /* GameState.swift in Sources */,
+				F59608EE1FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */,
+				F59608C71FB2A07600F42D2B /* Array+Extensions.swift in Sources */,
+				F525B5691FB412A200982E71 /* MapReducer.swift in Sources */,
+				F59608E21FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
+				F5DFCB451FB2932B00DB8195 /* AppDelegate.swift in Sources */,
+				F5C108E41FB4162E00F2F771 /* PlayerState.swift in Sources */,
+				F59608E51FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
+				F5C108E01FB4160A00F2F771 /* MapState.swift in Sources */,
+				F5A1026D1FB2C16600A2F4EE /* Actions.swift in Sources */,
+				F59608BB1FB2A07600F42D2B /* Constants.swift in Sources */,
+				F59608F41FB2A07600F42D2B /* TileMapExtensions.swift in Sources */,
+				F500EC5E1FB2B1510057C05F /* MapLocation.swift in Sources */,
+				F59608C11FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB5A1FB2932B00DB8195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F500EC631FB2B3A20057C05F /* GameReducer.swift in Sources */,
+				F525B5661FB4128600982E71 /* PlayerReducer.swift in Sources */,
+				F59608C21FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */,
+				F5DFCB661FB2932B00DB8195 /* ExtensionDelegate.swift in Sources */,
+				F59608E01FB2A07600F42D2B /* SKAction+SpecialEffects.swift in Sources */,
+				F59608C81FB2A07600F42D2B /* Array+Extensions.swift in Sources */,
+				F59608D71FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
+				F59608CE1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */,
+				F596088C1FB2968400F42D2B /* GameScene.swift in Sources */,
+				F5AE446E1FB4C19000538E98 /* Characters.swift in Sources */,
+				F5DFCB641FB2932B00DB8195 /* InterfaceController.swift in Sources */,
+				F5A102721FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */,
+				F5A102751FB2C72600A2F4EE /* Maze.swift in Sources */,
+				F59608DD1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */,
+				F59608DA1FB2A07600F42D2B /* JSONLoader.swift in Sources */,
+				F59608F51FB2A07600F42D2B /* TileMapExtensions.swift in Sources */,
+				F59608EC1FB2A07600F42D2B /* SKTEffects.swift in Sources */,
+				F59608F81FB2A07600F42D2B /* Vector3.swift in Sources */,
+				F59608D11FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */,
+				F59608E61FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
+				F525B56A1FB412A200982E71 /* MapReducer.swift in Sources */,
+				F59608BC1FB2A07600F42D2B /* Constants.swift in Sources */,
+				F59608E31FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
+				F5C108E51FB4162E00F2F771 /* PlayerState.swift in Sources */,
+				F59608F21FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
+				F5C108E11FB4160A00F2F771 /* MapState.swift in Sources */,
+				F5A1026E1FB2C16600A2F4EE /* Actions.swift in Sources */,
+				F59608CB1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
+				F51095EE1FB2C02E0075F6EF /* GameState.swift in Sources */,
+				F500EC5F1FB2B1590057C05F /* MapLocation.swift in Sources */,
+				F59608EF1FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DFCB681FB2932B00DB8195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F500EC641FB2B3A20057C05F /* GameReducer.swift in Sources */,
+				F525B5671FB4128600982E71 /* PlayerReducer.swift in Sources */,
+				F596088D1FB2968400F42D2B /* GameScene.swift in Sources */,
+				F59608CF1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */,
+				F59608E11FB2A07600F42D2B /* SKAction+SpecialEffects.swift in Sources */,
+				F59608F91FB2A07600F42D2B /* Vector3.swift in Sources */,
+				F59608D81FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
+				F59608CC1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
+				F59608E71FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
+				F5AE446F1FB4C19000538E98 /* Characters.swift in Sources */,
+				F59608DB1FB2A07600F42D2B /* JSONLoader.swift in Sources */,
+				F5A102731FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */,
+				F5A102761FB2C72600A2F4EE /* Maze.swift in Sources */,
+				F59608F61FB2A07600F42D2B /* TileMapExtensions.swift in Sources */,
+				F59608F31FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
+				F59608ED1FB2A07600F42D2B /* SKTEffects.swift in Sources */,
+				F59608961FB29A2000F42D2B /* GameState.swift in Sources */,
+				F59608E41FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
+				F500EC5B1FB2AAC90057C05F /* GameViewController.swift in Sources */,
+				F59608DE1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */,
+				F525B56B1FB412A200982E71 /* MapReducer.swift in Sources */,
+				F5DFCB6F1FB2932B00DB8195 /* AppDelegate.swift in Sources */,
+				F59608C31FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */,
+				F5C108E61FB4162E00F2F771 /* PlayerState.swift in Sources */,
+				F59608C91FB2A07600F42D2B /* Array+Extensions.swift in Sources */,
+				F5C108E21FB4160A00F2F771 /* MapState.swift in Sources */,
+				F5A1026F1FB2C16600A2F4EE /* Actions.swift in Sources */,
+				F59608D21FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */,
+				F59608F01FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */,
+				F500EC601FB2B1590057C05F /* MapLocation.swift in Sources */,
+				F59608BD1FB2A07600F42D2B /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F50A650D1FB55A890076245E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5DFCB401FB2932B00DB8195 /* Bobart iOS */;
+			targetProxy = F50A650C1FB55A890076245E /* PBXContainerItemProxy */;
+		};
+		F5DFCB541FB2932B00DB8195 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5DFCB501FB2932B00DB8195 /* Bobart watchOS App */;
+			targetProxy = F5DFCB531FB2932B00DB8195 /* PBXContainerItemProxy */;
+		};
+		F5DFCB611FB2932B00DB8195 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5DFCB5D1FB2932B00DB8195 /* Bobart watchOS App Extension */;
+			targetProxy = F5DFCB601FB2932B00DB8195 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5DFCB481FB2932B00DB8195 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5DFCB491FB2932B00DB8195 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5DFCB4B1FB2932B00DB8195 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5DFCB4C1FB2932B00DB8195 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F5DFCB561FB2932B00DB8195 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5DFCB571FB2932B00DB8195 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		F5DFCB721FB2932B00DB8195 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5DFCB731FB2932B00DB8195 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F50A650E1FB55A890076245E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 047C8B965A60A69022E68BAD /* Pods-Bobart Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				INFOPLIST_FILE = "Bobart Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JimmyBouker.Bobart-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bobart.app/Bobart";
+			};
+			name = Debug;
+		};
+		F50A650F1FB55A890076245E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4B9C402379826F88D92F54F /* Pods-Bobart Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				INFOPLIST_FILE = "Bobart Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JimmyBouker.Bobart-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bobart.app/Bobart";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5DFCB811FB2932B00DB8195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F5DFCB821FB2932B00DB8195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		F5DFCB841FB2932B00DB8195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B86D5B1CFB663FAC077F5AB1 /* Pods-Bobart watchOS App Extension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				INFOPLIST_FILE = "Bobart watchOS App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "Bobart Extension";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		F5DFCB851FB2932B00DB8195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3A7FC1A38B0BBDA830461C0 /* Pods-Bobart watchOS App Extension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				INFOPLIST_FILE = "Bobart watchOS App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "Bobart Extension";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
+		F5DFCB881FB2932B00DB8195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5B85DF04039C5EEC6B0F16D /* Pods-Bobart watchOS App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				IBSC_MODULE = Bobart_Extension;
+				INFOPLIST_FILE = "Bobart watchOS App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart.watchkitapp;
+				PRODUCT_NAME = Bobart;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		F5DFCB891FB2932B00DB8195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06E14EC9F8230155E1E1F654 /* Pods-Bobart watchOS App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				IBSC_MODULE = Bobart_Extension;
+				INFOPLIST_FILE = "Bobart watchOS App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart.watchkitapp;
+				PRODUCT_NAME = Bobart;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
+		F5DFCB8C1FB2932B00DB8195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E8A61BD9AE940B7C3C88026 /* Pods-Bobart iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				INFOPLIST_FILE = "Bobart iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart;
+				PRODUCT_NAME = Bobart;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5DFCB8D1FB2932B00DB8195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48B5477E2C3EC4C8B15C01F7 /* Pods-Bobart iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				INFOPLIST_FILE = "Bobart iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart;
+				PRODUCT_NAME = Bobart;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5DFCB8F1FB2932B00DB8195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E26B61DAF4250B6B37252B5B /* Pods-Bobart tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "tvOS LaunchImage";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				INFOPLIST_FILE = "Bobart tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart;
+				PRODUCT_NAME = Bobart;
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		F5DFCB901FB2932B00DB8195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E266F10D908CA499F464F09 /* Pods-Bobart tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "tvOS LaunchImage";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6KM367XE7J;
+				INFOPLIST_FILE = "Bobart tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart;
+				PRODUCT_NAME = Bobart;
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F50A65101FB55A890076245E /* Build configuration list for PBXNativeTarget "Bobart Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F50A650E1FB55A890076245E /* Debug */,
+				F50A650F1FB55A890076245E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DFCB371FB2932B00DB8195 /* Build configuration list for PBXProject "Bobart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DFCB811FB2932B00DB8195 /* Debug */,
+				F5DFCB821FB2932B00DB8195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DFCB831FB2932B00DB8195 /* Build configuration list for PBXNativeTarget "Bobart watchOS App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DFCB841FB2932B00DB8195 /* Debug */,
+				F5DFCB851FB2932B00DB8195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DFCB871FB2932B00DB8195 /* Build configuration list for PBXNativeTarget "Bobart watchOS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DFCB881FB2932B00DB8195 /* Debug */,
+				F5DFCB891FB2932B00DB8195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DFCB8B1FB2932B00DB8195 /* Build configuration list for PBXNativeTarget "Bobart iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DFCB8C1FB2932B00DB8195 /* Debug */,
+				F5DFCB8D1FB2932B00DB8195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DFCB8E1FB2932B00DB8195 /* Build configuration list for PBXNativeTarget "Bobart tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DFCB8F1FB2932B00DB8195 /* Debug */,
+				F5DFCB901FB2932B00DB8195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5DFCB341FB2932B00DB8195 /* Project object */;
+}

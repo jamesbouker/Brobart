@@ -1,0 +1,37 @@
+{
+	"1" : {
+		"width" : 7,
+        "height" : 7,
+        "atlas" : "vine",
+        "grass" : 20,
+        "mustSpawn" : ["blueSlime"]
+	},
+    "2" : {
+        "width" : 8,
+        "widthVar" : 1,
+        "height" : 7,
+        "heightVar" : 1,
+        "grass" : 0,
+        "atlas" : "brick",
+        "mustSpawn" : ["skeleton", "redDragon"]
+    },
+    "3" : {
+        "width" : 8,
+        "widthVar" : 1,
+        "height" : 7,
+        "heightVar" : 1,
+        "atlas" : "stone",
+        "grass" : 20,
+        "mustSpawn" : ["blueSlime", "blackBat"]
+    },
+    "4" : {
+        "mustSpawn" : ["skeleton", "redDragon","skeleton", "redDragon","skeleton", "redDragon"],
+        "width" : 8,
+        "widthVar" : 1,
+        "height" : 7,
+        "heightVar" : 1,
+        "grass" : 0,
+        "atlas" : "brick",
+        "wallsToRemove" : 0.70
+    }
+}

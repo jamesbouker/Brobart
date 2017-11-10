@@ -1,0 +1,68 @@
+[
+    {
+        "monsterId" : "brownBear",
+		"maxHp" : 4,
+		"asset" : "bear",
+        "ai" : "sightedLastKnown",
+        "range" : 8,
+		"isDirectional" : true,
+        "onDeath" : "bones"
+	},
+    {
+        "monsterId" : "blueSlime",
+        "maxHp" : 1,
+        "asset" : "slime",
+        "ai" : "random",
+        "isDirectional" : true,
+	},
+    {
+        "monsterId" : "blackBat",
+		"maxHp" : 1,
+		"asset" : "bat",
+        "ai" : "random",
+		"isDirectional" : false,
+        "canFly" : true,
+        "onDeath" : "blood"
+	},
+    {
+        "monsterId" : "whiteRat",
+        "maxHp" : 2,
+        "asset" : "rat",
+        "ai" : "sighted",
+        "range" : 4,
+        "isDirectional" : true,
+        "onDeath" : "bones"
+    },
+    {
+        "monsterId" : "worm",
+        "maxHp" : 1,
+        "asset" : "worm",
+        "ai" : "sightedFollower",
+        "range" : 8,
+        "isDirectional" : true,
+        "onDeath" : "blood"
+    },
+    {
+        "monsterId" : "skeleton",
+        "maxHp" : 1,
+        "asset" : "skeleton",
+        "ai" : "sightedFollower",
+        "range" : 2,
+        "isDirectional" : true,
+        "isRanged" : true,
+        "rangedItem" : "bone",
+        "onDeath" : "bones"
+    },
+    {
+        "monsterId" : "redDragon",
+        "maxHp" : 4,
+        "asset" : "dragon",
+        "ai" : "sightedFollower",
+        "range" : 4,
+        "shootRange" : 1,
+        "isDirectional" : true,
+        "isRanged" : true,
+        "rangedItem" : "fireball",
+        "onDeath" : "bones"
+    }
+]

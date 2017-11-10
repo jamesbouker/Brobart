@@ -1,0 +1,6 @@
+framework module Pods_Bobart_Tests {
+  umbrella header "Pods-Bobart Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
