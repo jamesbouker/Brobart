@@ -5,6 +5,7 @@
 //  Created by james bouker on 11/9/17.
 //  Copyright © 2017 JimmyBouker. All rights reserved.
 //
+// swiftlint:disable type_name
 
 import XCTest
 

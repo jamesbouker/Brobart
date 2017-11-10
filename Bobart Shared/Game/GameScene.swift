@@ -5,7 +5,6 @@
 //  Created by james bouker on 7/29/17.
 //  Copyright © 2017 Jimmy Bouker. All rights reserved.
 //
-// swiftlint:disable cyclomatic_complexity
 
 import SpriteKit
 import ReSwift

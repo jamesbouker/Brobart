@@ -602,6 +602,7 @@
 				37E52BC8317281B24FB1F570 /* [CP] Embed Pods Frameworks */,
 				9E9E4281A10B410E32B91B11 /* [CP] Copy Pods Resources */,
 				F5AC79011FB55BDE000FC8BC /* Swift Format */,
+				F5AC79021FB55CE7000FC8BC /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -1073,6 +1074,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "echo \"Running SwiftFormat .\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/Bobart Shared/\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/Bobart iOS/\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/Bobart watchOS App/\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/Bobart watchOS App Extension/\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/Bobart tvOS/\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/Bobart Tests/\"";
+		};
+		F5AC79021FB55CE7000FC8BC /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		FD15673E17942526C6131D14 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

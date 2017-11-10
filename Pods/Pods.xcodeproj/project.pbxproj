@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -100,20 +100,20 @@
 		0BFF380301917C28B06DD0DE4F38F65D /* Pods-Bobart watchOS App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bobart watchOS App-dummy.m"; sourceTree = "<group>"; };
 		0C4CB55B41B3BD8183B8F5372545E02A /* Pods-Bobart iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bobart iOS-frameworks.sh"; sourceTree = "<group>"; };
 		0C4FF81B92149622508E028C0801E207 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		0E2B684443FCE4ABC8765466298B6C07 /* ReSwift-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "ReSwift-watchOS.modulemap"; path = "../ReSwift-watchOS/ReSwift-watchOS.modulemap"; sourceTree = "<group>"; };
-		0FB33046979741C1A31619AEA392B00F /* Pods_Bobart_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bobart_Tests.framework; path = "Pods-Bobart Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E2B684443FCE4ABC8765466298B6C07 /* ReSwift-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "ReSwift-watchOS.modulemap"; path = "../ReSwift-watchOS/ReSwift-watchOS.modulemap"; sourceTree = "<group>"; };
+		0FB33046979741C1A31619AEA392B00F /* Pods_Bobart_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FAA1403829F8D8CDD7932D56714FDA /* Pods-Bobart watchOS App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bobart watchOS App-acknowledgements.markdown"; sourceTree = "<group>"; };
 		18222CAD6C39583ECABDC8981D3262E5 /* Pods-Bobart watchOS App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bobart watchOS App-acknowledgements.plist"; sourceTree = "<group>"; };
 		18547C07E35D9F5B911A6A3A920CAC45 /* Pods-Bobart tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bobart tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		1D6D704F73A7CAAC396DEBCAA3AE05D9 /* Pods-Bobart iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bobart iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		268E601F128D7F2679AF551DB6F4C8ED /* ReSwift-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "ReSwift-iOS.modulemap"; sourceTree = "<group>"; };
-		2BF0E5FF511ADAEDFC600EC34C288E33 /* Pods-Bobart watchOS App Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bobart watchOS App Extension.modulemap"; sourceTree = "<group>"; };
+		268E601F128D7F2679AF551DB6F4C8ED /* ReSwift-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "ReSwift-iOS.modulemap"; sourceTree = "<group>"; };
+		2BF0E5FF511ADAEDFC600EC34C288E33 /* Pods-Bobart watchOS App Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Bobart watchOS App Extension.modulemap"; sourceTree = "<group>"; };
 		2C5B9E27E48C0379D0D1251D7E3CC923 /* Pods-Bobart tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bobart tvOS-frameworks.sh"; sourceTree = "<group>"; };
 		2D263735CD68F4E792C20F92C7E25462 /* Pods-Bobart Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bobart Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DEA142F26C2DA616FD6091B0ED6C2E4 /* Middleware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Middleware.swift; path = ReSwift/CoreTypes/Middleware.swift; sourceTree = "<group>"; };
 		31D285C99F9CBF01E86E57997DC743D0 /* Pods-Bobart tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bobart tvOS-resources.sh"; sourceTree = "<group>"; };
 		335431CC64A23775F11F333B2AD156BE /* Pods-Bobart Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bobart Tests-dummy.m"; sourceTree = "<group>"; };
-		336A4581854E0970ED8CE07B625C134A /* Pods_Bobart_watchOS_App_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bobart_watchOS_App_Extension.framework; path = "Pods-Bobart watchOS App Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		336A4581854E0970ED8CE07B625C134A /* Pods_Bobart_watchOS_App_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_watchOS_App_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA43F276E9E8BB6E27AB993DF8B74E7 /* Pods-Bobart iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bobart iOS-dummy.m"; sourceTree = "<group>"; };
 		3F3270604B20DE61CE4C30C3AC7A3D37 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FE59D9E1DA1DA489FFBD2801E601EDF /* ReSwift-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-iOS-umbrella.h"; sourceTree = "<group>"; };
@@ -134,20 +134,20 @@
 		5AFDC81216C253F2F26866EDBA0EBFC6 /* ReSwift-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ReSwift-tvOS-umbrella.h"; path = "../ReSwift-tvOS/ReSwift-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		5CA9EAD55A02F7DD89C76D002EB7D97B /* Subscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Subscription.swift; path = ReSwift/CoreTypes/Subscription.swift; sourceTree = "<group>"; };
 		5E8B3DD153E962CD01A2869E33735339 /* ReSwift-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ReSwift-iOS.xcconfig"; sourceTree = "<group>"; };
-		697BEC86C64309D5657B289E76556D3F /* Pods_Bobart_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bobart_watchOS_App.framework; path = "Pods-Bobart watchOS App.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		697BEC86C64309D5657B289E76556D3F /* Pods_Bobart_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_watchOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768402D0E81B0F8B61944E6FE50F652A /* Pods-Bobart watchOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bobart watchOS App.release.xcconfig"; sourceTree = "<group>"; };
 		786DB22AA141D48895A725FAE0185198 /* Pods-Bobart Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bobart Tests-frameworks.sh"; sourceTree = "<group>"; };
 		7C686C8D628C5B4D96901A70092C026F /* TypeHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeHelper.swift; path = ReSwift/Utils/TypeHelper.swift; sourceTree = "<group>"; };
 		7CA525D1E8A1B15D2AC001D55EC0CA16 /* Pods-Bobart tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bobart tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7E5A7488782E0A0169C173E0E26472C2 /* Pods_Bobart_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bobart_tvOS.framework; path = "Pods-Bobart tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E5A7488782E0A0169C173E0E26472C2 /* Pods_Bobart_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F044B68C256FFECDA24715BA0C4750F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80BD18536CEBA1BA2EF2567175719C5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		82BA4A4848DADD9D60595459C370774C /* Pods-Bobart Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bobart Tests.modulemap"; sourceTree = "<group>"; };
+		82BA4A4848DADD9D60595459C370774C /* Pods-Bobart Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Bobart Tests.modulemap"; sourceTree = "<group>"; };
 		84D736508F81C90331AF2F1FC481C42B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8BD4170BD71C360109694F49EF7AEC4C /* Pods-Bobart tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bobart tvOS.modulemap"; sourceTree = "<group>"; };
+		8BD4170BD71C360109694F49EF7AEC4C /* Pods-Bobart tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Bobart tvOS.modulemap"; sourceTree = "<group>"; };
 		90AB3AAD23833C86881F6171437421E7 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = ReSwift/CoreTypes/State.swift; sourceTree = "<group>"; };
-		915D67D96AD5CD3D0901238B962DF841 /* Pods-Bobart watchOS App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bobart watchOS App.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		915D67D96AD5CD3D0901238B962DF841 /* Pods-Bobart watchOS App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Bobart watchOS App.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95BDAE9DF73B060366962F541CA07318 /* ReSwift-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ReSwift-tvOS-prefix.pch"; path = "../ReSwift-tvOS/ReSwift-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		9C6D398BF0914D5F676DF6F71496F112 /* ReSwift-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "ReSwift-tvOS.xcconfig"; path = "../ReSwift-tvOS/ReSwift-tvOS.xcconfig"; sourceTree = "<group>"; };
 		9D2521E1046140BE66C2564E9B4AF395 /* ReSwift-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ReSwift-watchOS-prefix.pch"; path = "../ReSwift-watchOS/ReSwift-watchOS-prefix.pch"; sourceTree = "<group>"; };
@@ -159,8 +159,8 @@
 		A8AE3B20A78CD2940B708F0CCF15C663 /* Pods-Bobart Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bobart Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AB3366F56C36F8A288E0931ABB90A8BB /* ReSwift-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-iOS-prefix.pch"; sourceTree = "<group>"; };
 		B24EA7EC6EA91CACD4C7790B1D8FCC34 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3819F9677EFB4D1C4BBCF44B71184A3 /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReSwift.framework; path = "ReSwift-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B511B85666A8E3025D829B20934D437A /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReSwift.framework; path = "ReSwift-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3819F9677EFB4D1C4BBCF44B71184A3 /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B511B85666A8E3025D829B20934D437A /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B795941E23292E9029138E2374EEA11F /* Pods-Bobart watchOS App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bobart watchOS App-resources.sh"; sourceTree = "<group>"; };
 		BEEAD2D8FF129351679C73614CF91001 /* Pods-Bobart iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bobart iOS-resources.sh"; sourceTree = "<group>"; };
 		C30512E334A33B2C4754D63099B1E983 /* Pods-Bobart tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bobart tvOS-dummy.m"; sourceTree = "<group>"; };
@@ -173,17 +173,17 @@
 		CA60A01B2E73C01C0E78D54F879C1C2B /* Pods-Bobart watchOS App Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bobart watchOS App Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		CC9E5A309ACFA7AD9FDE67890B60C8BA /* Pods-Bobart tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bobart tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		CE7B32EC7132615814FE331C6EB3D71A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0085B42A7801B0D012A030AD74AB4B6 /* Pods-Bobart iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bobart iOS.modulemap"; sourceTree = "<group>"; };
+		D0085B42A7801B0D012A030AD74AB4B6 /* Pods-Bobart iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Bobart iOS.modulemap"; sourceTree = "<group>"; };
 		D042692840CCE5D1791CE057F3C0D37B /* Pods-Bobart tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bobart tvOS-umbrella.h"; sourceTree = "<group>"; };
-		D1CA444529F68FDB70FC5A689BCBE6CC /* ReSwift-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "ReSwift-tvOS.modulemap"; path = "../ReSwift-tvOS/ReSwift-tvOS.modulemap"; sourceTree = "<group>"; };
+		D1CA444529F68FDB70FC5A689BCBE6CC /* ReSwift-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "ReSwift-tvOS.modulemap"; path = "../ReSwift-tvOS/ReSwift-tvOS.modulemap"; sourceTree = "<group>"; };
 		D2CA2D93D1C69C81A083895BD9336165 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../ReSwift-watchOS/Info.plist"; sourceTree = "<group>"; };
 		D568513B071B4815F18BA4895CCB27DA /* Pods-Bobart watchOS App Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bobart watchOS App Extension-dummy.m"; sourceTree = "<group>"; };
 		D6D47C6106373A6B901C6BD03D15D097 /* Pods-Bobart iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bobart iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E938EEC33EB3028F87C0CC62320461D6 /* Pods-Bobart watchOS App Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bobart watchOS App Extension-resources.sh"; sourceTree = "<group>"; };
-		EBEDE6A31ABFBA14C5D0BE070C3BDFB0 /* Pods_Bobart_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bobart_iOS.framework; path = "Pods-Bobart iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBEDE6A31ABFBA14C5D0BE070C3BDFB0 /* Pods_Bobart_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F628B3579AC8DBF266D5EF94375C7636 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../ReSwift-tvOS/Info.plist"; sourceTree = "<group>"; };
 		F69B784A72B23FEECFF6E93261F8EEBC /* Pods-Bobart iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bobart iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		F973150CA5000206BF7A8C6980EC790A /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReSwift.framework; path = "ReSwift-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F973150CA5000206BF7A8C6980EC790A /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC864B7C0C24912FF979B6674FBF4C5 /* StoreSubscriber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreSubscriber.swift; path = ReSwift/CoreTypes/StoreSubscriber.swift; sourceTree = "<group>"; };
 		FFCCC17B273539561112226A91EB6C5F /* ReSwift-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ReSwift-watchOS-umbrella.h"; path = "../ReSwift-watchOS/ReSwift-watchOS-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -316,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -425,7 +424,6 @@
 				7C686C8D628C5B4D96901A70092C026F /* TypeHelper.swift */,
 				D8245354F76B93C613AE06FBC16C600D /* Support Files */,
 			);
-			name = ReSwift;
 			path = ReSwift;
 			sourceTree = "<group>";
 		};
@@ -459,7 +457,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = SwiftFormat;
 			path = SwiftFormat;
 			sourceTree = "<group>";
 		};
@@ -707,7 +704,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0910;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1466,6 +1463,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				TVOS_DEPLOYMENT_TARGET = 10.2;
 				WATCHOS_DEPLOYMENT_TARGET = 4.1;
