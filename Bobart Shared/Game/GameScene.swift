@@ -33,6 +33,7 @@ class GameScene: SKScene {
             }
         }
     }
+
     private var state: GameState!
 
     #if os(watchOS)
@@ -75,12 +76,12 @@ extension GameScene: StoreSubscriber {
             executeFirstAction()
         } else {
             isExecuting = true
-//            runs([.wait(forDuration: 1.0), .run {
-                self.state = state
-                self.layout(state: state)
-                self.isExecuting = false
-                self.executeFirstAction()
-//            }])
+            //            runs([.wait(forDuration: 1.0), .run {
+            self.state = state
+            self.layout(state: state)
+            self.isExecuting = false
+            self.executeFirstAction()
+            //            }])
             // Run diff states, then run SKAction
             // On SKAction run complete, set isExecuting = false
             // Then call executeFirstAction()
