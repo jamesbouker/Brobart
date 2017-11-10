@@ -17,14 +17,14 @@ fileprivate extension GameScene {
     }
 
     func addGrass(grassMax: Int, noWalls: [MapLocation]) {
-        for _ in 0..<Int.random(grassMax) {
+        for _ in 0 ..< Int.random(grassMax) {
             if let loc = noWalls.randomItem() {
                 grass.setTile(tile: TileType.grass, forLocation: loc)
             }
         }
     }
 
-    func addWalls(walls: [MapLocation], map: [MapLocation : Bool]) {
+    func addWalls(walls: [MapLocation], map: [MapLocation: Bool]) {
         for wall in walls {
             let oneDown = MapLocation(x: wall.x, y: wall.y - 1)
             let isHorz = map[oneDown] == nil

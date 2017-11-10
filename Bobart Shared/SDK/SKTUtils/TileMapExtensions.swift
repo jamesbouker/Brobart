@@ -14,11 +14,11 @@ import SpriteKit
 import ObjectiveC
 
 extension CGPoint {
-    static func +(lhs: CGPoint, rhs: CGSize) -> CGPoint {
+    static func + (lhs: CGPoint, rhs: CGSize) -> CGPoint {
         return CGPoint(x: lhs.x + rhs.width, y: lhs.y + rhs.height)
     }
 
-    static func +=(lhs: inout CGPoint, rhs: CGSize) {
+    static func += (lhs: inout CGPoint, rhs: CGSize) {
         lhs = lhs + rhs
     }
 }
@@ -133,7 +133,7 @@ extension SKTileMapNode {
 }
 
 extension CGSize {
-    static func *(lhs: CGSize, rhs: MapLocation) -> CGSize {
+    static func * (lhs: CGSize, rhs: MapLocation) -> CGSize {
         return CGSize(width: lhs.width * CGFloat(rhs.x), height: lhs.height * CGFloat(rhs.y))
     }
 }

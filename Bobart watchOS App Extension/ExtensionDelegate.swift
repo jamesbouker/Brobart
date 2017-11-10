@@ -49,5 +49,4 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
-
 }

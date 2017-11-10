@@ -16,7 +16,6 @@ let tileSize: CGFloat = 48.0
 // Amount of time between 2 key frame animations
 let frameTime = 0.20
 
-
 // MARK: - Tile types
 enum TileType {
     static let floor = "floor"

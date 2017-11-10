@@ -12,4 +12,3 @@ struct GameState: Codable, StateType {
     var mapState: MapState
     var playerState: PlayerState
 }
-

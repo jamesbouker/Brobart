@@ -20,7 +20,7 @@ struct MapState: Codable, StateType {
         self.height = height
         self.walls = walls
         self.switchLoc = .init(x: 0, y: 0)
-        self.switchToggled = false
+        switchToggled = false
 
         guard let switchLoc = noWalls.randomItem() else {
             fatalError("Cannot place switch!")
@@ -29,11 +29,10 @@ struct MapState: Codable, StateType {
     }
 }
 
-
 // MARK: - Dynamic Variables
 extension MapState {
-    private var columns: [Int] { return Array(0..<width) }
-    private var rows: [Int] { return Array(0..<height) }
+    private var columns: [Int] { return Array(0 ..< width) }
+    private var rows: [Int] { return Array(0 ..< height) }
     private var locations: [MapLocation] {
         return columns.cross(rows).map { MapLocation(x: $0.0, y: $0.1) }
     }

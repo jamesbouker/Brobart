@@ -22,8 +22,8 @@ class InterfaceController: WKInterfaceController {
 
         let scene = GameScene(fileNamed: "GameScene")!
         scene.scaleMode = .aspectFill
-        self.skInterface.preferredFramesPerSecond = 60
-        self.skInterface.presentScene(scene)
+        skInterface.preferredFramesPerSecond = 60
+        skInterface.presentScene(scene)
 
         self.scene = scene
     }
@@ -36,7 +36,7 @@ class InterfaceController: WKInterfaceController {
         if gesture.state == .ended, let loc = initialLocation {
             let delta = gesture.locationInObject() - loc
             if delta.lengthSquared() < 100 {
-//                fireEvent(event: .pressed)
+                //                fireEvent(event: .pressed)
             }
         }
     }
@@ -72,18 +72,18 @@ class InterfaceController: WKInterfaceController {
         if abs(deltaX) > abs(deltaY) {
             if deltaX > delta {
                 kill()
-//                fireEvent(event: .swipedRight)
+                //                fireEvent(event: .swipedRight)
             } else if deltaX < -delta {
                 kill()
-//                fireEvent(event: .swipedLeft)
+                //                fireEvent(event: .swipedLeft)
             }
         } else {
             if deltaY > delta {
                 kill()
-//                fireEvent(event: .swipedDown)
+                //                fireEvent(event: .swipedDown)
             } else if deltaY < -delta {
                 kill()
-//                fireEvent(event: .swipedUp)
+                //                fireEvent(event: .swipedUp)
             }
         }
     }

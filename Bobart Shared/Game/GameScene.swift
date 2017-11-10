@@ -11,7 +11,7 @@ import SpriteKit
 import ReSwift
 
 class GameScene: SKScene {
-    
+
     var tileMap: SKTileMapNode!
     var shadows: SKTileMapNode!
     var grass: SKTileMapNode!

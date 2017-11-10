@@ -9,16 +9,15 @@
 import XCTest
 
 class Bobart_Tests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
-    func testExample() {
 
+    func testExample() {
     }
 }

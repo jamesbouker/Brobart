@@ -14,7 +14,7 @@ struct MapLocation: Codable, StateType {
 }
 
 extension MapLocation: Equatable, Hashable {
-    static func ==(lhs: MapLocation, rhs: MapLocation) -> Bool {
+    static func == (lhs: MapLocation, rhs: MapLocation) -> Bool {
         return lhs.x == rhs.x && lhs.y == rhs.y
     }
 
