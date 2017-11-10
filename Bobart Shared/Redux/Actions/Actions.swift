@@ -14,4 +14,5 @@ enum PlayerAction: UInt8, Codable, Action {
     case moveLeft
     case moveUp
     case moveDown
+    case loadNextLevel
 }

@@ -137,6 +137,9 @@
 		F5A102741FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
 		F5A102751FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
 		F5A102761FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
+		F5AC79061FB56DE3000FC8BC /* GameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */; };
+		F5AC79071FB56DE3000FC8BC /* GameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */; };
+		F5AC79081FB56DE3000FC8BC /* GameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */; };
 		F5AE446D1FB4C19000538E98 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE446C1FB4C19000538E98 /* Characters.swift */; };
 		F5AE446E1FB4C19000538E98 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE446C1FB4C19000538E98 /* Characters.swift */; };
 		F5AE446F1FB4C19000538E98 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE446C1FB4C19000538E98 /* Characters.swift */; };
@@ -273,6 +276,7 @@
 		F59608B01FB2A07600F42D2B /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		F5A1026C1FB2C16600A2F4EE /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneLayout.swift; sourceTree = "<group>"; };
+		F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneModel.swift; sourceTree = "<group>"; };
 		F5AE446C1FB4C19000538E98 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		F5C108DF1FB4160A00F2F771 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
 		F5C108E31FB4162E00F2F771 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
@@ -459,6 +463,7 @@
 			children = (
 				F59608861FB2968400F42D2B /* GameScene.swift */,
 				F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */,
+				F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -1127,6 +1132,7 @@
 				F59608D91FB2A07600F42D2B /* JSONLoader.swift in Sources */,
 				F59608CA1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
 				F59608F11FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
+				F5AC79061FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
 				F59608F71FB2A07600F42D2B /* Vector3.swift in Sources */,
 				F5AE446D1FB4C19000538E98 /* Characters.swift in Sources */,
 				F59608D61FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
@@ -1165,6 +1171,7 @@
 				F59608C81FB2A07600F42D2B /* Array+Extensions.swift in Sources */,
 				F59608D71FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
 				F59608CE1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */,
+				F5AC79071FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
 				F596088C1FB2968400F42D2B /* GameScene.swift in Sources */,
 				F5AE446E1FB4C19000538E98 /* Characters.swift in Sources */,
 				F5DFCB641FB2932B00DB8195 /* InterfaceController.swift in Sources */,
@@ -1203,6 +1210,7 @@
 				F59608F91FB2A07600F42D2B /* Vector3.swift in Sources */,
 				F59608D81FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
 				F59608CC1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
+				F5AC79081FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
 				F59608E71FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
 				F5AE446F1FB4C19000538E98 /* Characters.swift in Sources */,
 				F59608DB1FB2A07600F42D2B /* JSONLoader.swift in Sources */,

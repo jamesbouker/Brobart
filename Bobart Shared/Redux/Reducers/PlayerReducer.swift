@@ -9,13 +9,16 @@
 import ReSwift
 
 private func initialPlayerState(_ map: MapState) -> PlayerState {
-    guard let location = map.noWalls.randomItem() else {
-        fatalError("Could not place player")
-    }
-    return PlayerState(loc: location)
+    let location = map.noWallsOrItems.randomItem()
+    return PlayerState(loc: location!)
 }
 
 private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: inout MapState) -> PlayerState {
+
+    if action == .loadNextLevel {
+        return initialPlayerState(map)
+    }
+
     var next = state
     switch action {
     case .moveUp: next.loc.y += 1
@@ -33,7 +36,7 @@ private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: 
     // Check if hitting switch!
     if map.switchLoc == next.loc {
         map.switchToggled = true
-        let stairLoc = map.noWalls.filter { $0 != state.loc }.randomItem()
+        let stairLoc = map.noWallsOrItems.filter { $0 != state.loc }.randomItem()
         map.stairLoc = stairLoc!
         return state
     }

@@ -61,7 +61,7 @@ class GameViewController: UIViewController {
         guard abs(deltaX) > delta || abs(deltaY) > delta else {
             if time > 0.3 {
                 kill()
-                scene.playerAction = .pressed
+                scene.viewModel.playerAction = .pressed
             }
             return
         }
@@ -69,18 +69,18 @@ class GameViewController: UIViewController {
         if abs(deltaX) > abs(deltaY) {
             if deltaX > delta {
                 kill()
-                scene.playerAction = .moveRight
+                scene.viewModel.playerAction = .moveRight
             } else if deltaX < -delta {
                 kill()
-                scene.playerAction = .moveLeft
+                scene.viewModel.playerAction = .moveLeft
             }
         } else {
             if deltaY > delta {
                 kill()
-                scene.playerAction = .moveDown
+                scene.viewModel.playerAction = .moveDown
             } else if deltaY < -delta {
                 kill()
-                scene.playerAction = .moveUp
+                scene.viewModel.playerAction = .moveUp
             }
         }
     }

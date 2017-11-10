@@ -24,6 +24,11 @@ private func randomMapState() -> MapState {
     return MapState(width: width, height: height, walls: walls)
 }
 
-func mapReducer(action _: Action, state: MapState?) -> MapState {
+func mapReducer(action: Action, state: MapState?) -> MapState {
+    if let action = action as? PlayerAction {
+        if action == .loadNextLevel {
+            return randomMapState()
+        }
+    }
     return state ?? randomMapState()
 }

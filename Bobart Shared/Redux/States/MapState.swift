@@ -45,6 +45,10 @@ extension MapState {
         return locations.filter { !walls.contains($0) }
     }
 
+    var noWallsOrItems: [MapLocation] {
+        return noWalls.filter { $0 != switchLoc }
+    }
+
     var wallMap: [MapLocation: Bool] {
         return walls.toDictionary { $0 }.mapValues { _ in true }
     }
