@@ -21,14 +21,14 @@ private func randomMapState(level: Int) -> MapState {
         walls.append(MapLocation(x: 0, y: i))
         walls.append(MapLocation(x: width - 1, y: i))
     }
-    return MapState(level: level, width: width, height: height, walls: walls)
+    return MapState(level: level, width: width, height: height, walls: walls, env: .brick)
 }
 
 func mapReducer(action: Action, state: MapState?) -> MapState {
     if let action = action as? PlayerAction {
         if action == .loadNextLevel {
             let currentLevel = state?.level ?? 0
-            return randomMapState(level: currentLevel  + 1)
+            return randomMapState(level: currentLevel + 1)
         }
     }
     return state ?? randomMapState(level: 1)

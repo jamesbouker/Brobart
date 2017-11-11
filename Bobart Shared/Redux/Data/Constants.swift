@@ -33,10 +33,6 @@ enum TileType {
     static let stairs_down_solo = "stairs_down_solo"
 }
 
-enum Atlas {
-    static let stone = "stone"
-}
-
 enum SceneNode {
     static let player = "Player"
     static let square = "square"

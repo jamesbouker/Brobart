@@ -11,18 +11,18 @@ target 'Bobart iOS' do
 end
 
 target 'Bobart tvOS' do
-  platform :tvos, '10.2'
+  platform :tvos, '10.0'
   use_frameworks!
   pod 'ReSwift'
 end
 
 target 'Bobart watchOS App' do
-  platform :watchos, '4.1'
+  platform :watchos, '4.0'
   use_frameworks!
 end
 
 target 'Bobart watchOS App Extension' do
-  platform :watchos, '4.1'
+  platform :watchos, '4.0'
   use_frameworks!
   pod 'ReSwift'
 end

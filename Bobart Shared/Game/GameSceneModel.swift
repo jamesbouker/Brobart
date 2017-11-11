@@ -46,7 +46,7 @@ class GameSceneModel {
 extension GameSceneModel: StoreSubscriber {
     private func onStairs() -> Bool {
         guard let state = state else { return false }
-        return state.playerState.loc == state.mapState.stairLoc && state.mapState.switchToggled
+        return state.playerState.loc == state.mapState.stairLoc && state.mapState.switchHit
     }
 
     private func finishStateTransition(to: GameState) {

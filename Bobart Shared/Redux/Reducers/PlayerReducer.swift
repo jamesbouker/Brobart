@@ -13,13 +13,7 @@ private func initialPlayerState(_ map: MapState) -> PlayerState {
     return PlayerState(loc: location!)
 }
 
-private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: inout MapState) -> PlayerState {
-
-    if action == .loadNextLevel {
-        return initialPlayerState(map)
-    }
-
-    var next = state
+private func movePlayer(_ action: PlayerAction, next: inout PlayerState) {
     switch action {
     case .moveUp: next.loc.y += 1
     case .moveDown: next.loc.y -= 1
@@ -27,6 +21,16 @@ private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: 
     case .moveLeft: next.loc.x -= 1
     default: break
     }
+}
+
+private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: inout MapState) -> PlayerState {
+
+    if action == .loadNextLevel {
+        return initialPlayerState(map)
+    }
+
+    var next = state
+    movePlayer(action, next: &next)
 
     // Check if player can move!
     if map.walls.contains(next.loc) {
@@ -35,10 +39,18 @@ private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: 
 
     // Check if hitting switch!
     if map.switchLoc == next.loc {
-        if !map.switchToggled {
-            map.switchToggled = true
+        if !map.switchHit {
+            map.switchHit = true
             let stairLoc = map.noWallsOrItems.filter { $0 != state.loc }.randomItem()
             map.stairLoc = stairLoc!
+        }
+        return state
+    }
+
+    // Check if hitting chest!
+    if map.chestLoc == next.loc {
+        if !map.chestOpened {
+            map.chestOpened = true
         }
         return state
     }

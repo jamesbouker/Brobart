@@ -8,30 +8,48 @@
 
 import ReSwift
 
+enum Environment: String, Codable {
+    case stone
+    case vine
+    case sand
+    case brick
+}
+
 struct MapState: Codable, StateType {
     var level: Int
+    var environment: Environment
+
+    // Walls
     var width: Int
     var height: Int
     var walls: [MapLocation]
 
-    // Items
-    var stairLoc: MapLocation
-    var switchLoc: MapLocation
-    var switchToggled: Bool
+    // Chest
+    var chestLoc: MapLocation
+    var chestOpened: Bool
 
-    init(level: Int, width: Int, height: Int, walls: [MapLocation]) {
+    // Stairs
+    var stairLoc: MapLocation
+
+    // Switch
+    var switchLoc: MapLocation
+    var switchHit: Bool
+
+    init(level: Int, width: Int, height: Int, walls: [MapLocation], env: Environment) {
         self.level = level
         self.width = width
         self.height = height
         self.walls = walls
-        self.switchLoc = .init(x: 0, y: 0)
-        switchToggled = false
+        environment = env
+        switchLoc = .init(x: 0, y: 0)
         stairLoc = .init(x: 0, y: 0)
+        chestLoc = .init(x: 0, y: 0)
+        switchHit = false
+        chestOpened = false
 
-        guard let switchLoc = noWalls.randomItem() else {
-            fatalError("Cannot place switch!")
-        }
-        self.switchLoc = switchLoc
+        // After everything initialized!
+        switchLoc = noWalls.randomItem()!
+        chestLoc = noWallsOrItems.randomItem()!
     }
 }
 
@@ -48,7 +66,7 @@ extension MapState {
     }
 
     var noWallsOrItems: [MapLocation] {
-        return noWalls.filter { $0 != switchLoc }
+        return noWalls.filter { $0 != switchLoc && $0 != chestLoc }
     }
 
     var wallMap: [MapLocation: Bool] {

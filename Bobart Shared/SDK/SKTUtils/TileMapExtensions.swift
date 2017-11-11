@@ -5,20 +5,9 @@
 //  Created by james bouker on 7/31/17.
 //  Copyright © 2017 Jimmy Bouker. All rights reserved.
 //
-// swiftlint:disable shorthand_operator
 
 import SpriteKit
 import ObjectiveC
-
-extension CGPoint {
-    static func + (lhs: CGPoint, rhs: CGSize) -> CGPoint {
-        return CGPoint(x: lhs.x + rhs.width, y: lhs.y + rhs.height)
-    }
-
-    static func += (lhs: inout CGPoint, rhs: CGSize) {
-        lhs = lhs + rhs
-    }
-}
 
 extension SKTileMapNode {
 
@@ -43,18 +32,18 @@ extension SKTileMapNode {
         }.first
     }
 
-    func setTile(tile: String, forLocation: MapLocation, atlas: String? = nil) {
+    func setTile(_ tile: String, loc: MapLocation, atlas: String? = nil) {
         if let group = group(tile, atlas: atlas) {
-            setTileGroup(group, forColumn: forLocation.x, row: forLocation.y)
+            setTileGroup(group, forColumn: loc.x, row: loc.y)
         } else {
-            setTileGroup(nil, forColumn: forLocation.x, row: forLocation.y)
+            setTileGroup(nil, forColumn: loc.x, row: loc.y)
         }
     }
 
     func setAllTiles(tile: String, atlas: String = "stone") {
         for x in 0 ..< numberOfColumns {
             for y in 0 ..< numberOfRows {
-                setTile(tile: tile, forLocation: .init(x: x, y: y), atlas: atlas)
+                setTile(tile, loc: .init(x: x, y: y), atlas: atlas)
             }
         }
     }
@@ -90,11 +79,5 @@ extension SKTileMapNode {
         let row = tileRowIndex(fromPosition: fromPosition)
         let column = tileColumnIndex(fromPosition: fromPosition)
         return MapLocation(x: column, y: row)
-    }
-}
-
-extension CGSize {
-    static func * (lhs: CGSize, rhs: MapLocation) -> CGSize {
-        return CGSize(width: lhs.width * CGFloat(rhs.x), height: lhs.height * CGFloat(rhs.y))
     }
 }
