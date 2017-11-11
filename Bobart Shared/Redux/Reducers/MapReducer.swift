@@ -8,7 +8,7 @@
 
 import ReSwift
 
-private func randomMapState() -> MapState {
+private func randomMapState(level: Int) -> MapState {
     let width = Int.random(min: 5, max: 7)
     let height = Int.random(min: 5, max: 7)
 
@@ -21,14 +21,15 @@ private func randomMapState() -> MapState {
         walls.append(MapLocation(x: 0, y: i))
         walls.append(MapLocation(x: width - 1, y: i))
     }
-    return MapState(width: width, height: height, walls: walls)
+    return MapState(level: level, width: width, height: height, walls: walls)
 }
 
 func mapReducer(action: Action, state: MapState?) -> MapState {
     if let action = action as? PlayerAction {
         if action == .loadNextLevel {
-            return randomMapState()
+            let currentLevel = state?.level ?? 0
+            return randomMapState(level: currentLevel  + 1)
         }
     }
-    return state ?? randomMapState()
+    return state ?? randomMapState(level: 1)
 }

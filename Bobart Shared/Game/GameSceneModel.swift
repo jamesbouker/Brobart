@@ -11,7 +11,7 @@ import ReSwift
 typealias LayoutFunc = (GameState) -> Void
 
 class GameSceneModel {
-    private var state: GameState!
+    var state: GameState?
 
     private var actions = [PlayerAction]()
     private var isExecuting = false
@@ -27,6 +27,9 @@ class GameSceneModel {
     private var layoutFunc: LayoutFunc
     init(layout: @escaping LayoutFunc) {
         layoutFunc = layout
+    }
+
+    func subscribe() {
         store.subscribe(self)
     }
 
@@ -42,10 +45,12 @@ class GameSceneModel {
 
 extension GameSceneModel: StoreSubscriber {
     private func onStairs() -> Bool {
+        guard let state = state else { return false }
         return state.playerState.loc == state.mapState.stairLoc && state.mapState.switchToggled
     }
 
-    private func finishStateTransition() {
+    private func finishStateTransition(to: GameState) {
+        state = to
         isExecuting = false
         if onStairs() {
             actions.removeAll()
@@ -57,15 +62,13 @@ extension GameSceneModel: StoreSubscriber {
 
     func newState(state: GameState) {
         if self.state == nil {
-            self.state = state
             self.layoutFunc(state)
-            finishStateTransition()
+            finishStateTransition(to: state)
         } else {
             isExecuting = true
             //            runs([.wait(forDuration: 1.0), .run {
-            self.state = state
             self.layoutFunc(state)
-            self.finishStateTransition()
+            self.finishStateTransition(to: state)
             //            }])
             // Run diff states, then run SKAction
             // On SKAction run complete, set isExecuting = false

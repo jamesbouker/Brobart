@@ -33,6 +33,7 @@ class GameScene: SKScene {
     func setupView() {
         grabOutlets()
         viewModel = GameSceneModel(layout: layout)
+        viewModel.subscribe()
     }
 
     func grabOutlets() {

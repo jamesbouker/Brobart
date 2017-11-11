@@ -9,6 +9,7 @@
 import ReSwift
 
 struct MapState: Codable, StateType {
+    var level: Int
     var width: Int
     var height: Int
     var walls: [MapLocation]
@@ -18,7 +19,8 @@ struct MapState: Codable, StateType {
     var switchLoc: MapLocation
     var switchToggled: Bool
 
-    init(width: Int, height: Int, walls: [MapLocation]) {
+    init(level: Int, width: Int, height: Int, walls: [MapLocation]) {
+        self.level = level
         self.width = width
         self.height = height
         self.walls = walls

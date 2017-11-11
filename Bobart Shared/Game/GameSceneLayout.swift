@@ -10,9 +10,9 @@ import SpriteKit
 
 fileprivate extension GameScene {
     func resizeTheMap(mapState: MapState) {
-        tileMap.resetMaps()
         tileMap.numberOfRows = mapState.height
         tileMap.numberOfColumns = mapState.width
+        tileMap.resetMaps()
         tileMap.setAllTiles(tile: TileType.floor)
     }
 
@@ -73,9 +73,11 @@ extension GameScene {
         let grassMax = noWalls.count / 2 + 1
 
         // ORDER IS IMPORTANT!
-        resizeTheMap(mapState: mapState)
-        addWalls(walls: walls, map: map)
-        addGrass(grassMax: grassMax, noWalls: noWalls)
+        if viewModel.state?.mapState.level != state.mapState.level {
+            resizeTheMap(mapState: mapState)
+            addWalls(walls: walls, map: map)
+            addGrass(grassMax: grassMax, noWalls: noWalls)
+        }
         addSwitch(mapState: mapState)
         addStairs(mapState: mapState)
         positionThePlayer(playerState: playerState)
