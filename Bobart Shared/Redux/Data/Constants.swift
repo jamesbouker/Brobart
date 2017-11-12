@@ -8,8 +8,6 @@
 
 import SpriteKit
 
-typealias Completion = () -> Void
-
 // Taken from GameScene.sks Base.tileSize and TileSet tile size
 let tileSize: CGFloat = 48.0
 

@@ -87,10 +87,10 @@ extension GameScene {
             resizeTheMap(mapState: mapState)
             renderWalls(mapState: mapState)
             renderGrass(grassMax: grassMax, noWalls: noWalls)
+            positionThePlayer(playerState: playerState)
         }
         renderSwitch(mapState: mapState)
         renderStairs(mapState: mapState)
         renderChest(mapState: mapState)
-        positionThePlayer(playerState: playerState)
     }
 }

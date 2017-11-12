@@ -32,7 +32,7 @@ class GameScene: SKScene {
     #endif
     func setupView() {
         grabOutlets()
-        viewModel = GameSceneModel(layout: layout)
+        viewModel = GameSceneModel(layout: layout, anim: animate)
         viewModel.subscribe()
     }
 
@@ -43,6 +43,7 @@ class GameScene: SKScene {
         items = tileMap.childNode(withName: SceneNode.items) as? SKTileMapNode
         sfx = tileMap.childNode(withName: SceneNode.sfx) as? SKTileMapNode
         player = tileMap?.childNode(withName: SceneNode.player) as? SKSpriteNode
+        player.run(Character.wizard.animFrames(.l), type: "idle")
         playerSquare = player.childNode(withName: SceneNode.square) as? SKShapeNode
         playerSquare.isHidden = true
     }

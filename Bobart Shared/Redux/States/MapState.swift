@@ -13,6 +13,15 @@ enum Environment: String, Codable {
     case vine
     case sand
     case brick
+
+    static var all: [Environment] {
+        return [.stone, .vine, .sand, .brick]
+    }
+
+    static var random: Environment {
+        let all = self.all
+        return all[Int.random(all.count)]
+    }
 }
 
 struct MapState: Codable, StateType {

@@ -7,8 +7,11 @@
 //
 
 import ReSwift
+import SpriteKit
 
+typealias Completion = () -> Void
 typealias LayoutFunc = (GameState) -> Void
+typealias AnimateFunc = (GameState, @escaping Completion) -> Void
 
 class GameSceneModel {
     var state: GameState?
@@ -25,8 +28,10 @@ class GameSceneModel {
     }
 
     private var layoutFunc: LayoutFunc
-    init(layout: @escaping LayoutFunc) {
+    private var animFunc: AnimateFunc
+    init(layout: @escaping LayoutFunc, anim: @escaping AnimateFunc) {
         layoutFunc = layout
+        animFunc = anim
     }
 
     func subscribe() {
@@ -66,13 +71,12 @@ extension GameSceneModel: StoreSubscriber {
             finishStateTransition(to: state)
         } else {
             isExecuting = true
-            //            runs([.wait(forDuration: 1.0), .run {
             self.layoutFunc(state)
-            self.finishStateTransition(to: state)
-            //            }])
-            // Run diff states, then run SKAction
-            // On SKAction run complete, set isExecuting = false
-            // Then call executeFirstAction()
+
+            animFunc(state, {
+                self.finishStateTransition(to: state)
+            })
+
         }
     }
 }
