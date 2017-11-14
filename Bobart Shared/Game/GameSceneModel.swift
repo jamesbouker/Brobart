@@ -67,7 +67,7 @@ extension GameSceneModel: StoreSubscriber {
 
     func newState(state: GameState) {
         if self.state == nil {
-            self.layoutFunc(state)
+            layoutFunc(state)
             finishStateTransition(to: state)
         } else {
             isExecuting = true
@@ -76,7 +76,6 @@ extension GameSceneModel: StoreSubscriber {
             animFunc(state, {
                 self.finishStateTransition(to: state)
             })
-
         }
     }
 }

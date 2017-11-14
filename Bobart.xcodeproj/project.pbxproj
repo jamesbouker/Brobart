@@ -128,9 +128,9 @@
 		F5A1026D1FB2C16600A2F4EE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1026C1FB2C16600A2F4EE /* Actions.swift */; };
 		F5A1026E1FB2C16600A2F4EE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1026C1FB2C16600A2F4EE /* Actions.swift */; };
 		F5A1026F1FB2C16600A2F4EE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1026C1FB2C16600A2F4EE /* Actions.swift */; };
-		F5A102711FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */; };
-		F5A102721FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */; };
-		F5A102731FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */; };
+		F5A102711FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */; };
+		F5A102721FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */; };
+		F5A102731FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */; };
 		F5A102741FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
 		F5A102751FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
 		F5A102761FB2C72600A2F4EE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608871FB2968400F42D2B /* Maze.swift */; };
@@ -163,9 +163,9 @@
 		F5F832611FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
 		F5F832621FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
 		F5F832631FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
-		F5F832651FB8028D00B0BD4F /* GameSceneAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832641FB8028D00B0BD4F /* GameSceneAnimations.swift */; };
-		F5F832661FB8028D00B0BD4F /* GameSceneAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832641FB8028D00B0BD4F /* GameSceneAnimations.swift */; };
-		F5F832671FB8028D00B0BD4F /* GameSceneAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832641FB8028D00B0BD4F /* GameSceneAnimations.swift */; };
+		F5F832651FB8028D00B0BD4F /* GameScene+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832641FB8028D00B0BD4F /* GameScene+Animations.swift */; };
+		F5F832661FB8028D00B0BD4F /* GameScene+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832641FB8028D00B0BD4F /* GameScene+Animations.swift */; };
+		F5F832671FB8028D00B0BD4F /* GameScene+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832641FB8028D00B0BD4F /* GameScene+Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,7 +277,7 @@
 		F59608AF1FB2A07600F42D2B /* TileMapExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapExtensions.swift; sourceTree = "<group>"; };
 		F59608B01FB2A07600F42D2B /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		F5A1026C1FB2C16600A2F4EE /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneLayout.swift; sourceTree = "<group>"; };
+		F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Layout.swift"; sourceTree = "<group>"; };
 		F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneModel.swift; sourceTree = "<group>"; };
 		F5AE446C1FB4C19000538E98 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		F5C108DF1FB4160A00F2F771 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 		F5DFCB731FB2932B00DB8195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5DFCB751FB2932B00DB8195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F832601FB7F91900B0BD4F /* LevelMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMeta.swift; sourceTree = "<group>"; };
-		F5F832641FB8028D00B0BD4F /* GameSceneAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneAnimations.swift; sourceTree = "<group>"; };
+		F5F832641FB8028D00B0BD4F /* GameScene+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Animations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,8 +466,8 @@
 			isa = PBXGroup;
 			children = (
 				F59608861FB2968400F42D2B /* GameScene.swift */,
-				F5F832641FB8028D00B0BD4F /* GameSceneAnimations.swift */,
-				F5A102701FB2C6B900A2F4EE /* GameSceneLayout.swift */,
+				F5F832641FB8028D00B0BD4F /* GameScene+Animations.swift */,
+				F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */,
 				F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */,
 			);
 			path = Game;
@@ -1149,13 +1149,13 @@
 				F59608F71FB2A07600F42D2B /* Vector3.swift in Sources */,
 				F5AE446D1FB4C19000538E98 /* Characters.swift in Sources */,
 				F59608D61FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
-				F5A102711FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */,
+				F5A102711FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */,
 				F5A102741FB2C72600A2F4EE /* Maze.swift in Sources */,
 				F59608DF1FB2A07600F42D2B /* SKAction+SpecialEffects.swift in Sources */,
 				F59608D01FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */,
 				F59608EB1FB2A07600F42D2B /* SKTEffects.swift in Sources */,
 				F596088B1FB2968400F42D2B /* GameScene.swift in Sources */,
-				F5F832651FB8028D00B0BD4F /* GameSceneAnimations.swift in Sources */,
+				F5F832651FB8028D00B0BD4F /* GameScene+Animations.swift in Sources */,
 				F59608941FB29A2000F42D2B /* GameState.swift in Sources */,
 				F59608EE1FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */,
 				F59608C71FB2A07600F42D2B /* Array+Extensions.swift in Sources */,
@@ -1190,12 +1190,12 @@
 				F596088C1FB2968400F42D2B /* GameScene.swift in Sources */,
 				F5AE446E1FB4C19000538E98 /* Characters.swift in Sources */,
 				F5DFCB641FB2932B00DB8195 /* InterfaceController.swift in Sources */,
-				F5A102721FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */,
+				F5A102721FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */,
 				F5A102751FB2C72600A2F4EE /* Maze.swift in Sources */,
 				F59608DD1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */,
 				F59608F51FB2A07600F42D2B /* TileMapExtensions.swift in Sources */,
 				F59608EC1FB2A07600F42D2B /* SKTEffects.swift in Sources */,
-				F5F832661FB8028D00B0BD4F /* GameSceneAnimations.swift in Sources */,
+				F5F832661FB8028D00B0BD4F /* GameScene+Animations.swift in Sources */,
 				F59608F81FB2A07600F42D2B /* Vector3.swift in Sources */,
 				F59608D11FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */,
 				F59608E61FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
@@ -1229,13 +1229,13 @@
 				F5AC79081FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
 				F59608E71FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
 				F5AE446F1FB4C19000538E98 /* Characters.swift in Sources */,
-				F5A102731FB2C6B900A2F4EE /* GameSceneLayout.swift in Sources */,
+				F5A102731FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */,
 				F5A102761FB2C72600A2F4EE /* Maze.swift in Sources */,
 				F59608F61FB2A07600F42D2B /* TileMapExtensions.swift in Sources */,
 				F59608F31FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
 				F59608ED1FB2A07600F42D2B /* SKTEffects.swift in Sources */,
 				F59608961FB29A2000F42D2B /* GameState.swift in Sources */,
-				F5F832671FB8028D00B0BD4F /* GameSceneAnimations.swift in Sources */,
+				F5F832671FB8028D00B0BD4F /* GameScene+Animations.swift in Sources */,
 				F59608E41FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
 				F500EC5B1FB2AAC90057C05F /* GameViewController.swift in Sources */,
 				F59608DE1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */,

@@ -39,10 +39,15 @@ extension LevelMeta {
     static func levelMeta(level: Int) -> LevelMeta {
         let decoder = JSONDecoder()
         let url = Bundle.main.url(forResource: "Levels", withExtension: "json")!
-        let data = try! Data.init(contentsOf: url)
-        let levels: [String : LevelMeta]
-        levels = try! decoder.decode([String : LevelMeta].self, from: data)
+        let _data = try? Data(contentsOf: url)
+        guard let data = _data else {
+            fatalError("Could not load date from Levels.json")
+        }
+        let _levels: [String: LevelMeta]?
+        _levels = try? decoder.decode([String: LevelMeta].self, from: data)
+        guard let levels = _levels else {
+            fatalError("Could not decode level.json")
+        }
         return levels["\(level)"]!
     }
 }
-

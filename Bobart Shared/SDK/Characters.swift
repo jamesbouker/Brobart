@@ -26,7 +26,7 @@ enum Character: String {
     case dragon
 }
 
-enum Direction: String {
+enum Direction: String, Codable {
     case u
     case d
     case l
@@ -47,6 +47,15 @@ enum Direction: String {
             self = .d
         default:
             self = .l
+        }
+    }
+
+    var loc: MapLocation {
+        switch self {
+        case .u: return .init(x: 0, y: 1)
+        case .d: return .init(x: 0, y: -1)
+        case .l: return .init(x: -1, y: 0)
+        case .r: return .init(x: 1, y: 0)
         }
     }
 }

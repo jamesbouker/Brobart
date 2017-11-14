@@ -43,7 +43,8 @@ class GameScene: SKScene {
         items = tileMap.childNode(withName: SceneNode.items) as? SKTileMapNode
         sfx = tileMap.childNode(withName: SceneNode.sfx) as? SKTileMapNode
         player = tileMap?.childNode(withName: SceneNode.player) as? SKSpriteNode
-        player.run(Character.wizard.animFrames(.l), type: "idle")
+        let anim = Character.wizard.animFrames(.l)
+        player.run(anim, type: ActionType.idle)
         playerSquare = player.childNode(withName: SceneNode.square) as? SKShapeNode
         playerSquare.isHidden = true
     }

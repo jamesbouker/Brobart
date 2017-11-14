@@ -10,15 +10,21 @@ import ReSwift
 
 private func initialPlayerState(_ map: MapState) -> PlayerState {
     let location = map.noWallsOrItems.randomItem()
-    return PlayerState(loc: location!)
+    return PlayerState(facing: .l, loc: location!, hitDirection: nil)
 }
 
 private func movePlayer(_ action: PlayerAction, next: inout PlayerState) {
     switch action {
-    case .moveUp: next.loc.y += 1
-    case .moveDown: next.loc.y -= 1
-    case .moveRight: next.loc.x += 1
-    case .moveLeft: next.loc.x -= 1
+    case .moveUp:
+        next.loc.y += 1
+    case .moveDown:
+        next.loc.y -= 1
+    case .moveRight:
+        next.loc.x += 1
+        next.facing = .r
+    case .moveLeft:
+        next.loc.x -= 1
+        next.facing = .l
     default: break
     }
 }
@@ -30,7 +36,10 @@ private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: 
     }
 
     var next = state
+    next.hitDirection = nil
+
     movePlayer(action, next: &next)
+    let direction = Direction(facing: next.loc - state.loc)
 
     // Check if player can move!
     if map.walls.contains(next.loc) {
@@ -39,20 +48,22 @@ private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: 
 
     // Check if hitting switch!
     if map.switchLoc == next.loc {
+        next.hitDirection = direction
         if !map.switchHit {
             map.switchHit = true
             let stairLoc = map.noWallsOrItems.filter { $0 != state.loc }.randomItem()
             map.stairLoc = stairLoc!
         }
-        return state
+        next.loc = state.loc
     }
 
     // Check if hitting chest!
     if map.chestLoc == next.loc {
+        next.hitDirection = direction
         if !map.chestOpened {
             map.chestOpened = true
         }
-        return state
+        next.loc = state.loc
     }
 
     return next

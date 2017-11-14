@@ -9,5 +9,7 @@
 import ReSwift
 
 struct PlayerState: Codable, StateType {
+    var facing: Direction
     var loc: MapLocation
+    var hitDirection: Direction?
 }

@@ -24,7 +24,7 @@ private func randomMapState(level: Int) -> MapState {
         walls.append(MapLocation(x: 0, y: i))
         walls.append(MapLocation(x: width - 1, y: i))
     }
-    
+
     return MapState(level: level,
                     width: width,
                     height: height,

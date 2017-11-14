@@ -7,6 +7,7 @@
 //
 
 import ReSwift
+import UIKit
 
 struct MapLocation: Codable, StateType {
     var x: Int
@@ -14,8 +15,17 @@ struct MapLocation: Codable, StateType {
 }
 
 extension MapLocation: Equatable, Hashable {
+
+    var point: CGPoint {
+        return CGPoint(x: x, y: y)
+    }
+
     static func == (lhs: MapLocation, rhs: MapLocation) -> Bool {
         return lhs.x == rhs.x && lhs.y == rhs.y
+    }
+
+    static func - (lhs: MapLocation, rhs: MapLocation) -> MapLocation {
+        return MapLocation(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
     }
 
     var hashValue: Int {

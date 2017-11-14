@@ -26,6 +26,7 @@ import CoreGraphics
 import SpriteKit
 
 public extension CGPoint {
+
     /**
      * Creates a new CGPoint given a CGVector.
      */
