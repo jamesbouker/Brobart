@@ -23,6 +23,8 @@ enum TileType {
     static let blank = "blank"
     static let floor = "floor"
     static let vert_wall = "vert_wall"
+    static let vert_wall_no_neighbor = "vert_wall_no_neighbor"
+    static let horz_wall_no_neighbor = "horz_wall_no_neighbor"
     static let horz_wall = "horz_wall"
     static let shadow = "shadow"
     static let torch = "torch"

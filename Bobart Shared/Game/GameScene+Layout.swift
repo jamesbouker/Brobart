@@ -27,17 +27,30 @@ fileprivate extension GameScene {
     func renderWalls(mapState: MapState) {
         let walls = mapState.walls
         let map = mapState.wallMap
+        var numberOfTorches = mapState.torches
 
-        for wall in walls {
+        for wall in walls.shuffled() {
             let oneDown = MapLocation(x: wall.x, y: wall.y - 1)
             let isHorz = map[oneDown] == nil
-            let tile = !isHorz ? TileType.vert_wall : TileType.horz_wall
+            var tile = !isHorz ? TileType.vert_wall_no_neighbor : TileType.horz_wall_no_neighbor
+            if !isHorz {
+                // check for neighbors, if we have one, pull from the ok bucket
+                if map[wall.leftOne] != nil || map[wall.rightOne] != nil {
+                    tile = TileType.vert_wall
+                }
+            } else {
+                // check for nighbor above?
+                if map[wall.upOne] != nil {
+                    tile = TileType.horz_wall
+                }
+            }
             tileMap.setTile(tile, loc: wall, atlas: mapState.environment.rawValue)
 
             if isHorz && wall.y > 0 {
                 shadows.setTile(TileType.shadow, loc: oneDown)
 
-                if Int.random(100) < 20 {
+                if Int.random(100) < 20 && numberOfTorches > 0 {
+                    numberOfTorches -= 1
                     sfx.setTile(TileType.torch, loc: wall)
                     sfx.setTile(TileType.torch_under, loc: oneDown)
                 }
@@ -79,11 +92,13 @@ extension GameScene {
         let playerState = state.playerState
         let mapState = state.mapState
         let noWalls = state.mapState.noWalls
-        let grassMax = noWalls.count / 2 + 1
+        let grassMax = state.mapState.grass
 
         // ORDER IS IMPORTANT!
         if viewModel.state?.mapState.level != state.mapState.level {
             tileMap.tileSet = SKTileSet(named: state.mapState.environment.rawValue)!
+            tileMap.pixelate()
+
             resizeTheMap(mapState: mapState)
             renderWalls(mapState: mapState)
             renderGrass(grassMax: grassMax, noWalls: noWalls)

@@ -18,6 +18,7 @@ struct LevelMeta: Codable {
     var height: Int
     var heightVar: Int?
     var grass: Int
+    var torches: Int
     var atlas: Environment
 }
 

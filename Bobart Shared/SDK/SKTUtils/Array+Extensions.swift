@@ -46,6 +46,10 @@ extension Array {
         }
         return dict
     }
+
+    public mutating func filtered(_ isIncluded: (Element) -> Bool) {
+        self = self.filter(isIncluded)
+    }
 }
 
 extension Array {

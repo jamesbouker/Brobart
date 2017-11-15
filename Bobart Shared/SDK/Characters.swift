@@ -58,6 +58,10 @@ enum Direction: String, Codable {
         case .r: return .init(x: 1, y: 0)
         }
     }
+
+    static func all() -> [Direction] {
+        return [.u, .d, .l, .r]
+    }
 }
 
 extension Character {

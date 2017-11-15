@@ -27,6 +27,8 @@ enum Environment: String, Codable {
 struct MapState: Codable, StateType {
     var level: Int
     var environment: Environment
+    var grass: Int
+    var torches: Int
 
     // Walls
     var width: Int
@@ -44,11 +46,13 @@ struct MapState: Codable, StateType {
     var switchLoc: MapLocation
     var switchHit: Bool
 
-    init(level: Int, width: Int, height: Int, walls: [MapLocation], env: Environment) {
+    init(level: Int, width: Int, height: Int, walls: [MapLocation], env: Environment, grass: Int, torches: Int) {
         self.level = level
         self.width = width
         self.height = height
         self.walls = walls
+        self.grass = grass
+        self.torches = torches
         environment = env
         switchLoc = .init(x: 0, y: 0)
         stairLoc = .init(x: 0, y: 0)
@@ -57,8 +61,11 @@ struct MapState: Codable, StateType {
         chestOpened = false
 
         // After everything initialized!
-        switchLoc = noWalls.randomItem()!
-        chestLoc = noWallsOrItems.randomItem()!
+        var deadEnds = self.deadEnds
+        switchLoc = deadEnds.randomItem()!
+        let indx = deadEnds.index { $0 == switchLoc }
+        deadEnds.remove(at: indx!)
+        chestLoc = deadEnds.randomItem()!
     }
 }
 
@@ -68,6 +75,15 @@ extension MapState {
     private var rows: [Int] { return Array(0 ..< height) }
     private var locations: [MapLocation] {
         return columns.cross(rows).map { MapLocation(x: $0.0, y: $0.1) }
+    }
+
+    func numberOfAdjacentWalls(_ wall: MapLocation, _ map: [MapLocation : Bool]) -> Int {
+        return wall.connecting.reduce(0) { map[$1] != nil ? ($0 + 1) : $0 }
+    }
+
+    var deadEnds: [MapLocation] {
+        let map = wallMap
+        return noWalls.filter { numberOfAdjacentWalls($0, map) == 3 }
     }
 
     var noWalls: [MapLocation] {

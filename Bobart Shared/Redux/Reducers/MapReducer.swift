@@ -10,10 +10,9 @@ import ReSwift
 
 private func randomMapState(level: Int) -> MapState {
     let levelMeta = LevelMeta.levelMeta(level: level)
-    let env = levelMeta.atlas
 
-    let width = levelMeta.randWidth
-    let height = levelMeta.randHeight
+    let width = 9// levelMeta.randWidth
+    let height = 9//levelMeta.randHeight
 
     var walls = [MapLocation]()
     for i in 0 ..< width {
@@ -25,11 +24,17 @@ private func randomMapState(level: Int) -> MapState {
         walls.append(MapLocation(x: width - 1, y: i))
     }
 
+//    var mazeGen = MazeGen.maze(width: width - 2, height: height - 2)
+//    mazeGen = mazeGen.map { MapLocation(x: $0.x + 1, y: $0.y + 1) }
+    walls = LevelCreator().levels.last!
+
     return MapState(level: level,
                     width: width,
                     height: height,
                     walls: walls,
-                    env: env)
+                    env: levelMeta.atlas,
+                    grass: levelMeta.grass,
+                    torches: levelMeta.torches)
 }
 
 func mapReducer(action: Action, state: MapState?) -> MapState {

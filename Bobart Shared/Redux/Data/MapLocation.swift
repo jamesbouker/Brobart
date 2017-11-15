@@ -16,6 +16,32 @@ struct MapLocation: Codable, StateType {
 
 extension MapLocation: Equatable, Hashable {
 
+    var upOne: MapLocation {
+        return MapLocation(x: x, y: y + 1)
+    }
+
+    var downOne: MapLocation {
+        return MapLocation(x: x, y: y - 1)
+    }
+
+    var leftOne: MapLocation {
+        return MapLocation(x: x - 1, y: y)
+    }
+
+    var rightOne: MapLocation {
+        return MapLocation(x: x + 1, y: y)
+    }
+
+    var connecting: [MapLocation] {
+        return [self.upOne, self.downOne, self.leftOne, self.rightOne]
+    }
+
+    var adjacents: [MapLocation] {
+        return [self.upOne, self.downOne, self.leftOne, self.rightOne,
+                self.upOne.leftOne, self.upOne.rightOne,
+                self.downOne.leftOne, self.downOne.rightOne]
+    }
+
     var point: CGPoint {
         return CGPoint(x: x, y: y)
     }
@@ -26,6 +52,10 @@ extension MapLocation: Equatable, Hashable {
 
     static func - (lhs: MapLocation, rhs: MapLocation) -> MapLocation {
         return MapLocation(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    }
+
+    static func + (lhs: MapLocation, rhs: MapLocation) -> MapLocation {
+        return MapLocation(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
 
     var hashValue: Int {
