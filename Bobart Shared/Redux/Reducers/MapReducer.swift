@@ -11,22 +11,17 @@ import ReSwift
 private func randomMapState(level: Int) -> MapState {
     let levelMeta = LevelMeta.levelMeta(level: level)
 
-    let width = 9// levelMeta.randWidth
-    let height = 9//levelMeta.randHeight
-
-    var walls = [MapLocation]()
-    for i in 0 ..< width {
-        walls.append(MapLocation(x: i, y: 0))
-        walls.append(MapLocation(x: i, y: height - 1))
+    let width = levelMeta.randWidth
+    let height = levelMeta.randHeight
+    let maker = MazeMaker(width, height)
+    let thinner = MazeThinner(width: width, height: height)
+    let ones = maker.generate()
+    let wallCount = ones.reduce(0) { $0 + $1 }
+    let map = thinner.thinMaze(onesAndZeroes: maker.generate())
+    let walls = map.keys.map { MapLocation(x: $0.x, y: $0.y) }
+    if walls.count == wallCount {
+        return randomMapState(level: level)
     }
-    for i in 1 ..< height {
-        walls.append(MapLocation(x: 0, y: i))
-        walls.append(MapLocation(x: width - 1, y: i))
-    }
-
-//    var mazeGen = MazeGen.maze(width: width - 2, height: height - 2)
-//    mazeGen = mazeGen.map { MapLocation(x: $0.x + 1, y: $0.y + 1) }
-    walls = LevelCreator().levels.last!
 
     return MapState(level: level,
                     width: width,

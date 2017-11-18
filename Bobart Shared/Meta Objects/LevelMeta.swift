@@ -13,10 +13,10 @@ struct LevelMeta: Codable {
     var canSpawn: [String]?
     var spawnWeight: [Int]?
 
-    var width: Int
-    var widthVar: Int?
-    var height: Int
-    var heightVar: Int?
+    var minWidth: Int
+    var maxWidth: Int
+    var minHeight: Int
+    var maxHeight: Int
     var grass: Int
     var torches: Int
     var atlas: Environment
@@ -24,15 +24,19 @@ struct LevelMeta: Codable {
 
 extension LevelMeta {
     var randWidth: Int {
-        let min = width - (widthVar ?? 0)
-        let max = width + (widthVar ?? 0)
-        return Int.random(min: min, max: max)
+        var width = Int.random(min: minWidth, max: maxWidth)
+        if width % 2 == 0 {
+            width += (width == maxWidth ? -1 : 1)
+        }
+        return width
     }
 
     var randHeight: Int {
-        let min = height - (heightVar ?? 0)
-        let max = height + (heightVar ?? 0)
-        return Int.random(min: min, max: max)
+        var height = Int.random(min: minHeight, max: maxHeight)
+        if height % 2 == 0 {
+            height += (height == maxHeight ? -1 : 1)
+        }
+        return height
     }
 }
 

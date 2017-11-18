@@ -86,6 +86,10 @@ extension MapState {
         return noWalls.filter { numberOfAdjacentWalls($0, map) == 3 }
     }
 
+    var deadEndsNoItems: [MapLocation] {
+        return deadEnds.filter { $0 != chestLoc && $0 != switchLoc }
+    }
+
     var noWalls: [MapLocation] {
         return locations.filter { !walls.contains($0) }
     }
