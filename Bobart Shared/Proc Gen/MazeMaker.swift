@@ -115,7 +115,6 @@ class MazeMaker {
         }
         bottomEdge += "#"
         walls += bottomEdge
-        print(walls)
 
         return walls.filter { $0 != "\n" }.map {
             $0 == "#" ? 1 : 0

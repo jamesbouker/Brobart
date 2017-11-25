@@ -23,13 +23,14 @@ private func randomMapState(level: Int) -> MapState {
         return randomMapState(level: level)
     }
 
-    return MapState(level: level,
+    let mapState = MapState(level: level,
                     width: width,
                     height: height,
                     walls: walls,
                     env: levelMeta.atlas,
                     grass: levelMeta.grass,
                     torches: levelMeta.torches)
+    return mapState ?? randomMapState(level: level)
 }
 
 func mapReducer(action: Action, state: MapState?) -> MapState {

@@ -46,7 +46,7 @@ struct MapState: Codable, StateType {
     var switchLoc: MapLocation
     var switchHit: Bool
 
-    init(level: Int, width: Int, height: Int, walls: [MapLocation], env: Environment, grass: Int, torches: Int) {
+    init?(level: Int, width: Int, height: Int, walls: [MapLocation], env: Environment, grass: Int, torches: Int) {
         self.level = level
         self.width = width
         self.height = height
@@ -62,10 +62,19 @@ struct MapState: Codable, StateType {
 
         // After everything initialized!
         var deadEnds = self.deadEnds
-        switchLoc = deadEnds.randomItem()!
+        guard let switchLoc = deadEnds.randomItem() else {
+            return nil
+        }
+        self.switchLoc = switchLoc
         let indx = deadEnds.index { $0 == switchLoc }
-        deadEnds.remove(at: indx!)
-        chestLoc = deadEnds.randomItem()!
+        guard let index = indx else {
+            return nil
+        }
+        deadEnds.remove(at: index)
+        guard let chestLoc = deadEnds.randomItem() else {
+            return nil
+        }
+        self.chestLoc = chestLoc
     }
 }
 
