@@ -41,7 +41,13 @@ extension LevelMeta {
 }
 
 extension LevelMeta {
+    static var levels = [String: LevelMeta]()
+
     static func levelMeta(level: Int) -> LevelMeta {
+        if levels.count > 0 {
+            return levels["\(level)"]!
+        }
+
         let decoder = JSONDecoder()
         let url = Bundle.main.url(forResource: "Levels", withExtension: "json")!
         let _data = try? Data(contentsOf: url)
@@ -53,6 +59,7 @@ extension LevelMeta {
         guard let levels = _levels else {
             fatalError("Could not decode level.json")
         }
+        self.levels = levels
         return levels["\(level)"]!
     }
 }

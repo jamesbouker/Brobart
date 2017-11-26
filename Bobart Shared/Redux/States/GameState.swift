@@ -11,4 +11,5 @@ import ReSwift
 struct GameState: Codable, StateType {
     var mapState: MapState
     var playerState: PlayerState
+    var monsterStates: [MonsterState]
 }

@@ -5,6 +5,7 @@
 //  Created by james bouker on 11/7/17.
 //  Copyright © 2017 JimmyBouker. All rights reserved.
 //
+// swiftlint:disable trailing_comma
 
 import ReSwift
 import UIKit
@@ -37,9 +38,11 @@ extension MapLocation: Equatable, Hashable {
     }
 
     var adjacents: [MapLocation] {
-        return [self.upOne, self.downOne, self.leftOne, self.rightOne,
-                self.upOne.leftOne, self.upOne.rightOne,
-                self.downOne.leftOne, self.downOne.rightOne]
+        return [
+            self.upOne, self.downOne, self.leftOne, self.rightOne,
+            self.upOne.leftOne, self.upOne.rightOne,
+            self.downOne.leftOne, self.downOne.rightOne,
+        ]
     }
 
     var point: CGPoint {

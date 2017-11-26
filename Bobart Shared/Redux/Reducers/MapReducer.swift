@@ -24,12 +24,12 @@ private func randomMapState(level: Int) -> MapState {
     }
 
     let mapState = MapState(level: level,
-                    width: width,
-                    height: height,
-                    walls: walls,
-                    env: levelMeta.atlas,
-                    grass: levelMeta.grass,
-                    torches: levelMeta.torches)
+                            width: width,
+                            height: height,
+                            walls: walls,
+                            env: levelMeta.atlas,
+                            grass: levelMeta.grass,
+                            torches: levelMeta.torches)
     return mapState ?? randomMapState(level: level)
 }
 

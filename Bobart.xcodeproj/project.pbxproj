@@ -137,6 +137,12 @@
 		F5A102711FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */; };
 		F5A102721FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */; };
 		F5A102731FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */; };
+		F5A7AC031FC93E6B00B37D0B /* MonsterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7AC021FC93E6B00B37D0B /* MonsterState.swift */; };
+		F5A7AC041FC93E6B00B37D0B /* MonsterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7AC021FC93E6B00B37D0B /* MonsterState.swift */; };
+		F5A7AC051FC93E6B00B37D0B /* MonsterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7AC021FC93E6B00B37D0B /* MonsterState.swift */; };
+		F5A7AC071FC9405C00B37D0B /* MonsterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7AC061FC9405C00B37D0B /* MonsterReducer.swift */; };
+		F5A7AC081FC9405C00B37D0B /* MonsterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7AC061FC9405C00B37D0B /* MonsterReducer.swift */; };
+		F5A7AC091FC9405C00B37D0B /* MonsterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7AC061FC9405C00B37D0B /* MonsterReducer.swift */; };
 		F5AC79061FB56DE3000FC8BC /* GameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */; };
 		F5AC79071FB56DE3000FC8BC /* GameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */; };
 		F5AC79081FB56DE3000FC8BC /* GameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */; };
@@ -163,6 +169,9 @@
 		F5DFCB7E1FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
 		F5DFCB7F1FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
 		F5DFCB801FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
+		F5F2E3401FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
+		F5F2E3411FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
+		F5F2E3421FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
 		F5F832611FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
 		F5F832621FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
 		F5F832631FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
@@ -282,6 +291,8 @@
 		F59608B01FB2A07600F42D2B /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		F5A1026C1FB2C16600A2F4EE /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Layout.swift"; sourceTree = "<group>"; };
+		F5A7AC021FC93E6B00B37D0B /* MonsterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterState.swift; sourceTree = "<group>"; };
+		F5A7AC061FC9405C00B37D0B /* MonsterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterReducer.swift; sourceTree = "<group>"; };
 		F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneModel.swift; sourceTree = "<group>"; };
 		F5AE446C1FB4C19000538E98 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		F5C108DF1FB4160A00F2F771 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
@@ -304,6 +315,7 @@
 		F5DFCB6E1FB2932B00DB8195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5DFCB731FB2932B00DB8195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5DFCB751FB2932B00DB8195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterMeta.swift; sourceTree = "<group>"; };
 		F5F832601FB7F91900B0BD4F /* LevelMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMeta.swift; sourceTree = "<group>"; };
 		F5F832641FB8028D00B0BD4F /* GameScene+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Animations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -405,6 +417,7 @@
 				F500EC611FB2B3A20057C05F /* GameReducer.swift */,
 				F525B5681FB412A200982E71 /* MapReducer.swift */,
 				F525B5641FB4128600982E71 /* PlayerReducer.swift */,
+				F5A7AC061FC9405C00B37D0B /* MonsterReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -415,6 +428,7 @@
 				F59608931FB29A2000F42D2B /* GameState.swift */,
 				F5C108DF1FB4160A00F2F771 /* MapState.swift */,
 				F5C108E31FB4162E00F2F771 /* PlayerState.swift */,
+				F5A7AC021FC93E6B00B37D0B /* MonsterState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -615,6 +629,7 @@
 			isa = PBXGroup;
 			children = (
 				F5F832601FB7F91900B0BD4F /* LevelMeta.swift */,
+				F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */,
 			);
 			path = "Meta Objects";
 			sourceTree = "<group>";
@@ -1174,12 +1189,15 @@
 				F59608C71FB2A07600F42D2B /* Array+Extensions.swift in Sources */,
 				F525B5691FB412A200982E71 /* MapReducer.swift in Sources */,
 				F59608E21FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
+				F5A7AC031FC93E6B00B37D0B /* MonsterState.swift in Sources */,
+				F5A7AC071FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
 				F5DFCB451FB2932B00DB8195 /* AppDelegate.swift in Sources */,
 				F5C108E41FB4162E00F2F771 /* PlayerState.swift in Sources */,
 				F59608E51FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
 				F5C108E01FB4160A00F2F771 /* MapState.swift in Sources */,
 				F5A1026D1FB2C16600A2F4EE /* Actions.swift in Sources */,
 				F55E22CA1FBFD25E00CD68C6 /* MazeThinner.swift in Sources */,
+				F5F2E3401FCA392A0088D419 /* MonsterMeta.swift in Sources */,
 				F59608BB1FB2A07600F42D2B /* Constants.swift in Sources */,
 				F59608F41FB2A07600F42D2B /* TileMapExtensions.swift in Sources */,
 				F500EC5E1FB2B1510057C05F /* MapLocation.swift in Sources */,
@@ -1215,12 +1233,15 @@
 				F59608E61FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
 				F525B56A1FB412A200982E71 /* MapReducer.swift in Sources */,
 				F59608BC1FB2A07600F42D2B /* Constants.swift in Sources */,
+				F5A7AC041FC93E6B00B37D0B /* MonsterState.swift in Sources */,
+				F5A7AC081FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
 				F59608E31FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
 				F5C108E51FB4162E00F2F771 /* PlayerState.swift in Sources */,
 				F59608F21FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
 				F5C108E11FB4160A00F2F771 /* MapState.swift in Sources */,
 				F5A1026E1FB2C16600A2F4EE /* Actions.swift in Sources */,
 				F59608CB1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
+				F5F2E3411FCA392A0088D419 /* MonsterMeta.swift in Sources */,
 				F51095EE1FB2C02E0075F6EF /* GameState.swift in Sources */,
 				F500EC5F1FB2B1590057C05F /* MapLocation.swift in Sources */,
 				F59608EF1FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */,
@@ -1256,12 +1277,15 @@
 				F59608DE1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */,
 				F525B56B1FB412A200982E71 /* MapReducer.swift in Sources */,
 				F5DFCB6F1FB2932B00DB8195 /* AppDelegate.swift in Sources */,
+				F5A7AC051FC93E6B00B37D0B /* MonsterState.swift in Sources */,
+				F5A7AC091FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
 				F59608C31FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */,
 				F5C108E61FB4162E00F2F771 /* PlayerState.swift in Sources */,
 				F59608C91FB2A07600F42D2B /* Array+Extensions.swift in Sources */,
 				F5C108E21FB4160A00F2F771 /* MapState.swift in Sources */,
 				F5A1026F1FB2C16600A2F4EE /* Actions.swift in Sources */,
 				F59608D21FB2A07600F42D2B /* CGVector+Extensions.swift in Sources */,
+				F5F2E3421FCA392A0088D419 /* MonsterMeta.swift in Sources */,
 				F59608F01FB2A07600F42D2B /* SKTTimingFunctions.swift in Sources */,
 				F500EC601FB2B1590057C05F /* MapLocation.swift in Sources */,
 				F59608BD1FB2A07600F42D2B /* Constants.swift in Sources */,

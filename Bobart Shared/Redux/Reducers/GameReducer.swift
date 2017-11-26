@@ -11,5 +11,6 @@ import ReSwift
 func gameReducer(action: Action, state: GameState?) -> GameState {
     var map = mapReducer(action: action, state: state?.mapState)
     let player = playerReducer(action: action, state: state?.playerState, map: &map)
-    return GameState(mapState: map, playerState: player)
+    let monsters = monsterReducer(action: action, state: state?.monsterStates)
+    return GameState(mapState: map, playerState: player, monsterStates: monsters)
 }

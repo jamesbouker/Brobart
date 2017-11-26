@@ -5,6 +5,7 @@
 //  Created by james bouker on 11/17/17.
 //  Copyright © 2017 JimmyBouker. All rights reserved.
 //
+// swiftlint:disable for_where
 
 import Foundation
 
@@ -12,26 +13,33 @@ struct Loc: Equatable, Hashable {
     var x: Int
     var y: Int
 
-    static func ==(lhs: Loc, rhs: Loc) -> Bool {
+    static func == (lhs: Loc, rhs: Loc) -> Bool {
         return lhs.x == rhs.x && lhs.y == rhs.y
     }
 
     var hashValue: Int {
         return x ^ y
     }
+}
+
+fileprivate extension Loc {
 
     var upOne: Loc {
-        return Loc(x: x, y: y+1)
+        return Loc(x: x, y: y + 1)
     }
+
     var downOne: Loc {
-        return Loc(x: x, y: y-1)
+        return Loc(x: x, y: y - 1)
     }
+
     var leftOne: Loc {
-        return Loc(x: x-1, y: y)
+        return Loc(x: x - 1, y: y)
     }
+
     var rightOne: Loc {
-        return Loc(x: x+1, y: y)
+        return Loc(x: x + 1, y: y)
     }
+
     var adjacent: [Loc] {
         return [self.upOne, self.downOne, self.rightOne, self.leftOne]
     }
@@ -105,16 +113,14 @@ fileprivate extension MazeThinner {
     }
 
     func createWallMap(onesAndZeroes: [Int]) {
-        for x in 0..<width {
-            for y in 0..<height {
-                if onesAndZeroes[(height-1-y) * width + x] == 1 {
-                    let loc = Loc(x: x, y: y)
-                    walls.append(loc)
-                    wallMap[loc] = true
+        for x in 0 ..< width {
+            for y in 0 ..< height where onesAndZeroes[(height - 1 - y) * width + x] == 1 {
+                let loc = Loc(x: x, y: y)
+                walls.append(loc)
+                wallMap[loc] = true
 
-                    if loc.x > 0 && loc.x < width-1 && loc.y > 0 && loc.y < height-1 {
-                        innerWallMap[loc] = true
-                    }
+                if loc.x > 0 && loc.x < width - 1 && loc.y > 0 && loc.y < height - 1 {
+                    innerWallMap[loc] = true
                 }
             }
         }
@@ -124,7 +130,7 @@ fileprivate extension MazeThinner {
         if toRemove <= 0 {
             return
         }
-        for _ in 0..<toRemove {
+        for _ in 0 ..< toRemove {
             // Filter out all walls that are creating a dead end!
             var filtered = walls.filter {
                 let rightDeadEnd = wallMap[$0.rightOne] == nil && adjecentCount(loc: $0.rightOne, map: wallMap) == 3
@@ -136,7 +142,7 @@ fileprivate extension MazeThinner {
 
             // Filter out the outer wall
             filtered = filtered.filter {
-                $0.x > 0 && $0.x < width-1 && $0.y > 0 && $0.y < height-1
+                $0.x > 0 && $0.x < width - 1 && $0.y > 0 && $0.y < height - 1
             }
 
             // Filter out all non sandwich walls (in between two walls, either up and down, left and right)
@@ -144,11 +150,13 @@ fileprivate extension MazeThinner {
             filtered = filtered.filter {
                 (wallMap[$0.upOne] != nil && wallMap[$0.downOne] != nil
                     && (wallMap[$0.leftOne] == nil && wallMap[$0.rightOne] == nil)
-                    && adjecentCount(loc: $0.upOne, map: wallMap) > 1 && adjecentCount(loc: $0.downOne, map: wallMap) > 1)
+                    && adjecentCount(loc: $0.upOne, map: wallMap) > 1
+                    && adjecentCount(loc: $0.downOne, map: wallMap) > 1)
                     ||
                     (wallMap[$0.leftOne] != nil && wallMap[$0.rightOne] != nil
                         && (wallMap[$0.upOne] == nil && wallMap[$0.downOne] == nil)
-                        && adjecentCount(loc: $0.leftOne, map: wallMap) > 1 && adjecentCount(loc: $0.rightOne, map: wallMap) > 1)
+                        && adjecentCount(loc: $0.leftOne, map: wallMap) > 1
+                        && adjecentCount(loc: $0.rightOne, map: wallMap) > 1)
             }
 
             if let first = filtered.shuffled().first {

@@ -48,7 +48,7 @@ extension Array {
     }
 
     public mutating func filtered(_ isIncluded: (Element) -> Bool) {
-        self = self.filter(isIncluded)
+        self = filter(isIncluded)
     }
 }
 

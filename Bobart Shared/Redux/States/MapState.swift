@@ -62,19 +62,14 @@ struct MapState: Codable, StateType {
 
         // After everything initialized!
         var deadEnds = self.deadEnds
-        guard let switchLoc = deadEnds.randomItem() else {
+        guard deadEnds.count >= 3 else {
             return nil
         }
-        self.switchLoc = switchLoc
-        let indx = deadEnds.index { $0 == switchLoc }
-        guard let index = indx else {
-            return nil
-        }
+
+        self.switchLoc = deadEnds.randomItem()!
+        let index = deadEnds.index { $0 == switchLoc }!
         deadEnds.remove(at: index)
-        guard let chestLoc = deadEnds.randomItem() else {
-            return nil
-        }
-        self.chestLoc = chestLoc
+        self.chestLoc = deadEnds.randomItem()!
     }
 }
 
@@ -86,7 +81,7 @@ extension MapState {
         return columns.cross(rows).map { MapLocation(x: $0.0, y: $0.1) }
     }
 
-    func numberOfAdjacentWalls(_ wall: MapLocation, _ map: [MapLocation : Bool]) -> Int {
+    func numberOfAdjacentWalls(_ wall: MapLocation, _ map: [MapLocation: Bool]) -> Int {
         return wall.connecting.reduce(0) { map[$1] != nil ? ($0 + 1) : $0 }
     }
 
