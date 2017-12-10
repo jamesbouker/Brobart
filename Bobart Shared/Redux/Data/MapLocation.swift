@@ -36,13 +36,8 @@ extension MapLocation: Equatable, Hashable {
     var connecting: [MapLocation] {
         return [self.upOne, self.downOne, self.leftOne, self.rightOne]
     }
-
     var adjacents: [MapLocation] {
-        return [
-            self.upOne, self.downOne, self.leftOne, self.rightOne,
-            self.upOne.leftOne, self.upOne.rightOne,
-            self.downOne.leftOne, self.downOne.rightOne,
-        ]
+        return [self.upOne, self.downOne, self.leftOne, self.rightOne]
     }
 
     var point: CGPoint {

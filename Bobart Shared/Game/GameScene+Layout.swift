@@ -85,6 +85,22 @@ fileprivate extension GameScene {
         player.position = CGPoint(x: CGFloat(loc.x) * tileSize,
                                   y: CGFloat(loc.y) * tileSize)
     }
+
+    func renderMonsters(monsters: [MonsterState]) {
+        self.monsters.removeAll()
+
+        for monster in monsters {
+            let character = Character(rawValue: monster.asset)
+            let node = SKSpriteNode(color: .red, size: CGSize(width: tileSize, height: tileSize))
+            node.anchorPoint = .zero
+            node.run(character!.animFrames(.l))
+            let loc = monster.loc
+            node.position = CGPoint(x: CGFloat(loc.x) * tileSize,
+                                    y: CGFloat(loc.y) * tileSize)
+            self.monsters.append(node)
+            self.tileMap.addChild(node)
+        }
+    }
 }
 
 extension GameScene {
@@ -103,6 +119,7 @@ extension GameScene {
             renderWalls(mapState: mapState)
             renderGrass(grassMax: grassMax, noWalls: noWalls)
             positionThePlayer(playerState: playerState)
+            renderMonsters(monsters: state.monsterStates)
         }
         renderSwitch(mapState: mapState)
         renderStairs(mapState: mapState)

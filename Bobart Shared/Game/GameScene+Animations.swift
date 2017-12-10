@@ -14,8 +14,17 @@ extension GameScene {
 
         let animDuration = frameTime
         let action = SKAction.run {
+
+            // Animate the player!
             self.playerAnim(to: to)
+
+            // Animate the monsters!
+            for (i, monster) in self.monsters.enumerated() {
+                let state = to.monsterStates[i]
+                self.monsterAnim(to: state, for: monster)
+            }
         }
+
         runs([action, .wait(forDuration: animDuration), .run {
             done()
         }])
@@ -24,26 +33,37 @@ extension GameScene {
 
 // MARK: Shared Animations
 private extension GameScene {
-    func bump(_: SKNode, direction: Direction) -> SKAction {
+    func bump(direction: Direction) -> SKAction {
         let offset = direction.loc.point
         let moveBy = CGVector(dx: offset.x * tileSize / 3, dy: offset.y * tileSize / 3)
         let bump = SKAction.move(by: moveBy, duration: frameTime / 2)
         return .sequence([bump, bump.reversed()])
+    }
+
+    func walk(loc: MapLocation) -> SKAction {
+        let x = CGFloat(loc.x) * tileSize
+        let y = CGFloat(loc.y) * tileSize
+        let pt = CGPoint(x: x, y: y)
+        return .move(to: pt, duration: frameTime)
+    }
+}
+
+// MARK: - Monster Animations
+private extension GameScene {
+    func monsterAnim(to: MonsterState, for node: SKSpriteNode) {
+        let move = walk(loc: to.loc)
+        node.run(move)
     }
 }
 
 // MARK: - Player Animations
 private extension GameScene {
     func playerAnim(to: GameState) {
-        let loc = to.playerState.loc
-        let x = CGFloat(loc.x) * tileSize
-        let y = CGFloat(loc.y) * tileSize
-        let pt = CGPoint(x: x, y: y)
+        var move = walk(loc: to.playerState.loc)
 
-        // How long to animate?
-        var walkDuration = frameTime
+        // Animate right away if changing levels
         if to.mapState.level != viewModel.state?.mapState.level {
-            walkDuration = 0 // 0 if changing levels
+            move.duration = 0
         }
 
         // If player direction changed, update idle animation
@@ -57,9 +77,8 @@ private extension GameScene {
         }
 
         // Walk or bump!?
-        var move = SKAction.move(to: pt, duration: walkDuration)
         if let direction = to.playerState.hitDirection {
-            move = bump(player, direction: direction)
+            move = bump(direction: direction)
         }
 
         // Idle anim + move
