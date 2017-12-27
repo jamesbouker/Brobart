@@ -8,38 +8,42 @@
 
 import ReSwift
 
-func initialMonsterState() -> [MonsterState] {
+func monstersForLevel(level: Int) -> [MonsterState] {
     var monsters = [MonsterState]()
-    let level = LevelMeta.levelMeta(level: 1)
+    let level = LevelMeta.levelMeta(level: level)
 
     // Must Spawns
-    for spawn in level.mustSpawn ?? [] {
-        let meta = MonsterMeta.monsterMeta(monsterId: spawn)
-        let monster = MonsterState(loc: .init(x: 1, y: 1), asset: meta.asset, hp: meta.maxHp)
+    for monsterId in level.mustSpawn ?? [] {
+        let meta = MonsterMeta.monsterMeta(monsterId: monsterId)
+        let monster = MonsterState(monsterId: meta.monsterId, loc: .init(x: 1, y: 1), asset: meta.asset, hp: meta.maxHp)
         monsters.append(monster)
     }
 
     // Can Spawns
-    // TODO
+    // TODO:
     return monsters
 }
 
-func moveMonsters(monsters: [MonsterState]) -> [MonsterState]{
+func moveMonsters(monsters: [MonsterState], map: MapState) -> [MonsterState] {
+    let noWallsItems = map.noWallsOrItems
+
     var nextMonsters = monsters
     for (i, monster) in monsters.enumerated() {
-        nextMonsters[i].loc = monster.loc.adjacents.randomItem()!
+        nextMonsters[i].loc = monster.loc.adjacents.notIncluding(noWallsItems).randomItem()!
     }
     return nextMonsters
 }
 
 func monsterReducer(action: Action, state: [MonsterState]?, map: MapState) -> [MonsterState] {
-    guard var next = state else {
-        return initialMonsterState()
+    guard let next = state else {
+        return monstersForLevel(level: 1)
     }
-    guard action is PlayerAction else {
+    guard let action = action as? PlayerAction else {
         return next
     }
 
-    next = moveMonsters(monsters: next)
-    return next
+    if action == .loadNextLevel {
+        return monstersForLevel(level: map.level)
+    }
+    return moveMonsters(monsters: next, map: map)
 }

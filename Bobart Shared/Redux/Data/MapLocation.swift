@@ -5,7 +5,6 @@
 //  Created by james bouker on 11/7/17.
 //  Copyright © 2017 JimmyBouker. All rights reserved.
 //
-// swiftlint:disable trailing_comma
 
 import ReSwift
 import UIKit
@@ -13,6 +12,15 @@ import UIKit
 struct MapLocation: Codable, StateType {
     var x: Int
     var y: Int
+}
+
+extension Array where Element == MapLocation {
+    func notIncluding(_ locs: [MapLocation]?) -> [MapLocation] {
+        guard let locations = locs else {
+            return self
+        }
+        return filter { locations.contains($0) }
+    }
 }
 
 extension MapLocation: Equatable, Hashable {
@@ -36,6 +44,7 @@ extension MapLocation: Equatable, Hashable {
     var connecting: [MapLocation] {
         return [self.upOne, self.downOne, self.leftOne, self.rightOne]
     }
+
     var adjacents: [MapLocation] {
         return [self.upOne, self.downOne, self.leftOne, self.rightOne]
     }

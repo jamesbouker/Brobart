@@ -66,10 +66,10 @@ struct MapState: Codable, StateType {
             return nil
         }
 
-        self.switchLoc = deadEnds.randomItem()!
+        switchLoc = deadEnds.randomItem()!
         let index = deadEnds.index { $0 == switchLoc }!
         deadEnds.remove(at: index)
-        self.chestLoc = deadEnds.randomItem()!
+        chestLoc = deadEnds.randomItem()!
     }
 }
 
