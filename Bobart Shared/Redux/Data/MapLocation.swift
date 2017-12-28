@@ -19,7 +19,7 @@ extension Array where Element == MapLocation {
         guard let locations = locs else {
             return self
         }
-        return filter { locations.contains($0) }
+        return filter { !locations.contains($0) }
     }
 }
 
@@ -67,6 +67,10 @@ extension MapLocation: Equatable, Hashable {
 
     var hashValue: Int {
         return x ^ y
+    }
+
+    var length: Int {
+        return abs(x) + abs(y)
     }
 
     var normalized: MapLocation {

@@ -109,4 +109,11 @@ extension MapState {
     var wallMap: [MapLocation: Bool] {
         return walls.toDictionary { $0 }.mapValues { _ in true }
     }
+
+    var wallItemMap: [MapLocation: Bool] {
+        var map = wallMap
+        map[chestLoc] = true
+        map[switchLoc] = true
+        return map
+    }
 }
