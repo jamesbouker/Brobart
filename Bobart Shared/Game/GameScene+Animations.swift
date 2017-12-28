@@ -51,8 +51,22 @@ private extension GameScene {
 // MARK: - Monster Animations
 private extension GameScene {
     func monsterAnim(to: MonsterState, for node: SKSpriteNode) {
+        // If player direction changed, update idle animation
+        let custom = {
+            guard let previous = self.viewModel.state?.monsterStates, previous.count > to.index else {
+                return
+            }
+            if to.facing != previous[to.index].facing {
+                let c = Character(rawValue: to.asset)!
+                let direction = to.meta.isDirectional ? to.facing : nil
+                let anim = c.animFrames(direction)
+                node.removeAction(forKey: ActionType.idle)
+                node.run(anim, type: ActionType.idle)
+            }
+        }
+
         let move = walk(loc: to.loc)
-        node.run(move)
+        node.runs([.run(custom), move])
     }
 }
 

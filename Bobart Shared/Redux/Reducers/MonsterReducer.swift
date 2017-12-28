@@ -19,7 +19,7 @@ func monstersForLevel(level: Int, map: MapState) -> [MonsterState] {
     var index = 0
     for monsterId in level.mustSpawn ?? [] {
         let meta = MonsterMeta.monsterMeta(monsterId: monsterId)
-        var monster = MonsterState(meta: meta, loc: .init(x: 1, y: 1), asset: meta.asset, hp: meta.maxHp, index: index)
+        var monster = MonsterState(meta: meta, index: index)
         index += 1
         monster.loc = noWalls.notIncluding(monsterPlacementSoFar).randomItem()!
         monsterPlacementSoFar.append(monster.loc)
@@ -67,6 +67,14 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: PlayerState) 
         // Grab the next location, if missing don't move
         let nextLoc = possibleNextMove.randomItem() ?? nextMonsters[i].loc
         nextMonsters[i].loc = nextLoc
+        switch (nextMonsters[i].loc - monster.loc).normalized {
+        case MapLocation(x: 1, y: 0):
+            nextMonsters[i].facing = .r
+        case MapLocation(x: -1, y: 0):
+            nextMonsters[i].facing = .l
+        default:
+            break
+        }
 
         // Update our map
         monsterLocMap[nextLoc] = true
