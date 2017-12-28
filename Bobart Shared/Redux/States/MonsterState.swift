@@ -9,7 +9,7 @@
 import ReSwift
 
 struct MonsterState: Codable, StateType {
-    var monsterId: String
+    var meta: MonsterMeta
     var loc: MapLocation
     var asset: String
     var hp: Int

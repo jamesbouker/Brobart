@@ -96,7 +96,8 @@ fileprivate extension GameScene {
             let character = Character(rawValue: monster.asset)
             let node = SKSpriteNode(color: .red, size: CGSize(width: tileSize, height: tileSize))
             node.anchorPoint = .zero
-            let direction: Direction? = MonsterMeta.monsterMeta(monsterId: monster.monsterId).isDirectional ? .l : nil
+            let monsterId = monster.meta.monsterId
+            let direction: Direction? = MonsterMeta.monsterMeta(monsterId: monsterId).isDirectional ? .l : nil
             node.run(character!.animFrames(direction))
             let loc = monster.loc
             node.position = CGPoint(x: CGFloat(loc.x) * tileSize,

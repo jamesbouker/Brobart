@@ -15,8 +15,10 @@ struct MonsterMeta: Codable {
     var ai: String
 
     var isDirectional: Bool
-    var onDeath: String?
 
+    // Optionals
+    var onDeath: String?
+    var canFly: Bool?
     var range: Int?
     var shootRange: Int?
     var rangedItem: String?

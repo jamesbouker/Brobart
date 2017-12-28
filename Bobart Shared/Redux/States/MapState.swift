@@ -98,6 +98,10 @@ extension MapState {
         return locations.filter { !walls.contains($0) }
     }
 
+    var items: [MapLocation] {
+        return [switchLoc, chestLoc]
+    }
+
     var noWallsOrItems: [MapLocation] {
         return noWalls.filter { $0 != switchLoc && $0 != chestLoc }
     }

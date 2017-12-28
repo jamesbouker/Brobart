@@ -15,7 +15,7 @@ func monstersForLevel(level: Int) -> [MonsterState] {
     // Must Spawns
     for monsterId in level.mustSpawn ?? [] {
         let meta = MonsterMeta.monsterMeta(monsterId: monsterId)
-        let monster = MonsterState(monsterId: meta.monsterId, loc: .init(x: 1, y: 1), asset: meta.asset, hp: meta.maxHp)
+        let monster = MonsterState(meta: meta, loc: .init(x: 1, y: 1), asset: meta.asset, hp: meta.maxHp)
         monsters.append(monster)
     }
 
@@ -29,7 +29,12 @@ func moveMonsters(monsters: [MonsterState], map: MapState) -> [MonsterState] {
 
     var nextMonsters = monsters
     for (i, monster) in monsters.enumerated() {
-        nextMonsters[i].loc = monster.loc.adjacents.notIncluding(noWallsItems).randomItem()!
+        let meta = monster.meta
+        if meta.canFly ?? false {
+            nextMonsters[i].loc = monster.loc.adjacents.randomItem()!
+        } else {
+            nextMonsters[i].loc = monster.loc.adjacents.notIncluding(noWallsItems).randomItem()!
+        }
     }
     return nextMonsters
 }
