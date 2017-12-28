@@ -15,6 +15,12 @@ struct MapLocation: Codable, StateType {
 }
 
 extension Array where Element == MapLocation {
+    func inBounds(width: Int, height: Int) -> [MapLocation] {
+        return filter {
+            $0.x > 0 && $0.y > 0 && $0.x < width - 1 && $0.y < height - 1
+        }
+    }
+
     func notIncluding(_ locs: [MapLocation]?) -> [MapLocation] {
         guard let locations = locs else {
             return self

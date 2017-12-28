@@ -13,5 +13,6 @@ struct MonsterState: Codable, StateType {
     var loc: MapLocation
     var asset: String
     var hp: Int
+    var index: Int
     //    var hitDirection: Direction?
 }
