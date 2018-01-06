@@ -29,6 +29,30 @@ extension MutableCollection where Index == Int {
 }
 
 extension Array {
+    mutating func modifyWhere(_ test: (Element) -> Bool, to: (inout Element) -> ()) {
+        for index in indices {
+            var element = self[index]
+            if test(element) {
+                to(&element)
+                self[index] = element
+            }
+        }
+    }
+
+    mutating func modifyForEach(_ body: (_ index: Index, _ element: inout Element) -> ()) {
+        for index in indices {
+            modifyElement(atIndex: index) { body(index, &$0) }
+        }
+    }
+
+    mutating func modifyElement(atIndex index: Index, _ modifyElement: (_ element: inout Element) -> ()) {
+        var element = self[index]
+        modifyElement(&element)
+        self[index] = element
+    }
+}
+
+extension Array {
     public func cross(_ array: [Element]) -> [(Element, Element)] {
         var ret = [(Element, Element)]()
         for x in self {

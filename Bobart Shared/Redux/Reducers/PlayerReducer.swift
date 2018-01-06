@@ -29,7 +29,10 @@ private func movePlayer(_ action: PlayerAction, next: inout PlayerState) {
     }
 }
 
-private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: inout MapState) -> PlayerState {
+private func playerReducer(_ action: PlayerAction,
+                           _ state: PlayerState,
+                           _ map: inout MapState,
+                           _ monsters: inout [MonsterState]?) -> PlayerState {
 
     if action == .loadNextLevel {
         return initialPlayerState(map)
@@ -40,11 +43,6 @@ private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: 
 
     movePlayer(action, next: &next)
     let direction = Direction(facing: next.loc - state.loc)
-
-    // Check if player can move!
-    if map.walls.contains(next.loc) {
-        return state
-    }
 
     // Check if hitting switch!
     if map.switchLoc == next.loc {
@@ -66,13 +64,28 @@ private func playerReducer(_ action: PlayerAction, _ state: PlayerState, _ map: 
         next.loc = state.loc
     }
 
+    // Check if hitting monster
+    monsters?.modifyWhere({ $0.loc == next.loc }) {
+        $0.hp -= 1
+        next.hitDirection = direction
+        next.loc = state.loc
+    }
+
+    // Check if player can move!
+    if map.walls.contains(next.loc) {
+        next.loc = state.loc
+    }
+
     return next
 }
 
-func playerReducer(action: Action, state: PlayerState?, map: inout MapState) -> PlayerState {
+func playerReducer(action: Action,
+                   state: PlayerState?,
+                   map: inout MapState,
+                   monsters: inout [MonsterState]?) -> PlayerState {
     var next = state ?? initialPlayerState(map)
     if let action = action as? PlayerAction {
-        next = playerReducer(action, next, &map)
+        next = playerReducer(action, next, &map, &monsters)
     }
     return next
 }
