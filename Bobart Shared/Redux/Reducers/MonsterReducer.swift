@@ -40,7 +40,7 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: PlayerState) 
 
     // Create monster location map (To avoid walking on same tile)
     var monsterLocMap = [MapLocation: Bool]()
-    for monster in monsters {
+    for monster in monsters where monster.hp > 0 {
         monsterLocMap[monster.loc] = true
     }
 
@@ -49,6 +49,10 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: PlayerState) 
 
     var nextMonsters = monsters
     for (i, monster) in monsters.enumerated() {
+
+        guard monster.hp > 0 else {
+            continue
+        }
 
         // Remove the current location from the map!
         monsterLocMap.removeValue(forKey: monster.loc)

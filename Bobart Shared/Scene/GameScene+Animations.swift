@@ -58,6 +58,9 @@ private extension GameScene {
             return
         }
         let from = previous[to.index]
+        if from.hp < 0 && to.hp < 0 {
+            node.isHidden = true
+        }
 
         // If direction changed, update idle animation
         let custom = {
@@ -70,12 +73,27 @@ private extension GameScene {
             }
         }
 
+        // Add attack anim time
         if from.hp != to.hp {
+            // Could eventually change based on player attack type
+            // Basic bump attack for now is frameTime
             delay = frameTime
         }
 
-        let move = walk(loc: to.loc)
-        node.runs([.wait(forDuration: delay), .run(custom), move])
+        if to.hp > 0 {
+            let move = walk(loc: to.loc)
+            node.runs([.wait(forDuration: delay), .run(custom), move])
+        } else {
+            // If dying, blink the anim, fade it out, and remove it from the scene
+            let fadeOut = SKAction.fadeOut(withDuration: frameTime / 6.0)
+            let fadeIn = SKAction.fadeIn(withDuration: frameTime / 6.0)
+            let fade = SKAction.sequence([fadeOut, fadeIn])
+            node.runs([fade, fade, fade, fade, fadeOut, .run {
+                node.isHidden = true
+                node.removeAllActions()
+                node.removeFromParent()
+            }])
+        }
     }
 }
 
