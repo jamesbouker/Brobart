@@ -10,7 +10,7 @@ import ReSwift
 
 private func initialPlayerState(_ map: MapState) -> PlayerState {
     let location = map.noWallsOrItems.randomItem()
-    return PlayerState(facing: .l, loc: location!, hitDirection: nil)
+    return PlayerState(facing: .l, loc: location!, hitDirection: nil, hp: startingHp, maxHp: startingHp)
 }
 
 private func movePlayer(_ action: PlayerAction, next: inout PlayerState) {

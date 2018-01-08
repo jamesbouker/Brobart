@@ -15,7 +15,7 @@ struct MonsterState: Codable, StateType {
     var hp: Int
     var index: Int
     var facing: Direction
-    //    var hitDirection: Direction?
+    var hitDirection: Direction?
 
     init(meta: MonsterMeta, index: Int) {
         loc = MapLocation(x: 1, y: 1)

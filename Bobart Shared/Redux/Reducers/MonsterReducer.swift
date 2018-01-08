@@ -31,7 +31,7 @@ func monstersForLevel(level: Int, map: MapState) -> [MonsterState] {
     return monsters
 }
 
-func moveMonsters(monsters: [MonsterState], map: MapState, player: PlayerState) -> [MonsterState] {
+func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerState) -> [MonsterState] {
 
     // Sort based on distance from player (Give closer monsters priority)
     let monsters = monsters.sorted {
@@ -50,6 +50,7 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: PlayerState) 
     var nextMonsters = monsters
     for (i, monster) in monsters.enumerated() {
 
+        nextMonsters[i].hitDirection = nil
         guard monster.hp > 0 else {
             continue
         }
@@ -69,9 +70,10 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: PlayerState) 
         }
 
         // Grab the next location, if missing don't move
-        let nextLoc = possibleNextMove.randomItem() ?? nextMonsters[i].loc
-        nextMonsters[i].loc = nextLoc
-        switch (nextMonsters[i].loc - monster.loc).normalized {
+        var nextLoc = possibleNextMove.randomItem() ?? nextMonsters[i].loc
+
+        // Determine face direction
+        switch (nextLoc - monster.loc).normalized {
         case MapLocation(x: 1, y: 0):
             nextMonsters[i].facing = .r
         case MapLocation(x: -1, y: 0):
@@ -80,7 +82,15 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: PlayerState) 
             break
         }
 
-        // Update our map
+        // check if hitting the player
+        if player.loc == nextLoc {
+            player.hp -= 1
+            nextMonsters[i].hitDirection = Direction(facing: player.loc - monster.loc)
+            nextLoc = monsters[i].loc
+        }
+
+        // Update map and the next monster location
+        nextMonsters[i].loc = nextLoc
         monsterLocMap[nextLoc] = true
     }
 
@@ -90,7 +100,7 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: PlayerState) 
     }
 }
 
-func monsterReducer(action: Action, state: [MonsterState]?, map: MapState, player: PlayerState) -> [MonsterState] {
+func monsterReducer(action: Action, state: [MonsterState]?, map: MapState, player: inout PlayerState) -> [MonsterState] {
     guard let next = state else {
         return monstersForLevel(level: 1, map: map)
     }
@@ -101,5 +111,5 @@ func monsterReducer(action: Action, state: [MonsterState]?, map: MapState, playe
     if action == .loadNextLevel {
         return monstersForLevel(level: map.level, map: map)
     }
-    return moveMonsters(monsters: next, map: map, player: player)
+    return moveMonsters(monsters: next, map: map, player: &player)
 }

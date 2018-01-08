@@ -13,7 +13,7 @@ func gameReducer(action: Action, state: GameState?) -> GameState {
     var map = mapReducer(action: action, state: state?.mapState)
     var monsters = state?.monsterStates
 
-    let player = playerReducer(action: action,
+    var player = playerReducer(action: action,
                                state: state?.playerState,
                                map: &map,
                                monsters: &monsters)
@@ -21,7 +21,7 @@ func gameReducer(action: Action, state: GameState?) -> GameState {
     monsters = monsterReducer(action: action,
                               state: monsters,
                               map: map,
-                              player: player)
+                              player: &player)
 
     return GameState(mapState: map, playerState: player, monsterStates: monsters!)
 }

@@ -78,7 +78,7 @@ private extension GameScene {
             }
         }
 
-        // Add attack anim time
+        // Add getting attacked (Player attack animation time) to the delay
         if from.hp != to.hp {
             // Could eventually change based on player attack type
             // Basic bump attack for now is frameTime
@@ -87,7 +87,16 @@ private extension GameScene {
 
         // Alive - animate the monster
         if to.hp > 0 {
-            let move = walk(loc: to.loc)
+            let move: SKAction
+            if let direction = to.hitDirection {
+                // Add attacking the player animation time to the delay
+                // Could eventually change based on enemy ranged attack time
+                // Basic bump attack for now is frameTime
+                delay += frameTime
+                move = bump(direction: direction)
+            } else {
+                move = walk(loc: to.loc)
+            }
             node.runs([.wait(forDuration: delay), .run(custom), move])
             return frameTime + delay
         }
