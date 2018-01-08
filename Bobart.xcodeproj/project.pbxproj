@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08D7DDF98D3CE74332CD3CED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360275AF2BED8CDAA4967FB1 /* SystemConfiguration.framework */; };
+		47BB91F94500E8A514805F85 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8E421095BB4B953F1E71F8 /* AVFoundation.framework */; };
 		54C8F0586351F89D64429938 /* Pods_Bobart_watchOS_App_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0216DA5DACC6EF2682A0C5 /* Pods_Bobart_watchOS_App_Extension.framework */; };
+		57EB8F7AF1239DFA483E80EF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3364C17D6CF0A2BC586D782 /* CoreMedia.framework */; };
+		7B0D064943196C8A14B40904 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F3D8CB8559BDF9C9814053 /* CoreVideo.framework */; };
 		9D03CA7474ABDA02A4332572 /* Pods_Bobart_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4ADE3256EAD277A1D3FEE5 /* Pods_Bobart_tvOS.framework */; };
+		A0411E252BFD89A4BD574F2B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACF09B82A9C46AE8B9F9633 /* CoreTelephony.framework */; };
+		A41968B6520D00EED0F5C15F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0D73BE6C839031E1CB4FF6 /* AssetsLibrary.framework */; };
 		AB3174000223ADDA21363A68 /* Pods_Bobart_watchOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F548929185E6252B2F9B37 /* Pods_Bobart_watchOS_App.framework */; };
+		CFC2C33AE132543086F4FD56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D12E8B996D90EF2580250A /* QuartzCore.framework */; };
 		D6239609FD11BFD6D2D7CAEC /* Pods_Bobart_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F38EB7B443A5802C3B5761 /* Pods_Bobart_Tests.framework */; };
+		E04BD0C1D277CC3B4FC701F3 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F2FE31FBF768BDF71D6248 /* BuddyBuildSDK.framework */; };
+		E150DF69EEFF25CCAD6FB9EE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7275B880641EB028792FBF6 /* CoreText.framework */; };
 		F500EC5B1FB2AAC90057C05F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFCB461FB2932B00DB8195 /* GameViewController.swift */; };
 		F500EC5E1FB2B1510057C05F /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500EC5D1FB2B1510057C05F /* MapLocation.swift */; };
 		F500EC5F1FB2B1590057C05F /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500EC5D1FB2B1510057C05F /* MapLocation.swift */; };
@@ -236,15 +245,25 @@
 		11698892DD5A0658D6F1163D /* Pods_Bobart_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E266F10D908CA499F464F09 /* Pods-Bobart tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart tvOS/Pods-Bobart tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		2E8A61BD9AE940B7C3C88026 /* Pods-Bobart iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart iOS/Pods-Bobart iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		360275AF2BED8CDAA4967FB1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		42F38EB7B443A5802C3B5761 /* Pods_Bobart_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F548929185E6252B2F9B37 /* Pods_Bobart_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_watchOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B5477E2C3EC4C8B15C01F7 /* Pods-Bobart iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart iOS/Pods-Bobart iOS.release.xcconfig"; sourceTree = "<group>"; };
+		4E8E421095BB4B953F1E71F8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		76D12E8B996D90EF2580250A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7A0216DA5DACC6EF2682A0C5 /* Pods_Bobart_watchOS_App_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_watchOS_App_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B9C402379826F88D92F54F /* Pods-Bobart Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart Tests/Pods-Bobart Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B0F2FE31FBF768BDF71D6248 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		B5B85DF04039C5EEC6B0F16D /* Pods-Bobart watchOS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App/Pods-Bobart watchOS App.debug.xcconfig"; sourceTree = "<group>"; };
+		B7F3D8CB8559BDF9C9814053 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		B86D5B1CFB663FAC077F5AB1 /* Pods-Bobart watchOS App Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App Extension/Pods-Bobart watchOS App Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		C2C6EBC422203CAFA90823EE /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		D7275B880641EB028792FBF6 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		DACF09B82A9C46AE8B9F9633 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		DE0D73BE6C839031E1CB4FF6 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E26B61DAF4250B6B37252B5B /* Pods-Bobart tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart tvOS/Pods-Bobart tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E3A7FC1A38B0BBDA830461C0 /* Pods-Bobart watchOS App Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App Extension/Pods-Bobart watchOS App Extension.release.xcconfig"; sourceTree = "<group>"; };
+		F3364C17D6CF0A2BC586D782 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		F500EC5D1FB2B1510057C05F /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		F500EC611FB2B3A20057C05F /* GameReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameReducer.swift; sourceTree = "<group>"; };
 		F50A65071FB55A890076245E /* Bobart Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bobart Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,6 +361,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55C9788B2AF8CFCE6A66F85 /* Pods_Bobart_iOS.framework in Frameworks */,
+				E04BD0C1D277CC3B4FC701F3 /* BuddyBuildSDK.framework in Frameworks */,
+				A41968B6520D00EED0F5C15F /* AssetsLibrary.framework in Frameworks */,
+				E150DF69EEFF25CCAD6FB9EE /* CoreText.framework in Frameworks */,
+				A0411E252BFD89A4BD574F2B /* CoreTelephony.framework in Frameworks */,
+				08D7DDF98D3CE74332CD3CED /* SystemConfiguration.framework in Frameworks */,
+				CFC2C33AE132543086F4FD56 /* QuartzCore.framework in Frameworks */,
+				47BB91F94500E8A514805F85 /* AVFoundation.framework in Frameworks */,
+				57EB8F7AF1239DFA483E80EF /* CoreMedia.framework in Frameworks */,
+				7B0D064943196C8A14B40904 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +417,15 @@
 				44F548929185E6252B2F9B37 /* Pods_Bobart_watchOS_App.framework */,
 				7A0216DA5DACC6EF2682A0C5 /* Pods_Bobart_watchOS_App_Extension.framework */,
 				42F38EB7B443A5802C3B5761 /* Pods_Bobart_Tests.framework */,
+				B0F2FE31FBF768BDF71D6248 /* BuddyBuildSDK.framework */,
+				DE0D73BE6C839031E1CB4FF6 /* AssetsLibrary.framework */,
+				D7275B880641EB028792FBF6 /* CoreText.framework */,
+				DACF09B82A9C46AE8B9F9633 /* CoreTelephony.framework */,
+				360275AF2BED8CDAA4967FB1 /* SystemConfiguration.framework */,
+				76D12E8B996D90EF2580250A /* QuartzCore.framework */,
+				4E8E421095BB4B953F1E71F8 /* AVFoundation.framework */,
+				F3364C17D6CF0A2BC586D782 /* CoreMedia.framework */,
+				B7F3D8CB8559BDF9C9814053 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -553,6 +590,7 @@
 				F5DFCB421FB2932B00DB8195 /* Products */,
 				1E539EB1CB75AA91AF78D09B /* Pods */,
 				C40F7690F5537A1C646FE92A /* Frameworks */,
+				C2C6EBC422203CAFA90823EE /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1578,12 +1616,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KM367XE7J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Bobart iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart;
 				PRODUCT_NAME = Bobart;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1597,12 +1640,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KM367XE7J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Bobart iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JimmyBouker.Bobart;
 				PRODUCT_NAME = Bobart;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
