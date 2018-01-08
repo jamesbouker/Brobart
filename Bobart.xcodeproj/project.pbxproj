@@ -450,7 +450,7 @@
 			path = "Proc Gen";
 			sourceTree = "<group>";
 		};
-		F59608461FB2956D00F42D2B /* Resources */ = {
+		F59608461FB2956D00F42D2B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				F59608471FB295B200F42D2B /* Default.sks */,
@@ -458,7 +458,7 @@
 				F596084D1FB295B200F42D2B /* Sprite Sheets */,
 				F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */,
 			);
-			path = Resources;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		F59608481FB295B200F42D2B /* JSON */ = {
@@ -488,7 +488,7 @@
 			path = "Sprite Sheets";
 			sourceTree = "<group>";
 		};
-		F59608841FB2968400F42D2B /* Game */ = {
+		F59608841FB2968400F42D2B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				F59608861FB2968400F42D2B /* GameScene.swift */,
@@ -496,7 +496,7 @@
 				F5A102701FB2C6B900A2F4EE /* GameScene+Layout.swift */,
 				F5AC79051FB56DE3000FC8BC /* GameSceneModel.swift */,
 			);
-			path = Game;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		F59608921FB2999F00F42D2B /* Redux */ = {
@@ -559,11 +559,10 @@
 		F5DFCB381FB2932B00DB8195 /* Bobart Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F59608461FB2956D00F42D2B /* Resources */,
-				F59608841FB2968400F42D2B /* Game */,
+				F59608461FB2956D00F42D2B /* Assets */,
 				F5F8325F1FB7F8FB00B0BD4F /* Meta Objects */,
-				F55E22C71FBFD24D00CD68C6 /* Proc Gen */,
 				F59608921FB2999F00F42D2B /* Redux */,
+				F59608841FB2968400F42D2B /* Scene */,
 				F59608971FB2A07600F42D2B /* SDK */,
 			);
 			path = "Bobart Shared";
@@ -630,6 +629,7 @@
 			children = (
 				F5F832601FB7F91900B0BD4F /* LevelMeta.swift */,
 				F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */,
+				F55E22C71FBFD24D00CD68C6 /* Proc Gen */,
 			);
 			path = "Meta Objects";
 			sourceTree = "<group>";

@@ -65,11 +65,11 @@ private func playerReducer(_ action: PlayerAction,
     }
 
     // Check if hitting monster
-    monsters?.modifyWhere({ $0.loc == next.loc }) {
+    monsters?.modifyWhere({ $0.loc == next.loc }, to: {
         $0.hp -= 1
         next.hitDirection = direction
         next.loc = state.loc
-    }
+    })
 
     // Check if player can move!
     if map.walls.contains(next.loc) {
