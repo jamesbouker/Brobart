@@ -12,7 +12,7 @@ import SpriteKit
 extension GameScene {
     func animate(to: GameState, done: @escaping () -> Void) {
 
-        let animDuration = frameTime
+        var animDuration = frameTime
         let action = SKAction.run {
 
             // Animate the player!
@@ -21,13 +21,17 @@ extension GameScene {
             // Animate the monsters!
             for (i, monster) in self.monsters.enumerated() {
                 let state = to.monsterStates[i]
-                self.monsterAnim(to: state, for: monster)
+                let duration = self.monsterAnim(to: state, for: monster)
+                if animDuration < duration {
+                    animDuration = duration
+                }
             }
-        }
 
-        runs([action, .wait(forDuration: animDuration), .run {
-            done()
-        }])
+            self.runs([.wait(forDuration: animDuration), .run {
+                done()
+            }])
+        }
+        run(action)
     }
 }
 
@@ -50,16 +54,17 @@ private extension GameScene {
 
 // MARK: - Monster Animations
 private extension GameScene {
-    func monsterAnim(to: MonsterState, for node: SKSpriteNode) {
+    func monsterAnim(to: MonsterState, for node: SKSpriteNode) -> TimeInterval {
         var delay: TimeInterval = 0.0
 
         guard let previous = self.viewModel.state?.monsterStates, previous.count > to.index else {
             node.run(walk(loc: to.loc))
-            return
+            return frameTime
         }
         let from = previous[to.index]
-        if from.hp < 0 && to.hp < 0 {
+        if from.hp <= 0 && to.hp <= 0 {
             node.isHidden = true
+            return 0
         }
 
         // If direction changed, update idle animation
@@ -80,20 +85,24 @@ private extension GameScene {
             delay = frameTime
         }
 
+        // Alive - animate the monster
         if to.hp > 0 {
             let move = walk(loc: to.loc)
             node.runs([.wait(forDuration: delay), .run(custom), move])
-        } else {
-            // If dying, blink the anim, fade it out, and remove it from the scene
-            let fadeOut = SKAction.fadeOut(withDuration: frameTime / 6.0)
-            let fadeIn = SKAction.fadeIn(withDuration: frameTime / 6.0)
-            let fade = SKAction.sequence([fadeOut, fadeIn])
-            node.runs([fade, fade, fade, fade, fadeOut, .run {
-                node.isHidden = true
-                node.removeAllActions()
-                node.removeFromParent()
-            }])
+            return frameTime + delay
         }
+
+        // If dying, blink the anim, fade it out, and remove it from the scene
+        let fadeOut = SKAction.fadeOut(withDuration: frameTime / 6.0)
+        let fadeIn = SKAction.fadeIn(withDuration: frameTime / 6.0)
+        let fade = SKAction.sequence([fadeOut, fadeIn])
+        let death = SKAction.sequence([fade, fade, fade, fade, fadeOut])
+        node.runs([.wait(forDuration: delay), death, .run {
+            node.isHidden = true
+            node.removeAllActions()
+            node.removeFromParent()
+        }])
+        return 1.5 * frameTime + delay
     }
 }
 
