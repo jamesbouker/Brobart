@@ -100,7 +100,12 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerS
     }
 }
 
-func monsterReducer(action: Action, state: [MonsterState]?, map: MapState, player: inout PlayerState) -> [MonsterState] {
+func monsterReducer(action: Action,
+                    state: [MonsterState]?,
+                    map: MapState,
+                    player: inout PlayerState)
+    -> [MonsterState] {
+
     guard let next = state else {
         return monstersForLevel(level: 1, map: map)
     }
