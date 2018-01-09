@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import BuddyBuildSDK
 
 var store: Store<GameState> = Store(reducer: gameReducer, state: nil)
 
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        BuddyBuildSDK.setup()
         return true
     }
 }
