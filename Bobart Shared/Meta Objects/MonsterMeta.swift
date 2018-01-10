@@ -12,15 +12,13 @@ struct MonsterMeta: Codable {
     var monsterId: String
     var maxHp: Int
     var asset: String
-    var ai: String
-
+    var sightRange: Int
+    var attackRange: Int
     var isDirectional: Bool
+    var canFly: Bool
 
     // Optionals
     var onDeath: String?
-    var canFly: Bool?
-    var range: Int?
-    var shootRange: Int?
     var rangedItem: String?
 }
 
