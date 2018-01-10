@@ -127,7 +127,10 @@ private extension GameScene {
 
         // If player direction changed, update idle animation
         let custom = {
-            if to.playerState.facing != self.viewModel.state?.playerState.facing {
+            if to.playerState.hp <= 0 {
+                self.player.removeAllActions()
+                self.player.texture = SKTexture.pixelatedImage(file: "rip")
+            } else if to.playerState.facing != self.viewModel.state?.playerState.facing {
                 let c = Character.wizard
                 let anim = c.animFrames(to.playerState.facing)
                 self.player.removeAction(forKey: ActionType.idle)

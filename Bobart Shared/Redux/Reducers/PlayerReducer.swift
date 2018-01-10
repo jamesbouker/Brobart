@@ -41,6 +41,10 @@ private func playerReducer(_ action: PlayerAction,
     var next = state
     next.hitDirection = nil
 
+    guard next.hp > 0 else {
+        return next
+    }
+
     movePlayer(action, next: &next)
     let direction = Direction(facing: next.loc - state.loc)
 
