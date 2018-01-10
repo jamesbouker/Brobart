@@ -54,12 +54,19 @@ extension GameSceneModel: StoreSubscriber {
         return state.playerState.loc == state.mapState.stairLoc && state.mapState.switchHit
     }
 
+    private func anyoneAttacked() -> Bool {
+        guard let state = state else { return false }
+        return state.playerState.hitDirection != nil || state.monsterStates.contains { $0.hitDirection != nil }
+    }
+
     private func finishStateTransition(to: GameState) {
         state = to
         isExecuting = false
         if onStairs() {
             actions.removeAll()
             playerAction = .loadNextLevel
+        } else if anyoneAttacked() {
+            actions.removeAll()
         } else {
             self.executeFirstAction()
         }
