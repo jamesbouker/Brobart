@@ -31,6 +31,9 @@
 		F51095ED1FB2BFD30075F6EF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F51095EC1FB2BFD30075F6EF /* GameScene.sks */; };
 		F51095EE1FB2C02E0075F6EF /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59608931FB29A2000F42D2B /* GameState.swift */; };
 		F516BD0A1FB2BBB1001E8173 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F516BD091FB2BBB1001E8173 /* GameScene.sks */; };
+		F518994120071CA900E7F0F8 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518994020071CA900E7F0F8 /* Dictionary+Extensions.swift */; };
+		F518994220071CA900E7F0F8 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518994020071CA900E7F0F8 /* Dictionary+Extensions.swift */; };
+		F518994320071CB100E7F0F8 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518994020071CA900E7F0F8 /* Dictionary+Extensions.swift */; };
 		F525B5651FB4128600982E71 /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5641FB4128600982E71 /* PlayerReducer.swift */; };
 		F525B5661FB4128600982E71 /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5641FB4128600982E71 /* PlayerReducer.swift */; };
 		F525B5671FB4128600982E71 /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5641FB4128600982E71 /* PlayerReducer.swift */; };
@@ -253,7 +256,7 @@
 		76D12E8B996D90EF2580250A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7A0216DA5DACC6EF2682A0C5 /* Pods_Bobart_watchOS_App_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bobart_watchOS_App_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B9C402379826F88D92F54F /* Pods-Bobart Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart Tests/Pods-Bobart Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B0F2FE31FBF768BDF71D6248 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		B0F2FE31FBF768BDF71D6248 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		B5B85DF04039C5EEC6B0F16D /* Pods-Bobart watchOS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App/Pods-Bobart watchOS App.debug.xcconfig"; sourceTree = "<group>"; };
 		B7F3D8CB8559BDF9C9814053 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		B86D5B1CFB663FAC077F5AB1 /* Pods-Bobart watchOS App Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bobart watchOS App Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bobart watchOS App Extension/Pods-Bobart watchOS App Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 		F50A650B1FB55A890076245E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51095EC1FB2BFD30075F6EF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		F516BD091FB2BBB1001E8173 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		F518994020071CA900E7F0F8 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		F525B5641FB4128600982E71 /* PlayerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerReducer.swift; sourceTree = "<group>"; };
 		F525B5681FB412A200982E71 /* MapReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReducer.swift; sourceTree = "<group>"; };
 		F55E22C81FBFD25D00CD68C6 /* MazeThinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeThinner.swift; sourceTree = "<group>"; };
@@ -574,6 +578,7 @@
 				F59608AE1FB2A07600F42D2B /* TextureExtensions.swift */,
 				F59608AF1FB2A07600F42D2B /* TileMapExtensions.swift */,
 				F59608B01FB2A07600F42D2B /* Vector3.swift */,
+				F518994020071CA900E7F0F8 /* Dictionary+Extensions.swift */,
 			);
 			path = SKTUtils;
 			sourceTree = "<group>";
@@ -1230,6 +1235,7 @@
 				F5A7AC031FC93E6B00B37D0B /* MonsterState.swift in Sources */,
 				F5A7AC071FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
 				F5DFCB451FB2932B00DB8195 /* AppDelegate.swift in Sources */,
+				F518994120071CA900E7F0F8 /* Dictionary+Extensions.swift in Sources */,
 				F5C108E41FB4162E00F2F771 /* PlayerState.swift in Sources */,
 				F59608E51FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
 				F5C108E01FB4160A00F2F771 /* MapState.swift in Sources */,
@@ -1274,6 +1280,7 @@
 				F5A7AC041FC93E6B00B37D0B /* MonsterState.swift in Sources */,
 				F5A7AC081FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
 				F59608E31FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
+				F518994320071CB100E7F0F8 /* Dictionary+Extensions.swift in Sources */,
 				F5C108E51FB4162E00F2F771 /* PlayerState.swift in Sources */,
 				F59608F21FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
 				F5C108E11FB4160A00F2F771 /* MapState.swift in Sources */,
@@ -1318,6 +1325,7 @@
 				F5A7AC051FC93E6B00B37D0B /* MonsterState.swift in Sources */,
 				F5A7AC091FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
 				F59608C31FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */,
+				F518994220071CA900E7F0F8 /* Dictionary+Extensions.swift in Sources */,
 				F5C108E61FB4162E00F2F771 /* PlayerState.swift in Sources */,
 				F59608C91FB2A07600F42D2B /* Array+Extensions.swift in Sources */,
 				F5C108E21FB4160A00F2F771 /* MapState.swift in Sources */,

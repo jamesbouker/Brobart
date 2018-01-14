@@ -79,6 +79,10 @@ extension MapLocation: Equatable, Hashable {
         return abs(x) + abs(y)
     }
 
+    func inLine(_ a: MapLocation) -> Bool {
+        return a.x == x || a.y == y
+    }
+
     var normalized: MapLocation {
         if x == 0 && y == 0 {
             return self

@@ -7,7 +7,7 @@
         "atlas" : "brick",
         "grass" : 0,
         "torches" : 3,
-        "mustSpawn" : ["blueSlime"]
+        "mustSpawn" : ["blueSlime","blueSlime","blueSlime","blueSlime","blueSlime"]
 	},
     "2" : {
         "minWidth" : 7,

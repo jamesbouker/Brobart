@@ -31,6 +31,51 @@ func monstersForLevel(level: Int, map: MapState) -> [MonsterState] {
     return monsters
 }
 
+private func removeWalls(_ locs: [MapLocation], wallItemMap: [MapLocation: Bool]) -> [MapLocation] {
+    var foundWall = false
+    var locations = locs
+    for loc in locs.enumerated() {
+        if foundWall || wallItemMap.hasKey(loc.element) {
+            foundWall = true
+            locations.remove(at: loc.offset)
+        }
+    }
+    return locations
+}
+
+private func visibleLocations(monster: MonsterState, wallItemMap: [MapLocation: Bool]) -> [MapLocation] {
+    let numbers = Array(1 ... monster.meta.sightRange)
+
+    var northLocations = numbers.map { MapLocation(x: monster.loc.x, y: monster.loc.y + $0) }
+    northLocations = removeWalls(northLocations, wallItemMap: wallItemMap)
+
+    var southLocations = numbers.map { MapLocation(x: monster.loc.x, y: monster.loc.y - $0) }
+    southLocations = removeWalls(southLocations, wallItemMap: wallItemMap)
+
+    var westLocations = numbers.map { MapLocation(x: monster.loc.x - $0, y: monster.loc.y) }
+    westLocations = removeWalls(westLocations, wallItemMap: wallItemMap)
+
+    var eastLocations = numbers.map { MapLocation(x: monster.loc.x + $0, y: monster.loc.y) }
+    eastLocations = removeWalls(eastLocations, wallItemMap: wallItemMap)
+
+    return northLocations + southLocations + westLocations + eastLocations
+}
+
+private func canSeePlayer(_ monster: MonsterState,
+                          wallItemMap: [MapLocation: Bool],
+                          player: PlayerState) -> MapLocation? {
+    guard
+        player.loc.inLine(monster.loc) &&
+        (player.loc - monster.loc).length <= monster.meta.sightRange else {
+        return nil
+    }
+    let visibles = visibleLocations(monster: monster, wallItemMap: wallItemMap)
+    if visibles.contains(player.loc) {
+        return (player.loc - monster.loc).normalized + monster.loc
+    }
+    return nil
+}
+
 func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerState) -> [MonsterState] {
 
     // Sort based on distance from player (Give closer monsters priority)
@@ -57,23 +102,29 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerS
 
         // Remove the current location from the map!
         monsterLocMap.removeValue(forKey: monster.loc)
+        var nextLoc = canSeePlayer(monster, wallItemMap: wallItemMap, player: player)
 
-        // Find next possible spots
-        var possibleNextMove = monster.loc.adjacents.inBounds(width: map.width, height: map.height)
-        possibleNextMove.filtered {
-            monsterLocMap[$0] != true
-        }
-        if monster.meta.canFly != true {
-            possibleNextMove = possibleNextMove.filter {
-                !(wallItemMap[$0] ?? false)
+        if nextLoc == nil || monsterLocMap.hasKey(nextLoc!) {
+            // Find next possible spots
+            var possibleNextMove = monster.loc.adjacents.inBounds(width: map.width, height: map.height)
+            possibleNextMove.filtered {
+                !monsterLocMap.hasKey($0)
             }
+
+            // If can't fly, remove walls from next moves
+            if monster.meta.canFly != true {
+                possibleNextMove = possibleNextMove.filter {
+                    !wallItemMap.hasKey($0)
+                }
+            }
+
+            // Grab the next location, if missing don't move
+            nextLoc = possibleNextMove.randomItem()
         }
 
-        // Grab the next location, if missing don't move
-        var nextLoc = possibleNextMove.randomItem() ?? nextMonsters[i].loc
-
+        var loc = nextLoc ?? nextMonsters[i].loc
         // Determine face direction
-        switch (nextLoc - monster.loc).normalized {
+        switch (loc - monster.loc).normalized {
         case MapLocation(x: 1, y: 0):
             nextMonsters[i].facing = .r
         case MapLocation(x: -1, y: 0):
@@ -86,12 +137,12 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerS
         if player.loc == nextLoc {
             player.hp -= 1
             nextMonsters[i].hitDirection = Direction(facing: player.loc - monster.loc)
-            nextLoc = monsters[i].loc
+            loc = monsters[i].loc
         }
 
         // Update map and the next monster location
-        nextMonsters[i].loc = nextLoc
-        monsterLocMap[nextLoc] = true
+        nextMonsters[i].loc = loc
+        monsterLocMap[loc] = true
     }
 
     // return them with original index based sort
