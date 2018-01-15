@@ -13,7 +13,7 @@
         "monsterId" : "blueSlime",
         "maxHp" : 1,
         "asset" : "slime",
-        "sightRange" : 1,
+        "sightRange" : 3,
         "attackRange" : 1,
         "isDirectional" : true,
         "canFly" : false

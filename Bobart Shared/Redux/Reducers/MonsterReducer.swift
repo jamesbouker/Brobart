@@ -33,11 +33,13 @@ func monstersForLevel(level: Int, map: MapState) -> [MonsterState] {
 
 private func removeWalls(_ locs: [MapLocation], wallItemMap: [MapLocation: Bool]) -> [MapLocation] {
     var foundWall = false
-    var locations = locs
+    var locations = [MapLocation]()
+
     for loc in locs.enumerated() {
         if foundWall || wallItemMap.hasKey(loc.element) {
             foundWall = true
-            locations.remove(at: loc.offset)
+        } else {
+            locations.append(loc.element)
         }
     }
     return locations
