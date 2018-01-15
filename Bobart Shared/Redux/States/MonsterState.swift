@@ -8,8 +8,9 @@
 
 import ReSwift
 
-struct MonsterState: Codable, StateType {
+struct MonsterState: Codable, StateType, Equatable, Hashable {
     var meta: MonsterMeta
+    var uuid: String
     var loc: MapLocation
     var asset: String
     var hp: Int
@@ -22,7 +23,16 @@ struct MonsterState: Codable, StateType {
         asset = meta.asset
         hp = meta.maxHp
         facing = .l
+        uuid = UUID().uuidString
         self.index = index
         self.meta = meta
+    }
+
+    public var hashValue: Int  {
+        return uuid.hashValue
+    }
+
+    static func ==(lhs: MonsterState, rhs: MonsterState) -> Bool {
+        return lhs.index == rhs.index && lhs.uuid == rhs.uuid
     }
 }

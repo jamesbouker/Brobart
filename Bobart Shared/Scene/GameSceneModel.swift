@@ -11,7 +11,7 @@ import SpriteKit
 
 typealias Completion = () -> Void
 typealias LayoutFunc = (GameState) -> Void
-typealias AnimateFunc = (GameState, @escaping Completion) -> Void
+typealias AnimateFunc = (GameState, GameState, @escaping Completion) -> Void
 
 class GameSceneModel {
     var state: GameState?
@@ -73,16 +73,16 @@ extension GameSceneModel: StoreSubscriber {
     }
 
     func newState(state: GameState) {
-        if self.state == nil {
-            layoutFunc(state)
-            finishStateTransition(to: state)
-        } else {
+        if let from = self.state {
             isExecuting = true
             self.layoutFunc(state)
 
-            animFunc(state, {
+            animFunc(state, from, {
                 self.finishStateTransition(to: state)
             })
+        } else {
+            layoutFunc(state)
+            finishStateTransition(to: state)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import ReSwift
 
-func monstersForLevel(level: Int, map: MapState) -> [MonsterState] {
+func monstersForLevel(level: Int, map: MapState, player: PlayerState) -> [MonsterState] {
     var monsters = [MonsterState]()
     let level = LevelMeta.levelMeta(level: level)
 
@@ -21,13 +21,10 @@ func monstersForLevel(level: Int, map: MapState) -> [MonsterState] {
         let meta = MonsterMeta.monsterMeta(monsterId: monsterId)
         var monster = MonsterState(meta: meta, index: index)
         index += 1
-        monster.loc = noWalls.notIncluding(monsterPlacementSoFar).randomItem()!
+        monster.loc = noWalls.notIncluding(monsterPlacementSoFar).notIncluding([player.loc]).randomItem()!
         monsterPlacementSoFar.append(monster.loc)
         monsters.append(monster)
     }
-
-    // Can Spawns
-    // TODO:
     return monsters
 }
 
@@ -160,14 +157,14 @@ func monsterReducer(action: Action,
     -> [MonsterState] {
 
     guard let next = state else {
-        return monstersForLevel(level: 1, map: map)
+        return monstersForLevel(level: 1, map: map, player: player)
     }
     guard let action = action as? PlayerAction else {
         return next
     }
 
     if action == .loadNextLevel {
-        return monstersForLevel(level: map.level, map: map)
+        return monstersForLevel(level: map.level, map: map, player: player)
     }
     return moveMonsters(monsters: next, map: map, player: &player)
 }

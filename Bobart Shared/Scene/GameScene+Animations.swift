@@ -10,21 +10,46 @@ import SpriteKit
 
 // MARK: - Main
 extension GameScene {
-    func animate(to: GameState, done: @escaping () -> Void) {
+    func animate(to: GameState, from: GameState, done: @escaping () -> Void) {
 
-        var animDuration = frameTime
+        var animDuration = 0.0
         let action = SKAction.run {
 
             // Animate the player!
-            self.playerAnim(to: to)
+            let playerDuration = self.playerAnim(to: to)
 
-            // Animate the monsters!
-            for (i, monster) in self.monsters.enumerated() {
-                let state = to.monsterStates[i]
-                let duration = self.monsterAnim(to: state, for: monster)
-                if animDuration < duration {
-                    animDuration = duration
-                }
+            // Find monsters getting hurt
+            var hurtMonsters = [MonsterState: MonsterState]()
+            if to.mapState.level == from.mapState.level {
+                let mon = to.monsterStates.filter { $0.hp != from.monsterStates[$0.index].hp }
+                hurtMonsters = mon.toDictionary { $0 }
+            }
+
+            // Animate monsters getting hurt all at once
+            var monsterHurtAnim = 0.0
+            for hurt in hurtMonsters.values {
+                monsterHurtAnim = max(monsterHurtAnim,
+                                      self.monsterAnim(to: hurt,
+                                                       for: self.monsters[hurt.index],
+                                                       startDelay: animDuration))
+            }
+            animDuration += monsterHurtAnim
+
+            // Animate monsters NOT (getting hurt || attacking player)
+            var monsterWalkAnim = 0.0
+            let walking = to.monsterStates.filter { !hurtMonsters.hasKey($0) && $0.hitDirection == nil }
+            for w in walking {
+                monsterWalkAnim = max(monsterWalkAnim,
+                                      self.monsterAnim(to: w, for: self.monsters[w.index], startDelay: monsterHurtAnim))
+            }
+            animDuration += max(playerDuration, monsterWalkAnim)
+
+            // Animate monsters hurting player!
+            let monstersAttacking = to.monsterStates.filter { $0.hitDirection != nil }
+            for attacker in monstersAttacking {
+                animDuration += self.monsterAnim(to: attacker,
+                                                   for: self.monsters[attacker.index],
+                                                   startDelay: animDuration)
             }
 
             self.runs([.wait(forDuration: animDuration), .run {
@@ -54,11 +79,14 @@ private extension GameScene {
 
 // MARK: - Monster Animations
 private extension GameScene {
-    func monsterAnim(to: MonsterState, for node: SKSpriteNode) -> TimeInterval {
-        var delay: TimeInterval = 0.0
 
+    @discardableResult
+    func monsterAnim(to: MonsterState, for node: SKSpriteNode, startDelay: TimeInterval) -> TimeInterval {
         guard let previous = self.viewModel.state?.monsterStates, previous.count > to.index else {
-            node.run(walk(loc: to.loc))
+            assert(false, "This should never happen!")
+            // This can happen - fix it eventually please
+
+            node.runs([.wait(forDuration: startDelay), walk(loc: to.loc)])
             return frameTime
         }
         let from = previous[to.index]
@@ -78,27 +106,16 @@ private extension GameScene {
             }
         }
 
-        // Add getting attacked (Player attack animation time) to the delay
-        if from.hp != to.hp {
-            // Could eventually change based on player attack type
-            // Basic bump attack for now is frameTime
-            delay = frameTime
-        }
-
         // Alive - animate the monster
         if to.hp > 0 {
             let move: SKAction
             if let direction = to.hitDirection {
-                // Add attacking the player animation time to the delay
-                // Could eventually change based on enemy ranged attack time
-                // Basic bump attack for now is frameTime
-                delay += frameTime
                 move = bump(direction: direction)
             } else {
                 move = walk(loc: to.loc)
             }
-            node.runs([.wait(forDuration: delay), .run(custom), move])
-            return frameTime + delay
+            node.runs([.wait(forDuration: startDelay), .run(custom), move])
+            return frameTime
         }
 
         // If dying, blink the anim, fade it out, and remove it from the scene
@@ -106,18 +123,18 @@ private extension GameScene {
         let fadeIn = SKAction.fadeIn(withDuration: frameTime / 6.0)
         let fade = SKAction.sequence([fadeOut, fadeIn])
         let death = SKAction.sequence([fade, fade, fade, fade, fadeOut])
-        node.runs([.wait(forDuration: delay), death, .run {
+        node.runs([.wait(forDuration: startDelay), death, .run {
             node.isHidden = true
             node.removeAllActions()
             node.removeFromParent()
         }])
-        return 1.5 * frameTime + delay
+        return 1.5 * frameTime
     }
 }
 
 // MARK: - Player Animations
 private extension GameScene {
-    func playerAnim(to: GameState) {
+    func playerAnim(to: GameState) -> TimeInterval {
         var move = walk(loc: to.playerState.loc)
 
         // Animate right away if changing levels
@@ -148,5 +165,7 @@ private extension GameScene {
 
         // Run the animation on the player
         player.run(anim)
+
+        return frameTime
     }
 }
