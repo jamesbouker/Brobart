@@ -43,7 +43,7 @@ extension GameScene {
             animDuration += max(playerDuration, monsterWalkAnim)
 
             // Animate monsters hurting player!
-            let monstersAttacking = to.monsterStates.filter { $0.hitDirection != nil}
+            let monstersAttacking = to.monsterStates.filter { $0.hitDirection != nil }
             for attacker in monstersAttacking {
                 animDuration += self.monsterAnim(attacker, to.playerState, self.monsters[attacker.index], animDuration)
             }
