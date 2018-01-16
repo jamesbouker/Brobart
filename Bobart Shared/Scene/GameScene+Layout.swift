@@ -94,7 +94,7 @@ fileprivate extension GameScene {
 
         for monster in monsters {
             let character = Character(rawValue: monster.asset)
-            let node = SKSpriteNode(color: .red, size: CGSize(width: tileSize, height: tileSize))
+            let node = SKSpriteNode(color: .red, size: tileSize_sz)
             node.anchorPoint = .zero
             let monsterId = monster.meta.monsterId
             let direction: Direction? = MonsterMeta.monsterMeta(monsterId: monsterId).isDirectional ? .l : nil

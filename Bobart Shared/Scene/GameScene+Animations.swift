@@ -29,7 +29,7 @@ extension GameScene {
             var monsterHurtAnim = 0.0
             for hurt in hurtMonsters.values {
                 monsterHurtAnim = max(monsterHurtAnim,
-                                      self.monsterAnim(hurt, to.playerState,  self.monsters[hurt.index], animDuration))
+                                      self.monsterAnim(hurt, to.playerState, self.monsters[hurt.index], animDuration))
             }
             animDuration += monsterHurtAnim
 
@@ -68,7 +68,10 @@ private extension GameScene {
         return images
     }
 
-    func fire(item: String, to: MapLocation, from: MapLocation, node: SKSpriteNode) -> (action: SKAction, duration: TimeInterval) {
+    func fire(item: String,
+              to: MapLocation,
+              from: MapLocation,
+              node: SKSpriteNode) -> (action: SKAction, duration: TimeInterval) {
 
         let delta = (to - from).normalized
         let direction = Direction(facing: delta)
@@ -82,7 +85,7 @@ private extension GameScene {
 
         return (.run {
             let images = self.images(rangedItem: meta, direction: direction)
-            let projectile = SKSpriteNode(texture: images.first!, color: .white, size: CGSize(width: tileSize, height: tileSize))
+            let projectile = SKSpriteNode(texture: images.first!, color: .white, size: tileSize_sz)
             projectile.anchorPoint = .zero
             projectile.position = start
             self.tileMap.addChild(projectile)
@@ -115,7 +118,10 @@ private extension GameScene {
 private extension GameScene {
 
     @discardableResult
-    func monsterAnim(_ to: MonsterState, _ player: PlayerState, _ node: SKSpriteNode, _ startDelay: TimeInterval) -> TimeInterval {
+    func monsterAnim(_ to: MonsterState,
+                     _ player: PlayerState,
+                     _ node: SKSpriteNode,
+                     _ startDelay: TimeInterval) -> TimeInterval {
         guard let previous = self.viewModel.state?.monsterStates, previous.count > to.index else {
             assert(false, "This should never happen!")
             node.runs([.wait(forDuration: startDelay), walk(loc: to.loc)])
