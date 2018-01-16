@@ -1,11 +1,12 @@
 [
     {
-        "spellId" : "bone",
+        "id" : "bone",
         "frames" : 4,
         "asset" : "bone",
+        "directional" : false
     },
     {
-        "spellId" : "fireball",
+        "id" : "fireball",
         "frames" : 1,
         "asset" : "fireball",
         "directional" : true

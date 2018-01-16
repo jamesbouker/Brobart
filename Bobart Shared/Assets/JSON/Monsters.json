@@ -13,7 +13,7 @@
         "monsterId" : "blueSlime",
         "maxHp" : 1,
         "asset" : "slime",
-        "sightRange" : 3,
+        "sightRange" : 2,
         "attackRange" : 1,
         "isDirectional" : true,
         "canFly" : false
@@ -66,7 +66,7 @@
         "rangedItem" : "fireball",
         "onDeath" : "bones",
         "sightRange" : 3,
-        "attackRange" : 2,
+        "attackRange" : 3,
         "isDirectional" : true,
         "canFly" : false
     }

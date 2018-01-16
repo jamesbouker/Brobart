@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct MonsterMeta: Codable {
-    var monsterId: String
-    var maxHp: Int
-    var asset: String
-    var sightRange: Int
-    var attackRange: Int
-    var isDirectional: Bool
-    var canFly: Bool
+class MonsterMeta: Codable {
+    let monsterId: String
+    let maxHp: Int
+    let asset: String
+    let sightRange: Int
+    let attackRange: Int
+    let isDirectional: Bool
+    let canFly: Bool
 
     // Optionals
-    var onDeath: String?
-    var rangedItem: String?
+    let onDeath: String?
+    let rangedItem: String?
 }
 
 extension MonsterMeta {

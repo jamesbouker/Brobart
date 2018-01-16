@@ -59,9 +59,9 @@
 		F59608601FB295B200F42D2B /* Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084B1FB295B200F42D2B /* Monsters.json */; };
 		F59608611FB295B200F42D2B /* Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084B1FB295B200F42D2B /* Monsters.json */; };
 		F59608621FB295B200F42D2B /* Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084B1FB295B200F42D2B /* Monsters.json */; };
-		F59608631FB295B200F42D2B /* Spells.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* Spells.json */; };
-		F59608641FB295B200F42D2B /* Spells.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* Spells.json */; };
-		F59608651FB295B200F42D2B /* Spells.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* Spells.json */; };
+		F59608631FB295B200F42D2B /* RangedItems.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* RangedItems.json */; };
+		F59608641FB295B200F42D2B /* RangedItems.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* RangedItems.json */; };
+		F59608651FB295B200F42D2B /* RangedItems.json in Resources */ = {isa = PBXBuildFile; fileRef = F596084C1FB295B200F42D2B /* RangedItems.json */; };
 		F59608661FB295B200F42D2B /* brick.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084E1FB295B200F42D2B /* brick.atlas */; };
 		F59608671FB295B200F42D2B /* brick.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084E1FB295B200F42D2B /* brick.atlas */; };
 		F59608681FB295B200F42D2B /* brick.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F596084E1FB295B200F42D2B /* brick.atlas */; };
@@ -184,6 +184,9 @@
 		F5F2E3401FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
 		F5F2E3411FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
 		F5F2E3421FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
+		F5F6ED01200E910E00B76A17 /* RangedItemMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F6ED00200E910E00B76A17 /* RangedItemMeta.swift */; };
+		F5F6ED02200E910E00B76A17 /* RangedItemMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F6ED00200E910E00B76A17 /* RangedItemMeta.swift */; };
+		F5F6ED03200E910E00B76A17 /* RangedItemMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F6ED00200E910E00B76A17 /* RangedItemMeta.swift */; };
 		F5F832611FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
 		F5F832621FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
 		F5F832631FB7F91900B0BD4F /* LevelMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F832601FB7F91900B0BD4F /* LevelMeta.swift */; };
@@ -283,7 +286,7 @@
 		F59608491FB295B200F42D2B /* Death.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Death.json; sourceTree = "<group>"; };
 		F596084A1FB295B200F42D2B /* Levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Levels.json; sourceTree = "<group>"; };
 		F596084B1FB295B200F42D2B /* Monsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Monsters.json; sourceTree = "<group>"; };
-		F596084C1FB295B200F42D2B /* Spells.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spells.json; sourceTree = "<group>"; };
+		F596084C1FB295B200F42D2B /* RangedItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RangedItems.json; sourceTree = "<group>"; };
 		F596084E1FB295B200F42D2B /* brick.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = brick.atlas; sourceTree = "<group>"; };
 		F596084F1FB295B200F42D2B /* Grass.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Grass.atlas; sourceTree = "<group>"; };
 		F59608501FB295B200F42D2B /* Items.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Items.atlas; sourceTree = "<group>"; };
@@ -339,6 +342,7 @@
 		F5DFCB731FB2932B00DB8195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5DFCB751FB2932B00DB8195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterMeta.swift; sourceTree = "<group>"; };
+		F5F6ED00200E910E00B76A17 /* RangedItemMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedItemMeta.swift; sourceTree = "<group>"; };
 		F5F832601FB7F91900B0BD4F /* LevelMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMeta.swift; sourceTree = "<group>"; };
 		F5F832641FB8028D00B0BD4F /* GameScene+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Animations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -508,7 +512,7 @@
 				F59608491FB295B200F42D2B /* Death.json */,
 				F596084A1FB295B200F42D2B /* Levels.json */,
 				F596084B1FB295B200F42D2B /* Monsters.json */,
-				F596084C1FB295B200F42D2B /* Spells.json */,
+				F596084C1FB295B200F42D2B /* RangedItems.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -672,6 +676,7 @@
 			children = (
 				F5F832601FB7F91900B0BD4F /* LevelMeta.swift */,
 				F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */,
+				F5F6ED00200E910E00B76A17 /* RangedItemMeta.swift */,
 				F55E22C71FBFD24D00CD68C6 /* Proc Gen */,
 			);
 			path = "Meta Objects";
@@ -865,7 +870,7 @@
 				F59608751FB295B200F42D2B /* Sprites.atlas in Resources */,
 				F5DFCB7E1FB2932B00DB8195 /* Assets.xcassets in Resources */,
 				F596086C1FB295B200F42D2B /* Items.atlas in Resources */,
-				F59608631FB295B200F42D2B /* Spells.json in Resources */,
+				F59608631FB295B200F42D2B /* RangedItems.json in Resources */,
 				F59608571FB295B200F42D2B /* Default.sks in Resources */,
 				F596086F1FB295B200F42D2B /* sand.atlas in Resources */,
 				F59608821FB2961300F42D2B /* GameScene.sks in Resources */,
@@ -894,7 +899,7 @@
 				F596085B1FB295B200F42D2B /* Death.json in Resources */,
 				F59608761FB295B200F42D2B /* Sprites.atlas in Resources */,
 				F596087C1FB295B200F42D2B /* vine.atlas in Resources */,
-				F59608641FB295B200F42D2B /* Spells.json in Resources */,
+				F59608641FB295B200F42D2B /* RangedItems.json in Resources */,
 				F59608791FB295B200F42D2B /* stone.atlas in Resources */,
 				F596087F1FB295B200F42D2B /* weapons.atlas in Resources */,
 				F59608701FB295B200F42D2B /* sand.atlas in Resources */,
@@ -908,7 +913,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F59608651FB295B200F42D2B /* Spells.json in Resources */,
+				F59608651FB295B200F42D2B /* RangedItems.json in Resources */,
 				F59608771FB295B200F42D2B /* Sprites.atlas in Resources */,
 				F59608741FB295B200F42D2B /* Shadows.atlas in Resources */,
 				F596087D1FB295B200F42D2B /* vine.atlas in Resources */,
@@ -1234,6 +1239,7 @@
 				F59608E21FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
 				F5A7AC031FC93E6B00B37D0B /* MonsterState.swift in Sources */,
 				F5A7AC071FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
+				F5F6ED01200E910E00B76A17 /* RangedItemMeta.swift in Sources */,
 				F5DFCB451FB2932B00DB8195 /* AppDelegate.swift in Sources */,
 				F518994120071CA900E7F0F8 /* Dictionary+Extensions.swift in Sources */,
 				F5C108E41FB4162E00F2F771 /* PlayerState.swift in Sources */,
@@ -1279,6 +1285,7 @@
 				F59608BC1FB2A07600F42D2B /* Constants.swift in Sources */,
 				F5A7AC041FC93E6B00B37D0B /* MonsterState.swift in Sources */,
 				F5A7AC081FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
+				F5F6ED02200E910E00B76A17 /* RangedItemMeta.swift in Sources */,
 				F59608E31FB2A07600F42D2B /* SKColor+Extensions.swift in Sources */,
 				F518994320071CB100E7F0F8 /* Dictionary+Extensions.swift in Sources */,
 				F5C108E51FB4162E00F2F771 /* PlayerState.swift in Sources */,
@@ -1324,6 +1331,7 @@
 				F5DFCB6F1FB2932B00DB8195 /* AppDelegate.swift in Sources */,
 				F5A7AC051FC93E6B00B37D0B /* MonsterState.swift in Sources */,
 				F5A7AC091FC9405C00B37D0B /* MonsterReducer.swift in Sources */,
+				F5F6ED03200E910E00B76A17 /* RangedItemMeta.swift in Sources */,
 				F59608C31FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */,
 				F518994220071CA900E7F0F8 /* Dictionary+Extensions.swift in Sources */,
 				F5C108E61FB4162E00F2F771 /* PlayerState.swift in Sources */,

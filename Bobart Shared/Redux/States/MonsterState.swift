@@ -28,11 +28,11 @@ struct MonsterState: Codable, StateType, Equatable, Hashable {
         self.meta = meta
     }
 
-    public var hashValue: Int  {
+    public var hashValue: Int {
         return uuid.hashValue
     }
 
-    static func ==(lhs: MonsterState, rhs: MonsterState) -> Bool {
+    static func == (lhs: MonsterState, rhs: MonsterState) -> Bool {
         return lhs.index == rhs.index && lhs.uuid == rhs.uuid
     }
 }

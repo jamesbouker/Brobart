@@ -29,9 +29,7 @@ extension GameScene {
             var monsterHurtAnim = 0.0
             for hurt in hurtMonsters.values {
                 monsterHurtAnim = max(monsterHurtAnim,
-                                      self.monsterAnim(to: hurt,
-                                                       for: self.monsters[hurt.index],
-                                                       startDelay: animDuration))
+                                      self.monsterAnim(hurt, to.playerState,  self.monsters[hurt.index], animDuration))
             }
             animDuration += monsterHurtAnim
 
@@ -40,16 +38,14 @@ extension GameScene {
             let walking = to.monsterStates.filter { !hurtMonsters.hasKey($0) && $0.hitDirection == nil }
             for w in walking {
                 monsterWalkAnim = max(monsterWalkAnim,
-                                      self.monsterAnim(to: w, for: self.monsters[w.index], startDelay: monsterHurtAnim))
+                                      self.monsterAnim(w, to.playerState, self.monsters[w.index], monsterHurtAnim))
             }
             animDuration += max(playerDuration, monsterWalkAnim)
 
             // Animate monsters hurting player!
             let monstersAttacking = to.monsterStates.filter { $0.hitDirection != nil }
             for attacker in monstersAttacking {
-                animDuration += self.monsterAnim(to: attacker,
-                                                   for: self.monsters[attacker.index],
-                                                   startDelay: animDuration)
+                animDuration += self.monsterAnim(attacker, to.playerState, self.monsters[attacker.index], animDuration)
             }
 
             self.runs([.wait(forDuration: animDuration), .run {
@@ -62,6 +58,39 @@ extension GameScene {
 
 // MARK: Shared Animations
 private extension GameScene {
+    func images(rangedItem meta: RangedItemMeta, direction: Direction) -> [SKTexture] {
+        var images = [SKTexture]()
+        for i in 1 ... meta.frames {
+            let file = meta.asset + "_\(i)" + (meta.directional ? "_\(direction.rawValue)" : "")
+            let image = SKTexture.pixelatedImage(file: file)
+            images.append(image)
+        }
+        return images
+    }
+
+    func fire(item: String, to: MapLocation, from: MapLocation, node: SKSpriteNode) -> (action: SKAction, duration: TimeInterval) {
+        let meta = RangedItemMeta.rangedItemMeta(id: item)
+        let duration = Double((to - from).length) * frameTime / 1.5
+        let direction = Direction(facing: to - from)
+        let toPoint = CGPoint(x: CGFloat(to.x) * tileSize,
+                              y: CGFloat(to.y) * tileSize)
+        return (.run {
+            let images = self.images(rangedItem: meta, direction: direction)
+            let projectile = SKSpriteNode(texture: images.first!, color: .white, size: CGSize(width: tileSize, height: tileSize))
+            projectile.anchorPoint = .zero
+            projectile.position = CGPoint(x: CGFloat(from.x) * tileSize,
+                                          y: CGFloat(from.y) * tileSize)
+            self.tileMap.addChild(projectile)
+
+            node.run(self.bump(direction: direction))
+            projectile.runs([.move(to: toPoint, duration: duration), .removeFromParent()])
+
+            if meta.frames > 1 {
+                projectile.run(.repeatForever(.animate(with: images, timePerFrame: frameTime / Double(meta.frames))))
+            }
+        }, duration)
+    }
+
     func bump(direction: Direction) -> SKAction {
         let offset = direction.loc.point
         let moveBy = CGVector(dx: offset.x * tileSize / 3, dy: offset.y * tileSize / 3)
@@ -81,11 +110,9 @@ private extension GameScene {
 private extension GameScene {
 
     @discardableResult
-    func monsterAnim(to: MonsterState, for node: SKSpriteNode, startDelay: TimeInterval) -> TimeInterval {
+    func monsterAnim(_ to: MonsterState, _ player: PlayerState, _ node: SKSpriteNode, _ startDelay: TimeInterval) -> TimeInterval {
         guard let previous = self.viewModel.state?.monsterStates, previous.count > to.index else {
             assert(false, "This should never happen!")
-            // This can happen - fix it eventually please
-
             node.runs([.wait(forDuration: startDelay), walk(loc: to.loc)])
             return frameTime
         }
@@ -110,12 +137,18 @@ private extension GameScene {
         if to.hp > 0 {
             let move: SKAction
             if let direction = to.hitDirection {
-                move = bump(direction: direction)
+                if (to.loc - player.loc).length > 1 {
+                    let anim = fire(item: to.meta.rangedItem!, to: player.loc, from: to.loc, node: node)
+                    move = anim.action
+                    move.duration = anim.duration
+                } else {
+                    move = bump(direction: direction)
+                }
             } else {
                 move = walk(loc: to.loc)
             }
             node.runs([.wait(forDuration: startDelay), .run(custom), move])
-            return frameTime
+            return move.duration
         }
 
         // If dying, blink the anim, fade it out, and remove it from the scene

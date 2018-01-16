@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct LevelMeta: Codable {
-    var mustSpawn: [String]?
-    var canSpawn: [String]?
-    var spawnWeight: [Int]?
+class LevelMeta: Codable {
+    let mustSpawn: [String]?
+    let canSpawn: [String]?
+    let spawnWeight: [Int]?
 
-    var minWidth: Int
-    var maxWidth: Int
-    var minHeight: Int
-    var maxHeight: Int
-    var grass: Int
-    var torches: Int
-    var atlas: Environment
+    let minWidth: Int
+    let maxWidth: Int
+    let minHeight: Int
+    let maxHeight: Int
+    let grass: Int
+    let torches: Int
+    let atlas: Environment
 }
 
 extension LevelMeta {

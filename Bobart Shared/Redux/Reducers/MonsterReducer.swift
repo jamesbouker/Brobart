@@ -42,8 +42,8 @@ private func removeWalls(_ locs: [MapLocation], wallItemMap: [MapLocation: Bool]
     return locations
 }
 
-private func visibleLocations(monster: MonsterState, wallItemMap: [MapLocation: Bool]) -> [MapLocation] {
-    let numbers = Array(1 ... monster.meta.sightRange)
+private func visibleLocations(monster: MonsterState, range: Int, wallItemMap: [MapLocation: Bool]) -> [MapLocation] {
+    let numbers = Array(1 ... range)
 
     var northLocations = numbers.map { MapLocation(x: monster.loc.x, y: monster.loc.y + $0) }
     northLocations = removeWalls(northLocations, wallItemMap: wallItemMap)
@@ -60,15 +60,31 @@ private func visibleLocations(monster: MonsterState, wallItemMap: [MapLocation: 
     return northLocations + southLocations + westLocations + eastLocations
 }
 
-private func canSeePlayer(_ monster: MonsterState,
-                          wallItemMap: [MapLocation: Bool],
-                          player: PlayerState) -> MapLocation? {
-    guard
-        player.loc.inLine(monster.loc) &&
-        (player.loc - monster.loc).length <= monster.meta.sightRange else {
+private func canShootPlayer(_ monster: MonsterState,
+                            _ wallItemMap: [MapLocation: Bool],
+                            _ player: PlayerState) -> MapLocation? {
+    guard canReachPlayer(monster, wallItemMap, player, monster.meta.attackRange) != nil else {
         return nil
     }
-    let visibles = visibleLocations(monster: monster, wallItemMap: wallItemMap)
+    return player.loc
+}
+
+private func canSeePlayer(_ monster: MonsterState,
+                          _ wallItemMap: [MapLocation: Bool],
+                          _ player: PlayerState) -> MapLocation? {
+    return canReachPlayer(monster, wallItemMap, player, monster.meta.sightRange)
+}
+
+private func canReachPlayer(_ monster: MonsterState,
+                            _ wallItemMap: [MapLocation: Bool],
+                            _ player: PlayerState,
+                            _ range: Int) -> MapLocation? {
+    guard
+        player.loc.inLine(monster.loc) &&
+        (player.loc - monster.loc).length <= range else {
+        return nil
+    }
+    let visibles = visibleLocations(monster: monster, range: range, wallItemMap: wallItemMap)
     if visibles.contains(player.loc) {
         return (player.loc - monster.loc).normalized + monster.loc
     }
@@ -101,7 +117,8 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerS
 
         // Remove the current location from the map!
         monsterLocMap.removeValue(forKey: monster.loc)
-        var nextLoc = canSeePlayer(monster, wallItemMap: wallItemMap, player: player)
+        var nextLoc = canShootPlayer(monster, wallItemMap, player) ??
+            canSeePlayer(monster, wallItemMap, player)
 
         if nextLoc == nil || monsterLocMap.hasKey(nextLoc!) {
             // Find next possible spots
