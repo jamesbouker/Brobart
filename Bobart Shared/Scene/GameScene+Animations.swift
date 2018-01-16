@@ -69,17 +69,22 @@ private extension GameScene {
     }
 
     func fire(item: String, to: MapLocation, from: MapLocation, node: SKSpriteNode) -> (action: SKAction, duration: TimeInterval) {
+
+        let delta = (to - from).normalized
+        let direction = Direction(facing: delta)
         let meta = RangedItemMeta.rangedItemMeta(id: item)
         let duration = Double((to - from).length) * frameTime / 1.5
-        let direction = Direction(facing: to - from)
         let toPoint = CGPoint(x: CGFloat(to.x) * tileSize,
                               y: CGFloat(to.y) * tileSize)
+        var start = CGPoint(x: CGFloat(from.x) * tileSize,
+                            y: CGFloat(from.y) * tileSize)
+        start += CGPoint(x: delta.x, y: delta.y) * (tileSize / 2.0)
+
         return (.run {
             let images = self.images(rangedItem: meta, direction: direction)
             let projectile = SKSpriteNode(texture: images.first!, color: .white, size: CGSize(width: tileSize, height: tileSize))
             projectile.anchorPoint = .zero
-            projectile.position = CGPoint(x: CGFloat(from.x) * tileSize,
-                                          y: CGFloat(from.y) * tileSize)
+            projectile.position = start
             self.tileMap.addChild(projectile)
 
             node.run(self.bump(direction: direction))
