@@ -9,8 +9,8 @@
 import SpriteKit
 
 // Taken from GameScene.sks Base.tileSize and TileSet tile size
-let tileSize: CGFloat = 48.0
-let tileSize_sz: CGSize = CGSize(width: 48, height: 48)
+let tileLength: CGFloat = 48.0
+let tileSize: CGSize = CGSize(width: 48, height: 48)
 
 // Amount of time between 2 key frame animations
 let frameTime = 0.20

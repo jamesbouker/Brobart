@@ -49,7 +49,7 @@ class GameViewController: UIViewController {
         guard let to = touches.first?.location(in: nil) else { return }
         guard let from = touchDownLocation else { return }
         let time = Date().timeIntervalSince(touchDown)
-        let delta: CGFloat = tileSize / 2
+        let delta: CGFloat = tileLength / 2
         let deltaX = (to - from).x
         let deltaY = (to - from).y
 

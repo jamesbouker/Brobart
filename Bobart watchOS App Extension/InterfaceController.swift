@@ -52,7 +52,7 @@ class InterfaceController: WKInterfaceController {
 
         guard let touchDown = touchDownTime else { return }
         let time = Date().timeIntervalSince(touchDown)
-        let delta: CGFloat = tileSize / 2
+        let delta: CGFloat = tileLength / 2
         let deltaX = gesture.translationInObject().x
         let deltaY = gesture.translationInObject().y
 

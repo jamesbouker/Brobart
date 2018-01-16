@@ -82,8 +82,8 @@ fileprivate extension GameScene {
 
     func positionThePlayer(playerState: PlayerState) {
         let loc = playerState.loc
-        player.position = CGPoint(x: CGFloat(loc.x) * tileSize,
-                                  y: CGFloat(loc.y) * tileSize)
+        player.position = CGPoint(x: CGFloat(loc.x) * tileLength,
+                                  y: CGFloat(loc.y) * tileLength)
     }
 
     func renderMonsters(monsters: [MonsterState]) {
@@ -94,14 +94,14 @@ fileprivate extension GameScene {
 
         for monster in monsters {
             let character = Character(rawValue: monster.asset)
-            let node = SKSpriteNode(color: .red, size: tileSize_sz)
+            let node = SKSpriteNode(color: .red, size: tileSize)
             node.anchorPoint = .zero
             let monsterId = monster.meta.monsterId
             let direction: Direction? = MonsterMeta.monsterMeta(monsterId: monsterId).isDirectional ? .l : nil
             node.run(character!.animFrames(direction))
             let loc = monster.loc
-            node.position = CGPoint(x: CGFloat(loc.x) * tileSize,
-                                    y: CGFloat(loc.y) * tileSize)
+            node.position = CGPoint(x: CGFloat(loc.x) * tileLength,
+                                    y: CGFloat(loc.y) * tileLength)
             self.monsters.append(node)
             tileMap.addChild(node)
         }

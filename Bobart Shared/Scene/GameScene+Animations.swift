@@ -27,7 +27,7 @@ extension GameScene {
 
             // Animate monsters getting hurt all at once
             var monsterHurtAnim = 0.0
-            for hurt in hurtMonsters.values {
+            for hurt in hurtMonsters.values where hurt.hitDirection == nil {
                 monsterHurtAnim = max(monsterHurtAnim,
                                       self.monsterAnim(hurt, to.playerState, self.monsters[hurt.index], animDuration))
             }
@@ -43,7 +43,7 @@ extension GameScene {
             animDuration += max(playerDuration, monsterWalkAnim)
 
             // Animate monsters hurting player!
-            let monstersAttacking = to.monsterStates.filter { $0.hitDirection != nil }
+            let monstersAttacking = to.monsterStates.filter { $0.hitDirection != nil}
             for attacker in monstersAttacking {
                 animDuration += self.monsterAnim(attacker, to.playerState, self.monsters[attacker.index], animDuration)
             }
@@ -77,15 +77,15 @@ private extension GameScene {
         let direction = Direction(facing: delta)
         let meta = RangedItemMeta.rangedItemMeta(id: item)
         let duration = Double((to - from).length) * frameTime / 1.5
-        let toPoint = CGPoint(x: CGFloat(to.x) * tileSize,
-                              y: CGFloat(to.y) * tileSize)
-        var start = CGPoint(x: CGFloat(from.x) * tileSize,
-                            y: CGFloat(from.y) * tileSize)
-        start += CGPoint(x: delta.x, y: delta.y) * (tileSize / 2.0)
+        let toPoint = CGPoint(x: CGFloat(to.x) * tileLength,
+                              y: CGFloat(to.y) * tileLength)
+        var start = CGPoint(x: CGFloat(from.x) * tileLength,
+                            y: CGFloat(from.y) * tileLength)
+        start += CGPoint(x: delta.x, y: delta.y) * (tileLength / 2.0)
 
         return (.run {
             let images = self.images(rangedItem: meta, direction: direction)
-            let projectile = SKSpriteNode(texture: images.first!, color: .white, size: tileSize_sz)
+            let projectile = SKSpriteNode(texture: images.first!, color: .white, size: tileSize)
             projectile.anchorPoint = .zero
             projectile.position = start
             self.tileMap.addChild(projectile)
@@ -101,14 +101,14 @@ private extension GameScene {
 
     func bump(direction: Direction) -> SKAction {
         let offset = direction.loc.point
-        let moveBy = CGVector(dx: offset.x * tileSize / 3, dy: offset.y * tileSize / 3)
+        let moveBy = CGVector(dx: offset.x * tileLength / 3, dy: offset.y * tileLength / 3)
         let bump = SKAction.move(by: moveBy, duration: frameTime / 2)
         return .sequence([bump, bump.reversed()])
     }
 
     func walk(loc: MapLocation) -> SKAction {
-        let x = CGFloat(loc.x) * tileSize
-        let y = CGFloat(loc.y) * tileSize
+        let x = CGFloat(loc.x) * tileLength
+        let y = CGFloat(loc.y) * tileLength
         let pt = CGPoint(x: x, y: y)
         return .move(to: pt, duration: frameTime)
     }
