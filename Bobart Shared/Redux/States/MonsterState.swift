@@ -19,6 +19,9 @@ struct MonsterState: Codable, StateType, Equatable, Hashable {
     var hitDirection: Direction?
     var blocked: Bool
 
+    // If cannot see/hit player - move toward...
+    var lastSawPlayer: MapLocation?
+
     init(meta: MonsterMeta, index: Int) {
         loc = MapLocation(x: 1, y: 1)
         asset = meta.asset

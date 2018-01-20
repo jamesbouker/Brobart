@@ -1,7 +1,7 @@
 {
 	"1" : {
-        "minWidth" : 7,
-        "maxWidth" : 7,
+        "minWidth" : 9,
+        "maxWidth" : 9,
         "minHeight" : 7,
         "maxHeight" : 7,
         "atlas" : "brick",
