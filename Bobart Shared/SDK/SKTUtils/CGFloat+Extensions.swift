@@ -25,6 +25,12 @@ import CoreGraphics
 /** The value of π as a CGFloat */
 let π = CGFloat.pi
 
+public extension Float {
+    public static func random() -> Float {
+        return Float(CGFloat.random())
+    }
+}
+
 public extension CGFloat {
 
     var radians: CGFloat {

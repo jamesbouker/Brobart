@@ -39,7 +39,7 @@ extension Array {
         }
     }
 
-    mutating func modifyForEach(_ body: (_ index: Index, _ element: inout Element) -> Void) {
+    mutating func modifyEach(_ body: (_ index: Index, _ element: inout Element) -> Void) {
         for index in indices {
             modifyElement(atIndex: index) { body(index, &$0) }
         }

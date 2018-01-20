@@ -71,7 +71,7 @@ private extension GameScene {
     func fire(item: String,
               to: MapLocation,
               from: MapLocation,
-              node: SKSpriteNode) -> (action: SKAction, duration: TimeInterval) {
+              node: SKSpriteNode) -> SKAction {
 
         let delta = (to - from).normalized
         let direction = Direction(facing: delta)
@@ -83,7 +83,7 @@ private extension GameScene {
                             y: CGFloat(from.y) * tileLength)
         start += CGPoint(x: delta.x, y: delta.y) * (tileLength / 2.0)
 
-        return (.run {
+        let action = SKAction.run {
             let images = self.images(rangedItem: meta, direction: direction)
             let projectile = SKSpriteNode(texture: images.first!, color: .white, size: tileSize)
             projectile.anchorPoint = .zero
@@ -96,7 +96,9 @@ private extension GameScene {
             if meta.frames > 1 {
                 projectile.run(.repeatForever(.animate(with: images, timePerFrame: frameTime / Double(meta.frames))))
             }
-        }, duration)
+        }
+        action.duration = duration
+        return action
     }
 
     func bump(direction: Direction) -> SKAction {
@@ -111,6 +113,11 @@ private extension GameScene {
         let y = CGFloat(loc.y) * tileLength
         let pt = CGPoint(x: x, y: y)
         return .move(to: pt, duration: frameTime)
+    }
+
+    func idle(character: String, facing: Direction?) -> SKAction {
+        let c = Character(rawValue: character)!
+        return c.animFrames(facing)
     }
 }
 
@@ -136,9 +143,8 @@ private extension GameScene {
         // If direction changed, update idle animation
         let custom = {
             if to.facing != from.facing {
-                let c = Character(rawValue: to.asset)!
                 let direction = to.meta.isDirectional ? to.facing : nil
-                let anim = c.animFrames(direction)
+                let anim = self.idle(character: to.asset, facing: direction)
                 node.removeAction(forKey: ActionType.idle)
                 node.run(anim, type: ActionType.idle)
             }
@@ -149,15 +155,14 @@ private extension GameScene {
             let move: SKAction
             if let direction = to.hitDirection {
                 if (to.loc - player.loc).length > 1 {
-                    let anim = fire(item: to.meta.rangedItem!, to: player.loc, from: to.loc, node: node)
-                    move = anim.action
-                    move.duration = anim.duration
+                    move = fire(item: to.meta.rangedItem!, to: player.loc, from: to.loc, node: node)
                 } else {
                     move = bump(direction: direction)
                 }
             } else {
                 move = walk(loc: to.loc)
             }
+
             node.runs([.wait(forDuration: startDelay), .run(custom), move])
             return move.duration
         }

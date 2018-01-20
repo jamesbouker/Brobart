@@ -28,8 +28,8 @@ public extension SKNode {
         run(.group(actions))
     }
 
-    public func runs(_ actions: [SKAction]) {
-        run(.sequence(actions))
+    public func runs(_ actions: [SKAction?]) {
+        run(.sequence(actions.flatMap { $0 }))
     }
 }
 

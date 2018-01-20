@@ -39,7 +39,10 @@ private func playerReducer(_ action: PlayerAction,
     }
 
     var next = state
+
+    // Reset status
     next.hitDirection = nil
+    monsters?.modifyEach { $1.blocked = false }
 
     guard next.hp > 0 else {
         return next
@@ -70,7 +73,12 @@ private func playerReducer(_ action: PlayerAction,
 
     // Check if hitting monster
     monsters?.modifyWhere({ $0.hp > 0 && $0.loc == next.loc }, to: {
-        $0.hp -= 1
+        // check if blocked!
+        if Float.random() <= $0.meta.block {
+            $0.blocked = true
+        } else {
+            $0.hp -= 1
+        }
         next.hitDirection = direction
         next.loc = state.loc
     })

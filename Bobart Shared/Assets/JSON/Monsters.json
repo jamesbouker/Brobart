@@ -7,7 +7,8 @@
         "attackRange" : 1,
         "onDeath" : "bones",
         "isDirectional" : true,
-        "canFly" : false
+        "canFly" : false,
+        "block" : 0
 	},
     {
         "monsterId" : "blueSlime",
@@ -16,7 +17,8 @@
         "sightRange" : 2,
         "attackRange" : 1,
         "isDirectional" : true,
-        "canFly" : false
+        "canFly" : false,
+        "block" : 0
 	},
     {
         "monsterId" : "blackBat",
@@ -26,7 +28,8 @@
         "sightRange" : 1,
         "attackRange" : 1,
         "isDirectional" : false,
-        "canFly" : true
+        "canFly" : true,
+        "block" : 0
 	},
     {
         "monsterId" : "whiteRat",
@@ -36,7 +39,8 @@
         "sightRange" : 1,
         "attackRange" : 1,
         "isDirectional" : true,
-        "canFly" : false
+        "canFly" : false,
+        "block" : 0
     },
     {
         "monsterId" : "worm",
@@ -46,7 +50,8 @@
         "sightRange" : 1,
         "attackRange" : 1,
         "isDirectional" : true,
-        "canFly" : false
+        "canFly" : false,
+        "block" : 0
     },
     {
         "monsterId" : "skeleton",
@@ -57,7 +62,8 @@
         "sightRange" : 2,
         "attackRange" : 2,
         "isDirectional" : true,
-        "canFly" : false
+        "canFly" : false,
+        "block" : 1
     },
     {
         "monsterId" : "redDragon",
@@ -68,6 +74,7 @@
         "sightRange" : 3,
         "attackRange" : 3,
         "isDirectional" : true,
-        "canFly" : false
+        "canFly" : false,
+        "block" : 0
     }
 ]

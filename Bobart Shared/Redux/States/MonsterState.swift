@@ -17,6 +17,7 @@ struct MonsterState: Codable, StateType, Equatable, Hashable {
     var index: Int
     var facing: Direction
     var hitDirection: Direction?
+    var blocked: Bool
 
     init(meta: MonsterMeta, index: Int) {
         loc = MapLocation(x: 1, y: 1)
@@ -24,6 +25,7 @@ struct MonsterState: Codable, StateType, Equatable, Hashable {
         hp = meta.maxHp
         facing = .l
         uuid = UUID().uuidString
+        blocked = false
         self.index = index
         self.meta = meta
     }

@@ -114,6 +114,9 @@ extension MapState {
         var map = wallMap
         map[chestLoc] = true
         map[switchLoc] = true
+        if switchHit {
+            map[stairLoc] = true
+        }
         return map
     }
 }
