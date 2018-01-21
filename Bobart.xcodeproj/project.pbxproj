@@ -181,6 +181,15 @@
 		F5DFCB7E1FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
 		F5DFCB7F1FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
 		F5DFCB801FB2932B00DB8195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DFCB3C1FB2932B00DB8195 /* Assets.xcassets */; };
+		F5E1E11F2014F9A8004E951C /* pixelated.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E1E11E2014F9A8004E951C /* pixelated.ttf */; };
+		F5E1E1202014F9A8004E951C /* pixelated.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E1E11E2014F9A8004E951C /* pixelated.ttf */; };
+		F5E1E1212014F9A8004E951C /* pixelated.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E1E11E2014F9A8004E951C /* pixelated.ttf */; };
+		F5E1E12320152BC4004E951C /* NodeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1E12220152BC4004E951C /* NodeFactory.swift */; };
+		F5E1E12420152BC4004E951C /* NodeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1E12220152BC4004E951C /* NodeFactory.swift */; };
+		F5E1E12520152BC4004E951C /* NodeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1E12220152BC4004E951C /* NodeFactory.swift */; };
+		F5E1E12720152F56004E951C /* ActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1E12620152F56004E951C /* ActionFactory.swift */; };
+		F5E1E12820152F56004E951C /* ActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1E12620152F56004E951C /* ActionFactory.swift */; };
+		F5E1E12920152F56004E951C /* ActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1E12620152F56004E951C /* ActionFactory.swift */; };
 		F5F2E3401FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
 		F5F2E3411FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
 		F5F2E3421FCA392A0088D419 /* MonsterMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */; };
@@ -341,6 +350,9 @@
 		F5DFCB6E1FB2932B00DB8195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5DFCB731FB2932B00DB8195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5DFCB751FB2932B00DB8195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E1E11E2014F9A8004E951C /* pixelated.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixelated.ttf; sourceTree = "<group>"; };
+		F5E1E12220152BC4004E951C /* NodeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeFactory.swift; sourceTree = "<group>"; };
+		F5E1E12620152F56004E951C /* ActionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionFactory.swift; sourceTree = "<group>"; };
 		F5F2E33F1FCA392A0088D419 /* MonsterMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterMeta.swift; sourceTree = "<group>"; };
 		F5F6ED00200E910E00B76A17 /* RangedItemMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedItemMeta.swift; sourceTree = "<group>"; };
 		F5F832601FB7F91900B0BD4F /* LevelMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMeta.swift; sourceTree = "<group>"; };
@@ -498,6 +510,7 @@
 		F59608461FB2956D00F42D2B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F5E1E11E2014F9A8004E951C /* pixelated.ttf */,
 				F59608471FB295B200F42D2B /* Default.sks */,
 				F59608481FB295B200F42D2B /* JSON */,
 				F596084D1FB295B200F42D2B /* Sprite Sheets */,
@@ -558,6 +571,8 @@
 		F59608971FB2A07600F42D2B /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				F5E1E12620152F56004E951C /* ActionFactory.swift */,
+				F5E1E12220152BC4004E951C /* NodeFactory.swift */,
 				F5AE446C1FB4C19000538E98 /* Characters.swift */,
 				F596089E1FB2A07600F42D2B /* SKTUtils */,
 			);
@@ -862,6 +877,7 @@
 				F596085D1FB295B200F42D2B /* Levels.json in Resources */,
 				F5DFCB4A1FB2932B00DB8195 /* Main.storyboard in Resources */,
 				F596087E1FB295B200F42D2B /* weapons.atlas in Resources */,
+				F5E1E11F2014F9A8004E951C /* pixelated.ttf in Resources */,
 				F59608661FB295B200F42D2B /* brick.atlas in Resources */,
 				F5DFCB4D1FB2932B00DB8195 /* LaunchScreen.storyboard in Resources */,
 				F59608601FB295B200F42D2B /* Monsters.json in Resources */,
@@ -900,6 +916,7 @@
 				F59608761FB295B200F42D2B /* Sprites.atlas in Resources */,
 				F596087C1FB295B200F42D2B /* vine.atlas in Resources */,
 				F59608641FB295B200F42D2B /* RangedItems.json in Resources */,
+				F5E1E1202014F9A8004E951C /* pixelated.ttf in Resources */,
 				F59608791FB295B200F42D2B /* stone.atlas in Resources */,
 				F596087F1FB295B200F42D2B /* weapons.atlas in Resources */,
 				F59608701FB295B200F42D2B /* sand.atlas in Resources */,
@@ -918,6 +935,7 @@
 				F59608741FB295B200F42D2B /* Shadows.atlas in Resources */,
 				F596087D1FB295B200F42D2B /* vine.atlas in Resources */,
 				F596087A1FB295B200F42D2B /* stone.atlas in Resources */,
+				F5E1E1212014F9A8004E951C /* pixelated.ttf in Resources */,
 				F59608681FB295B200F42D2B /* brick.atlas in Resources */,
 				F596086E1FB295B200F42D2B /* Items.atlas in Resources */,
 				F596085C1FB295B200F42D2B /* Death.json in Resources */,
@@ -1214,6 +1232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F500EC621FB2B3A20057C05F /* GameReducer.swift in Sources */,
+				F5E1E12720152F56004E951C /* ActionFactory.swift in Sources */,
 				F525B5651FB4128600982E71 /* PlayerReducer.swift in Sources */,
 				F59608CD1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */,
 				F59608DC1FB2A07600F42D2B /* SKAction+Extensions.swift in Sources */,
@@ -1223,6 +1242,7 @@
 				F59608F11FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
 				F5AC79061FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
 				F59608F71FB2A07600F42D2B /* Vector3.swift in Sources */,
+				F5E1E12320152BC4004E951C /* NodeFactory.swift in Sources */,
 				F5AE446D1FB4C19000538E98 /* Characters.swift in Sources */,
 				F59608D61FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
 				F5A102711FB2C6B900A2F4EE /* GameScene+Layout.swift in Sources */,
@@ -1260,6 +1280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F500EC631FB2B3A20057C05F /* GameReducer.swift in Sources */,
+				F5E1E12820152F56004E951C /* ActionFactory.swift in Sources */,
 				F525B5661FB4128600982E71 /* PlayerReducer.swift in Sources */,
 				F59608C21FB2A07600F42D2B /* SKSpriteNode+Extensions.swift in Sources */,
 				F5DFCB661FB2932B00DB8195 /* ExtensionDelegate.swift in Sources */,
@@ -1269,6 +1290,7 @@
 				F59608D71FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
 				F59608CE1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */,
 				F5AC79071FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
+				F5E1E12420152BC4004E951C /* NodeFactory.swift in Sources */,
 				F596088C1FB2968400F42D2B /* GameScene.swift in Sources */,
 				F5AE446E1FB4C19000538E98 /* Characters.swift in Sources */,
 				F55E22CD1FBFD2D800CD68C6 /* MazeMaker.swift in Sources */,
@@ -1306,6 +1328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F500EC641FB2B3A20057C05F /* GameReducer.swift in Sources */,
+				F5E1E12920152F56004E951C /* ActionFactory.swift in Sources */,
 				F525B5671FB4128600982E71 /* PlayerReducer.swift in Sources */,
 				F596088D1FB2968400F42D2B /* GameScene.swift in Sources */,
 				F59608CF1FB2A07600F42D2B /* CGPoint+Extensions.swift in Sources */,
@@ -1315,6 +1338,7 @@
 				F59608D81FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
 				F59608CC1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
 				F5AC79081FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
+				F5E1E12520152BC4004E951C /* NodeFactory.swift in Sources */,
 				F59608E71FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,
 				F5AE446F1FB4C19000538E98 /* Characters.swift in Sources */,
 				F55E22CC1FBFD2D700CD68C6 /* MazeMaker.swift in Sources */,

@@ -58,6 +58,17 @@ extension GameScene {
 
 // MARK: Shared Animations
 private extension GameScene {
+    func showText(node: SKNode, text: String) -> SKAction {
+        let action = SKAction.run {
+            self.label(text: text, color: #colorLiteral(red: 1, green: 0.2876047492, blue: 0.2655626833, alpha: 1), node: node, z: 101)
+            let textNode2 = self.label(text: text, color: .black, node: node, z: 100)
+            textNode2.position.x += 2.0
+            textNode2.position.y -= 2
+        }
+        action.duration = frameTime * 2.0
+        return action
+    }
+
     func images(rangedItem meta: RangedItemMeta, direction: Direction) -> [SKTexture] {
         var images = [SKTexture]()
         for i in 1 ... meta.frames {
@@ -77,11 +88,9 @@ private extension GameScene {
         let direction = Direction(facing: delta)
         let meta = RangedItemMeta.rangedItemMeta(id: item)
         let duration = Double((to - from).length) * frameTime / 1.5
-        let toPoint = CGPoint(x: CGFloat(to.x) * tileLength,
-                              y: CGFloat(to.y) * tileLength)
-        var start = CGPoint(x: CGFloat(from.x) * tileLength,
-                            y: CGFloat(from.y) * tileLength)
-        start += CGPoint(x: delta.x, y: delta.y) * (tileLength / 2.0)
+        let toPoint = to.point * tileLength
+        var start = from.point * tileLength
+        start += (delta.point * tileLength / 2.0)
 
         let action = SKAction.run {
             let images = self.images(rangedItem: meta, direction: direction)
@@ -150,6 +159,12 @@ private extension GameScene {
             }
         }
 
+        // If hurt show text
+        if to.hp < from.hp {
+            let text = showText(node: node, text: "\(from.hp - to.hp)")
+            node.runs([.wait(forDuration: startDelay), text])
+        }
+
         // Alive - animate the monster
         if to.hp > 0 {
             let move: SKAction
@@ -168,11 +183,7 @@ private extension GameScene {
         }
 
         // If dying, blink the anim, fade it out, and remove it from the scene
-        let fadeOut = SKAction.fadeOut(withDuration: frameTime / 6.0)
-        let fadeIn = SKAction.fadeIn(withDuration: frameTime / 6.0)
-        let fade = SKAction.sequence([fadeOut, fadeIn])
-        let death = SKAction.sequence([fade, fade, fade, fade, fadeOut])
-        node.runs([.wait(forDuration: startDelay), death, .run {
+        node.runs([.wait(forDuration: startDelay), .blink(), .run {
             node.isHidden = true
             node.removeAllActions()
             node.removeFromParent()
