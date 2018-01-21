@@ -7,7 +7,8 @@
         "atlas" : "brick",
         "grass" : 0,
         "torches" : 3,
-        "mustSpawn" : ["skeleton", "blueArmor"]
+        "mustSpawn" : ["skeleton", "blueArmor"],
+        "wood" : 1.0
 	},
     "2" : {
         "minWidth" : 7,
@@ -17,7 +18,8 @@
         "grass" : 0,
         "torches" : 2,
         "atlas" : "stone",
-        "mustSpawn" : ["skeleton", "redDragon"]
+        "mustSpawn" : ["skeleton", "redDragon"],
+        "wood" : 1.0
     },
     "3" : {
         "minWidth" : 7,
@@ -27,7 +29,8 @@
         "torches" : 0,
         "atlas" : "vine",
         "grass" : 20,
-        "mustSpawn" : ["blueSlime", "blackBat"]
+        "mustSpawn" : ["blueSlime", "blackBat"],
+        "wood" : 1.0
     },
     "4" : {
         "mustSpawn" : ["skeleton", "redDragon","skeleton", "redDragon","skeleton", "redDragon"],
@@ -38,6 +41,7 @@
         "grass" : 0,
         "torches" : 0,
         "atlas" : "sand",
-        "wallsToRemove" : 0.70
+        "wallsToRemove" : 0.70,
+        "wood" : 1.0
     }
 }

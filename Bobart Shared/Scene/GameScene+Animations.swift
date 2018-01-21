@@ -85,17 +85,6 @@ private extension GameScene {
             }
         }
 
-        if to.blocked {
-            let text = showText(node: node, text: "block", color: .white)
-            node.runs([.wait(forDuration: startDelay), text])
-        }
-
-        // If hurt show text
-        if to.hp < from.hp {
-            let text = showText(node: node, text: "\(from.hp - to.hp)")
-            node.runs([.wait(forDuration: startDelay), text])
-        }
-
         // Alive - animate the monster
         if to.hp > 0 {
             let move: SKAction
@@ -105,8 +94,10 @@ private extension GameScene {
                 if (to.loc - player.loc).length > 1 {
                     let shoot = fire(item: to.meta.rangedItem!, to: player.loc, from: to.loc, node: node)
                     move = .sequence([shoot, text])
+                    move.duration = shoot.duration + text.duration
                 } else {
                     move = .group([bump(direction: direction), text])
+                    move.duration = text.duration
                 }
             } else {
                 move = walk(loc: to.loc)
@@ -151,6 +142,20 @@ private extension GameScene {
 
         // Walk or bump!?
         if let direction = to.playerState.hitDirection {
+            let monsters = to.monsterStates.toDictionary{ $0.loc }
+            let hitLoc = to.playerState.loc + direction.loc
+            if let monster = monsters[hitLoc] {
+
+                let node = self.monsters[monster.index]
+                if monster.blocked {
+                    let text = showText(node: node, text: "block", color: .white)
+                    node.runs([.wait(forDuration: frameTime / 2.0), text])
+                } else {
+                    let text = showText(node: node, text: "1")
+                    node.runs([.wait(forDuration: frameTime / 2.0), text])
+                }
+
+            }
             move = bump(direction: direction)
         }
 

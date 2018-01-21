@@ -36,6 +36,7 @@ extension GameScene {
             textNode2.position.x += 2.0
             textNode2.position.y -= 2
         }
+        action.duration = frameTime * 1.75
         return action
     }
 
