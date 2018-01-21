@@ -13,6 +13,19 @@
         "attack" : 4
 	},
     {
+        "monsterId" : "blueArmor",
+        "maxHp" : 10,
+        "asset" : "armor",
+        "sightRange" : 3,
+        "attackRange" : 1,
+        "onDeath" : "bones",
+        "isDirectional" : true,
+        "canFly" : false,
+        "block" : 0.25,
+        "smart" : true,
+        "attack" : 4
+    },
+    {
         "monsterId" : "blueSlime",
         "maxHp" : 1,
         "asset" : "slime",
@@ -73,7 +86,7 @@
         "attackRange" : 2,
         "isDirectional" : true,
         "canFly" : false,
-        "block" : 0.5,
+        "block" : 0,
         "smart" : true,
         "attack" : 5
     },

@@ -9,14 +9,9 @@
 import SpriteKit
 
 enum Character: String {
-    case warrior
-    case ranger
-    case priest
-    case berserker
-    case thief
-    case shaman
     case wizard
 
+    case armor
     case slime
     case bat
     case bear
