@@ -15,7 +15,7 @@ let tileSize: CGSize = CGSize(width: 48, height: 48)
 // Amount of time between 2 key frame animations
 let frameTime = 0.20
 
-let startingHp = 10
+let startingHp = 100
 
 enum ActionType {
     static let idle = "idle"

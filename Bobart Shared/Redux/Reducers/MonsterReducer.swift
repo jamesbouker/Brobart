@@ -151,7 +151,7 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerS
 
         // check if hitting the player
         if player.loc == nextLoc {
-            player.hp -= 1
+            player.hp -= monster.meta.attack
             nextMonsters[i].hitDirection = Direction(facing: player.loc - monster.loc)
             loc = monsters[i].loc
         }

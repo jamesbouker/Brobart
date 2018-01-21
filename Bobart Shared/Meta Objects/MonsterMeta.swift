@@ -18,6 +18,7 @@ class MonsterMeta: Codable {
     let canFly: Bool
     let block: Float
     let smart: Bool
+    let attack: Int
 
     // Optionals
     let onDeath: String?

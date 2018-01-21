@@ -24,7 +24,7 @@ extension GameScene {
         let move = SKAction.move(by: CGVector(dx: 0, dy: tileLength / 2.0), duration: frameTime * 0.75)
         move.timingMode = .easeInEaseOut
         let group = SKAction.group([.fadeIn(frameTime / 4.0), move])
-        textNode.runs([group, .wait(frameTime * 0.75), .blink(), .removeFromParent()])
+        textNode.runs([group, .wait(frameTime), .blink(), .removeFromParent()])
 
         return textNode
     }
