@@ -85,6 +85,11 @@ private extension GameScene {
             }
         }
 
+        if to.blocked {
+            let text = showText(node: node, text: "block", color: .white)
+            node.runs([.wait(forDuration: startDelay), text])
+        }
+
         // If hurt show text
         if to.hp < from.hp {
             let text = showText(node: node, text: "\(from.hp - to.hp)")
