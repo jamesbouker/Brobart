@@ -70,7 +70,7 @@ private func playerReducer(_ action: PlayerAction,
         }
         next.loc = state.loc
     }
-    
+
     // Check if hitting fire
     if map.fireLoc == next.loc {
         next.hitDirection = direction

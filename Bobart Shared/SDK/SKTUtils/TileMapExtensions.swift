@@ -11,6 +11,10 @@ import ObjectiveC
 
 extension SKTileMapNode {
 
+    func rePosition(_ node: SKNode) {
+        node.zPosition = CGFloat(numberOfRows) - node.position.y / tileLength
+    }
+
     func resetMaps() {
         setAllTiles(tile: "blank")
 

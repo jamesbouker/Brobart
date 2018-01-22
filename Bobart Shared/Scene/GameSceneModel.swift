@@ -10,7 +10,7 @@ import ReSwift
 import SpriteKit
 
 typealias Completion = () -> Void
-typealias LayoutFunc = (GameState) -> Void
+typealias LayoutFunc = (GameState, GameState?) -> Void
 typealias AnimateFunc = (GameState, GameState, @escaping Completion) -> Void
 
 class GameSceneModel {
@@ -75,13 +75,13 @@ extension GameSceneModel: StoreSubscriber {
     func newState(state: GameState) {
         if let from = self.state {
             isExecuting = true
-            self.layoutFunc(state)
+            self.layoutFunc(state, self.state)
 
             animFunc(state, from, {
                 self.finishStateTransition(to: state)
             })
         } else {
-            layoutFunc(state)
+            layoutFunc(state, self.state)
             finishStateTransition(to: state)
         }
     }

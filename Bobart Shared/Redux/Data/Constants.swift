@@ -21,6 +21,12 @@ enum ActionType {
     static let idle = "idle"
 }
 
+enum ZPositions {
+    static let projectiles: CGFloat = 500.0
+    static let textFront: CGFloat = 1001.0
+    static let textBack: CGFloat = 1000.0
+}
+
 // MARK: - Tile types
 enum TileType {
     static let blank = "blank"
@@ -37,6 +43,8 @@ enum TileType {
     static let chest_empty = "chest_empty"
     static let switch_off = "switch_off"
     static let switch_on = "switch_on"
+    static let switch_left = "switch_left"
+    static let switch_right = "switch_right"
     static let fire_out = "fire_out"
     static let fire = "fire"
     static let stairs_down_solo = "stairs_down_solo"
