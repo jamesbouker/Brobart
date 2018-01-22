@@ -27,7 +27,7 @@ fileprivate extension GameScene {
     func renderWalls(mapState: MapState) {
         let walls = mapState.walls
         let map = mapState.wallMap
-        var numberOfTorches = mapState.torches
+        var numberOfTorches = mapState.meta.torches
 
         for wall in walls.shuffled() {
             let oneDown = MapLocation(x: wall.x, y: wall.y - 1)
@@ -61,6 +61,13 @@ fileprivate extension GameScene {
     func renderSwitch(mapState: MapState) {
         let switchTile = mapState.switchHit ? TileType.switch_on : TileType.switch_off
         items.setTile(switchTile, loc: mapState.switchLoc)
+    }
+
+    func renderFire(mapState: MapState) {
+        if let loc = mapState.fireLoc {
+            let fireTile = mapState.fireHit ? TileType.fire : TileType.fire_out
+            items.setTile(fireTile, loc: loc)
+        }
     }
 
     func renderStairs(mapState: MapState) {
@@ -113,7 +120,7 @@ extension GameScene {
         let playerState = state.playerState
         let mapState = state.mapState
         let noWalls = state.mapState.noWalls
-        let grassMax = state.mapState.grass
+        let grassMax = state.mapState.meta.grass
 
         // ORDER IS IMPORTANT!
         if viewModel.state?.mapState.level != state.mapState.level {
@@ -126,6 +133,7 @@ extension GameScene {
             positionThePlayer(playerState: playerState)
             renderMonsters(monsters: state.monsterStates)
         }
+        renderFire(mapState: mapState)
         renderSwitch(mapState: mapState)
         renderStairs(mapState: mapState)
         renderChest(mapState: mapState)

@@ -27,8 +27,6 @@ enum Environment: String, Codable {
 struct MapState: Codable, StateType {
     var level: Int
     var environment: Environment
-    var grass: Int
-    var torches: Int
 
     // Walls
     var width: Int
@@ -46,19 +44,25 @@ struct MapState: Codable, StateType {
     var switchLoc: MapLocation
     var switchHit: Bool
 
-    init?(level: Int, width: Int, height: Int, walls: [MapLocation], env: Environment, grass: Int, torches: Int) {
+    // Fire
+    var fireLoc: MapLocation?
+    var fireHit: Bool
+
+    let meta: LevelMeta
+
+    init?(level: Int, width: Int, height: Int, walls: [MapLocation], env: Environment) {
+        meta = LevelMeta.levelMeta(level: level)
         self.level = level
         self.width = width
         self.height = height
         self.walls = walls
-        self.grass = grass
-        self.torches = torches
         environment = env
         switchLoc = .init(x: 0, y: 0)
         stairLoc = .init(x: 0, y: 0)
         chestLoc = .init(x: 0, y: 0)
         switchHit = false
         chestOpened = false
+        fireHit = false
 
         // After everything initialized!
         var deadEnds = self.deadEnds
@@ -67,9 +71,14 @@ struct MapState: Codable, StateType {
         }
 
         switchLoc = deadEnds.randomItem()!
-        let index = deadEnds.index { $0 == switchLoc }!
-        deadEnds.remove(at: index)
+        deadEnds.filtered { $0 != switchLoc }
         chestLoc = deadEnds.randomItem()!
+        deadEnds.filtered { $0 != chestLoc }
+
+        // Make a fire
+        if Float.random() <= meta.wood && deadEnds.count > 1 {
+            fireLoc = deadEnds.randomItem()!
+        }
     }
 }
 
@@ -91,19 +100,15 @@ extension MapState {
     }
 
     var deadEndsNoItems: [MapLocation] {
-        return deadEnds.filter { $0 != chestLoc && $0 != switchLoc }
+        return deadEnds.filter { $0 != chestLoc && $0 != switchLoc && $0 != fireLoc }
     }
 
     var noWalls: [MapLocation] {
         return locations.filter { !walls.contains($0) }
     }
 
-    var items: [MapLocation] {
-        return [switchLoc, chestLoc]
-    }
-
     var noWallsOrItems: [MapLocation] {
-        return noWalls.filter { $0 != switchLoc && $0 != chestLoc }
+        return noWalls.filter { $0 != switchLoc && $0 != chestLoc && $0 != fireLoc }
     }
 
     var wallMap: [MapLocation: Bool] {
@@ -116,6 +121,9 @@ extension MapState {
         map[switchLoc] = true
         if switchHit {
             map[stairLoc] = true
+        }
+        if fireLoc != nil {
+            map[fireLoc!] = true
         }
         return map
     }

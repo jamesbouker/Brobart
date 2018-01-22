@@ -19,6 +19,7 @@ class LevelMeta: Codable {
     let maxHeight: Int
     let grass: Int
     let torches: Int
+    let wood: Float
     let atlas: Environment
 }
 

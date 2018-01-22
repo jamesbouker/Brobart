@@ -37,6 +37,8 @@ enum TileType {
     static let chest_empty = "chest_empty"
     static let switch_off = "switch_off"
     static let switch_on = "switch_on"
+    static let fire_out = "fire_out"
+    static let fire = "fire"
     static let stairs_down_solo = "stairs_down_solo"
 }
 

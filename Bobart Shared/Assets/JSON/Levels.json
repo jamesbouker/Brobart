@@ -1,9 +1,9 @@
 {
 	"1" : {
-        "minWidth" : 9,
-        "maxWidth" : 9,
-        "minHeight" : 7,
-        "maxHeight" : 7,
+        "minWidth" : 11,
+        "maxWidth" : 11,
+        "minHeight" : 11,
+        "maxHeight" : 11,
         "atlas" : "brick",
         "grass" : 0,
         "torches" : 3,

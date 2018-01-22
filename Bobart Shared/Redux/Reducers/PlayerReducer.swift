@@ -70,6 +70,15 @@ private func playerReducer(_ action: PlayerAction,
         }
         next.loc = state.loc
     }
+    
+    // Check if hitting fire
+    if map.fireLoc == next.loc {
+        next.hitDirection = direction
+        if !map.fireHit {
+            map.fireHit = true
+        }
+        next.loc = state.loc
+    }
 
     // Check if hitting monster
     monsters?.modifyWhere({ $0.hp > 0 && $0.loc == next.loc }, to: {

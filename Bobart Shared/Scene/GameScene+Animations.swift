@@ -65,9 +65,7 @@ private extension GameScene {
                      _ node: SKSpriteNode,
                      _ startDelay: TimeInterval) -> TimeInterval {
         guard let previous = self.viewModel.state?.monsterStates, previous.count > to.index else {
-            assert(false, "This should never happen!")
-            node.runs([.wait(forDuration: startDelay), walk(loc: to.loc)])
-            return frameTime
+            return 0
         }
         let from = previous[to.index]
         if from.hp <= 0 && to.hp <= 0 {
@@ -142,7 +140,7 @@ private extension GameScene {
 
         // Walk or bump!?
         if let direction = to.playerState.hitDirection {
-            let monsters = to.monsterStates.toDictionary{ $0.loc }
+            let monsters = to.monsterStates.toDictionary { $0.loc }
             let hitLoc = to.playerState.loc + direction.loc
             if let monster = monsters[hitLoc] {
 
@@ -154,7 +152,6 @@ private extension GameScene {
                     let text = showText(node: node, text: "1")
                     node.runs([.wait(forDuration: frameTime / 2.0), text])
                 }
-
             }
             move = bump(direction: direction)
         }
