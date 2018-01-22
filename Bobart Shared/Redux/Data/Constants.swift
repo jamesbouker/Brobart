@@ -39,6 +39,10 @@ enum TileType {
     static let torch = "torch"
     static let torch_under = "torch_under"
     static let grass = "grass"
+    static let stairs_down_solo = "stairs_down_solo"
+}
+
+enum Assets {
     static let chest_closed = "chest_closed"
     static let chest_empty = "chest_empty"
     static let switch_off = "switch_off"
@@ -46,8 +50,8 @@ enum TileType {
     static let switch_left = "switch_left"
     static let switch_right = "switch_right"
     static let fire_out = "fire_out"
-    static let fire = "fire"
-    static let stairs_down_solo = "stairs_down_solo"
+    static let fire_1 = "fire_1"
+    static let fire_2 = "fire_2"
 }
 
 enum SceneNode {

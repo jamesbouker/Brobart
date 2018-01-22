@@ -85,22 +85,25 @@ fileprivate extension GameScene {
 
     func renderSwitch(mapState: MapState) {
         renderItem(test: mapState.switchHit,
-                   left: [TileType.switch_left],
-                   right: [TileType.switch_right],
+                   left: [Assets.switch_left],
+                   right: [Assets.switch_right],
                    loc: mapState.switchLoc)
     }
 
     func renderFire(mapState: MapState) {
         if let loc = mapState.fireLoc {
             renderItem(test: mapState.fireHit,
-                       left: ["fire_1", "fire_2"],
-                       right: [TileType.fire_out],
+                       left: [Assets.fire_1, Assets.fire_2],
+                       right: [Assets.fire_out],
                        loc: loc)
         }
     }
 
     func renderChest(mapState: MapState) {
-        renderItem(test: mapState.chestOpened, left: [TileType.chest_empty], right: [TileType.chest_closed], loc: mapState.chestLoc)
+        renderItem(test: mapState.chestOpened,
+                   left: [Assets.chest_empty],
+                   right: [Assets.chest_closed],
+                   loc: mapState.chestLoc)
     }
 
     func renderStairs(mapState: MapState) {
