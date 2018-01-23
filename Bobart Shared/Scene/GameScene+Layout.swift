@@ -72,25 +72,31 @@ fileprivate extension GameScene {
         let itemName = left.first!
         tileMap.childNode(withName: itemName)?.removeFromParent()
 
-        let textureName = test ? left.first! : right.first!
-        let texture = SKTexture.pixelatedImage(file: textureName)
-        let node = SKSpriteNode(texture: texture, color: .white, size: tileSize)
+        let textureNames = test ? left : right
+        let textures = textureNames.map { SKTexture.pixelatedImage(file: $0) }
+        let node = SKSpriteNode(texture: textures.first!, color: .white, size: tileSize)
         node.name = itemName
         node.anchorPoint = .zero
         node.position = loc.point * tileLength
         tileMap.rePosition(node)
         node.zPosition -= 0.5
         tileMap.addChild(node)
+
+        if textures.count > 1 {
+            let action = SKAction.animate(with: textures, timePerFrame: frameTime)
+            node.run(.repeatForever(action), type: ActionType.idle)
+        }
     }
 
     func renderSwitch(mapState: MapState) {
         renderItem(test: mapState.switchHit,
-                   left: [Assets.switch_left],
-                   right: [Assets.switch_right],
+                   left: [Assets.switch_right],
+                   right: [Assets.switch_left],
                    loc: mapState.switchLoc)
     }
 
     func renderFire(mapState: MapState) {
+        tileMap.childNode(withName: Assets.fire_1)?.removeFromParent()
         if let loc = mapState.fireLoc {
             renderItem(test: mapState.fireHit,
                        left: [Assets.fire_1, Assets.fire_2],
