@@ -8,16 +8,16 @@
 
 import ReSwift
 
-func monstersForLevel(level: Int, map: MapState, player: PlayerState) -> [MonsterState] {
+func monstersForLevel(level levelNum: Int, map: MapState, player: PlayerState) -> [MonsterState] {
     var monsters = [MonsterState]()
-    let level = LevelMeta.levelMeta(level: level)
+    let level = LevelMeta.levelMeta(level: levelNum)
 
     // Must Spawns
     var monsterPlacementSoFar = [MapLocation]()
     let noWalls = map.noWallsOrItems
 
     var index = 0
-    for monsterId in level.mustSpawn ?? [] {
+    for monsterId in level.mustSpawn {
         let meta = MonsterMeta.monsterMeta(monsterId: monsterId)
         var monster = MonsterState(meta: meta, index: index)
         index += 1
@@ -25,6 +25,26 @@ func monstersForLevel(level: Int, map: MapState, player: PlayerState) -> [Monste
         monsterPlacementSoFar.append(monster.loc)
         monsters.append(monster)
     }
+
+    // Can Spawn
+    var canSpawns = [String]()
+    for (monsterId, weight) in zip(level.canSpawn, level.spawnWeight) {
+        for _ in 0 ..< weight {
+            canSpawns.append(monsterId)
+        }
+    }
+
+    let willSpawn = Int.random(min: level.minSpawn, max: level.maxSpawn)
+    for _ in 0 ..< willSpawn {
+        let monsterId = canSpawns[Int.random(canSpawns.count)]
+        let meta = MonsterMeta.monsterMeta(monsterId: monsterId)
+        var monster = MonsterState(meta: meta, index: index)
+        index += 1
+        monster.loc = noWalls.notIncluding(monsterPlacementSoFar).notIncluding([player.loc]).randomItem()!
+        monsterPlacementSoFar.append(monster.loc)
+        monsters.append(monster)
+    }
+
     return monsters
 }
 

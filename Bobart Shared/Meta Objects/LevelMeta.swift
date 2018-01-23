@@ -9,18 +9,29 @@
 import Foundation
 
 class LevelMeta: Codable {
-    let mustSpawn: [String]?
-    let canSpawn: [String]?
-    let spawnWeight: [Int]?
 
+    // Must Spawn
+    let mustSpawn: [String]
+
+    // Can Spawn
+    let canSpawn: [String]
+    let spawnWeight: [Int]
+    let minSpawn: Int
+    let maxSpawn: Int
+
+    // Map Size
     let minWidth: Int
     let maxWidth: Int
     let minHeight: Int
     let maxHeight: Int
+
+    // Art!
     let grass: Int
     let torches: Int
-    let wood: Float
     let atlas: Environment
+
+    // Skills
+    let wood: Float
 }
 
 extension LevelMeta {

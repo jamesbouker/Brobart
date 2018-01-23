@@ -8,6 +8,10 @@
         "grass" : 0,
         "torches" : 3,
         "mustSpawn" : ["skeleton", "blueArmor"],
+        "canSpawn" : ["blueSlime", "redDragon"],
+        "spawnWeight" : [1, 2],
+        "minSpawn" : 1,
+        "maxSpawn" : 2,
         "wood" : 1.0
 	},
     "2" : {
@@ -19,6 +23,10 @@
         "torches" : 2,
         "atlas" : "stone",
         "mustSpawn" : ["skeleton", "redDragon"],
+        "canSpawn" : [],
+        "spawnWeight" : [],
+        "minSpawn" : 0,
+        "maxSpawn" : 0,
         "wood" : 1.0
     },
     "3" : {
@@ -30,10 +38,18 @@
         "atlas" : "vine",
         "grass" : 20,
         "mustSpawn" : ["blueSlime", "blackBat"],
+        "canSpawn" : [],
+        "spawnWeight" : [],
+        "minSpawn" : 0,
+        "maxSpawn" : 0,
         "wood" : 1.0
     },
     "4" : {
         "mustSpawn" : ["skeleton", "redDragon","skeleton", "redDragon","skeleton", "redDragon"],
+        "canSpawn" : [],
+        "spawnWeight" : [],
+        "minSpawn" : 0,
+        "maxSpawn" : 0,
         "minWidth" : 9,
         "maxWidth" : 11,
         "minHeight" : 9,
