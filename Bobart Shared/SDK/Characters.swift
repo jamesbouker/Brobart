@@ -12,6 +12,7 @@ enum Character: String {
     case wizard
 
     case armor
+    case ghost
     case slime
     case bat
     case bear

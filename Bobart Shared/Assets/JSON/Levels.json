@@ -7,7 +7,7 @@
         "atlas" : "brick",
         "grass" : 0,
         "torches" : 3,
-        "mustSpawn" : ["skeleton", "blueArmor"],
+        "mustSpawn" : ["whiteGhost","skeleton", "blueArmor"],
         "canSpawn" : ["blueSlime", "redDragon"],
         "spawnWeight" : [1, 2],
         "minSpawn" : 1,

@@ -1,5 +1,17 @@
 [
     {
+        "monsterId" : "whiteGhost",
+        "maxHp" : 4,
+        "asset" : "ghost",
+        "sightRange" : 3,
+        "attackRange" : 1,
+        "isDirectional" : true,
+        "canFly" : true,
+        "block" : 0,
+        "smart" : true,
+        "attack" : 2
+    },
+    {
         "monsterId" : "brownBear",
 		"maxHp" : 4,
 		"asset" : "bear",
