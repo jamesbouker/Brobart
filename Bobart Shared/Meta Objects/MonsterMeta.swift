@@ -17,6 +17,7 @@ class MonsterMeta: Codable {
     let isDirectional: Bool
     let canFly: Bool
     let block: Float
+    let swap: Float
     let smart: Bool
     let attack: Int
 
