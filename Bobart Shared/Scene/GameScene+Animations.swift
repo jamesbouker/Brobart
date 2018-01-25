@@ -89,6 +89,7 @@ private extension GameScene {
             if let direction = to.hitDirection {
                 let text = showText(node: self.player, text: "\(to.meta.attack)")
 
+                // if shooting player
                 if (to.loc - player.loc).length > 1 {
                     let shoot = fire(item: to.meta.rangedItem!, to: player.loc, from: to.loc, node: node)
                     move = .sequence([shoot, text])
@@ -99,6 +100,11 @@ private extension GameScene {
                 }
             } else {
                 move = walk(loc: to.loc)
+            }
+
+            if to.swapped {
+                let phase = SKAction.phase(times: 1, over: frameTime)
+                node.run(phase)
             }
 
             node.runs([.wait(forDuration: startDelay), .run(custom), move])

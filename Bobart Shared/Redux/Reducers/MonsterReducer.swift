@@ -131,7 +131,7 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerS
     for (i, monster) in monsters.enumerated() {
 
         nextMonsters[i].hitDirection = nil
-        guard monster.hp > 0 && monster.blocked == false else {
+        guard monster.hp > 0 && monster.blocked == false && monster.swapped == false else {
             continue
         }
 
@@ -159,15 +159,7 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerS
         }
 
         var loc = nextLoc ?? nextMonsters[i].loc
-        // Determine face direction
-        switch (loc - monster.loc).normalized {
-        case MapLocation(x: 1, y: 0):
-            nextMonsters[i].facing = .r
-        case MapLocation(x: -1, y: 0):
-            nextMonsters[i].facing = .l
-        default:
-            break
-        }
+        nextMonsters[i].facing = Direction(facing: loc - monster.loc)
 
         // check if hitting the player
         if player.loc == nextLoc {

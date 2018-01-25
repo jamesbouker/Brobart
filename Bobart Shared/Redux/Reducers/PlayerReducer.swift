@@ -42,7 +42,10 @@ private func playerReducer(_ action: PlayerAction,
 
     // Reset status
     next.hitDirection = nil
-    monsters?.modifyEach { $1.blocked = false }
+    monsters?.modifyEach {
+        $1.blocked = false
+        $1.swapped = false
+    }
 
     guard next.hp > 0 else {
         return next
@@ -82,14 +85,21 @@ private func playerReducer(_ action: PlayerAction,
 
     // Check if hitting monster
     monsters?.modifyWhere({ $0.hp > 0 && $0.loc == next.loc }, to: {
-        // check if blocked!
+        // check if blocked or swapped
         if Float.random() <= $0.meta.block {
             $0.blocked = true
+            next.hitDirection = direction
+            next.loc = state.loc
+        } else if Float.random() <= $0.meta.swap && map.noWallsOrItems.contains($0.loc) {
+            $0.loc = state.loc
+            $0.swapped = true
+            $0.facing = direction
+            next.facing = direction.reversed
         } else {
             $0.hp -= 1
+            next.hitDirection = direction
+            next.loc = state.loc
         }
-        next.hitDirection = direction
-        next.loc = state.loc
     })
 
     // Check if player can move!

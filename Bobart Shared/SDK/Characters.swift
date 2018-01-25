@@ -46,6 +46,10 @@ enum Direction: String, Codable {
         }
     }
 
+    var reversed: Direction {
+        return Direction(facing: loc * -1)
+    }
+
     var loc: MapLocation {
         switch self {
         case .u: return .init(x: 0, y: 1)

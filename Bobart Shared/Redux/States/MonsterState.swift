@@ -15,9 +15,17 @@ struct MonsterState: Codable, StateType, Equatable, Hashable {
     var asset: String
     var hp: Int
     var index: Int
-    var facing: Direction
+    var facing: Direction {
+        didSet {
+            if facing == .u || facing == .d {
+                facing = oldValue
+            }
+        }
+    }
+
     var hitDirection: Direction?
     var blocked: Bool
+    var swapped: Bool
 
     // If cannot see/hit player - move toward...
     var lastSawPlayer: MapLocation?
@@ -29,6 +37,7 @@ struct MonsterState: Codable, StateType, Equatable, Hashable {
         facing = .l
         uuid = UUID().uuidString
         blocked = false
+        swapped = false
         self.index = index
         self.meta = meta
     }

@@ -21,6 +21,16 @@ extension SKAction {
         return .wait(forDuration: time)
     }
 
+    class func phase(times: Int, over: TimeInterval) -> SKAction {
+        let fadeTime = over / Double(times)
+        let fade: [SKAction] = [.fadeOut(fadeTime), .fadeIn(fadeTime)]
+        var seq = [SKAction]()
+        for _ in 0 ..< times {
+            seq += fade
+        }
+        return .sequence(seq)
+    }
+
     class func blink() -> SKAction {
         let time = frameTime / 6.0
         let fade = SKAction.sequence([.fadeOut(time), .fadeIn(time)])

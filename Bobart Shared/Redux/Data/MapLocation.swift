@@ -71,6 +71,10 @@ extension MapLocation: Equatable, Hashable {
         return MapLocation(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
 
+    static func * (lhs: MapLocation, rhs: Int) -> MapLocation {
+        return MapLocation(x: lhs.x * rhs, y: lhs.y * rhs)
+    }
+
     var hashValue: Int {
         return x ^ y
     }

@@ -9,7 +9,14 @@
 import ReSwift
 
 struct PlayerState: Codable, StateType {
-    var facing: Direction
+    var facing: Direction {
+        didSet {
+            if facing == .u || facing == .d {
+                facing = oldValue
+            }
+        }
+    }
+
     var loc: MapLocation
     var hitDirection: Direction?
     var hp: Int
