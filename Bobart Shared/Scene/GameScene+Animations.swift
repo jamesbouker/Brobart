@@ -102,7 +102,7 @@ private extension GameScene {
                 move = walk(loc: to.loc)
             }
 
-            if to.swapped {
+            if to.phased {
                 let phase = SKAction.phase(times: 1, over: frameTime)
                 node.run(phase)
             }

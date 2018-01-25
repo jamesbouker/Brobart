@@ -25,7 +25,7 @@ struct MonsterState: Codable, StateType, Equatable, Hashable {
 
     var hitDirection: Direction?
     var blocked: Bool
-    var swapped: Bool
+    var phased: Bool
 
     // If cannot see/hit player - move toward...
     var lastSawPlayer: MapLocation?
@@ -37,7 +37,7 @@ struct MonsterState: Codable, StateType, Equatable, Hashable {
         facing = .l
         uuid = UUID().uuidString
         blocked = false
-        swapped = false
+        phased = false
         self.index = index
         self.meta = meta
     }

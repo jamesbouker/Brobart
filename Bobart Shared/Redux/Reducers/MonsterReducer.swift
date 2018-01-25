@@ -131,7 +131,7 @@ func moveMonsters(monsters: [MonsterState], map: MapState, player: inout PlayerS
     for (i, monster) in monsters.enumerated() {
 
         nextMonsters[i].hitDirection = nil
-        guard monster.hp > 0 && monster.blocked == false && monster.swapped == false else {
+        guard monster.hp > 0 && monster.blocked == false && monster.phased == false else {
             continue
         }
 
