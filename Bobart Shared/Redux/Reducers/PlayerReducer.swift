@@ -30,27 +30,10 @@ private func movePlayer(_ action: PlayerAction, next: inout PlayerState) {
 }
 
 private func playerReducer(_ action: PlayerAction,
-                           _ state: PlayerState,
+                           _ next: inout PlayerState,
                            _ map: inout MapState,
                            _ monsters: inout [MonsterState]?) -> PlayerState {
-
-    if action == .loadNextLevel {
-        return initialPlayerState(map)
-    }
-
-    var next = state
-
-    // Reset status
-    next.hitDirection = nil
-    monsters?.modifyEach {
-        $1.blocked = false
-        $1.phased = false
-    }
-
-    guard next.hp > 0 else {
-        return next
-    }
-
+    let state = next
     movePlayer(action, next: &next)
     let direction = Direction(facing: next.loc - state.loc)
 
@@ -116,7 +99,22 @@ func playerReducer(action: Action,
                    monsters: inout [MonsterState]?) -> PlayerState {
     var next = state ?? initialPlayerState(map)
     if let action = action as? PlayerAction {
-        next = playerReducer(action, next, &map, &monsters)
+        if action == .loadNextLevel {
+            return initialPlayerState(map)
+        }
+
+        // Reset status
+        next.hitDirection = nil
+        monsters?.modifyEach {
+            $1.blocked = false
+            $1.phased = false
+        }
+
+        guard next.hp > 0 else {
+            return next
+        }
+
+        next = playerReducer(action, &next, &map, &monsters)
     }
     return next
 }
