@@ -61,7 +61,6 @@ fileprivate extension GameScene {
     func blankOut(_ loc: MapLocation) {
         items.setTile(TileType.blank, loc: loc)
         grass.setTile(TileType.blank, loc: loc)
-        shadows.setTile(TileType.blank, loc: loc)
         sfx.setTile(TileType.blank, loc: loc)
         sfx.setTile(TileType.blank, loc: loc.upOne)
     }
