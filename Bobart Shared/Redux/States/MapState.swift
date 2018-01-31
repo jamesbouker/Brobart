@@ -48,6 +48,9 @@ struct MapState: Codable, StateType {
     var fireLoc: MapLocation?
     var fireHit: Bool
 
+    // Food
+    var foodLocations: [MapLocation]
+
     let meta: LevelMeta
 
     init?(level: Int, width: Int, height: Int, walls: [MapLocation], env: Environment) {
@@ -63,6 +66,7 @@ struct MapState: Codable, StateType {
         switchHit = false
         chestOpened = false
         fireHit = false
+        foodLocations = [MapLocation]()
 
         // After everything initialized!
         var deadEnds = self.deadEnds

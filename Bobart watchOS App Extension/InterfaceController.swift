@@ -15,8 +15,8 @@ class InterfaceController: WKInterfaceController {
     // Shared
     var scene: GameScene!
 
-    func setHp(current: Int, max: Int) {
-//        self.hp.text = "\(current) / \(max)"
+    func setHp(current _: Int, max _: Int) {
+        //        self.hp.text = "\(current) / \(max)"
     }
 
     @IBOutlet var skInterface: WKInterfaceSKScene!

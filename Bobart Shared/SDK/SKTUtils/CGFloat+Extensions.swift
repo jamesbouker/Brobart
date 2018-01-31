@@ -106,6 +106,10 @@ public func shortestAngleBetween(_ angle1: CGFloat, angle2: CGFloat) -> CGFloat 
 
 public extension Double {
 
+    static func * (lhs: Double, rhs: CGSize) -> CGSize {
+        return CGSize(width: lhs * Double(rhs.width), height: lhs * Double(rhs.height))
+    }
+
     var cgf: CGFloat {
         return CGFloat(self)
     }

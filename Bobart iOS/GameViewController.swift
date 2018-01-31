@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var hp: UILabel!
 
     func setHp(current: Int, max: Int) {
-        self.hp.text = "\(current) / \(max)"
+        hp.text = "\(current) / \(max)"
     }
 
     var touchDownLocation: CGPoint?

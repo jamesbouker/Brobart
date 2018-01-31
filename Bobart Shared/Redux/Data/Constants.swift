@@ -15,13 +15,14 @@ let tileSize: CGSize = CGSize(width: 48, height: 48)
 // Amount of time between 2 key frame animations
 let frameTime = 0.20
 
-let startingHp = 10
+let startingHp = 100
 
 enum ActionType {
     static let idle = "idle"
 }
 
 enum ZPositions {
+    static let droppedItems: CGFloat = 1
     static let projectiles: CGFloat = 500.0
     static let textFront: CGFloat = 1001.0
     static let textBack: CGFloat = 1000.0

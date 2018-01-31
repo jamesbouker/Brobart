@@ -41,8 +41,8 @@ extension SKAction {
 extension GameScene {
     func showText(node: SKNode, text: String, color: UIColor = #colorLiteral(red: 1, green: 0.2876047492, blue: 0.2655626833, alpha: 1)) -> SKAction {
         let action = SKAction.run {
-            self.label(text: text, color: color, node: node, z: ZPositions.textFront)
-            let textNode2 = self.label(text: text, color: .black, node: node, z: ZPositions.textBack)
+            self.labelNode(text: text, color: color, node: node, z: ZPositions.textFront)
+            let textNode2 = self.labelNode(text: text, color: .black, node: node, z: ZPositions.textBack)
             textNode2.position.x += 2.0
             textNode2.position.y -= 2
         }

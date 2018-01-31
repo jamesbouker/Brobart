@@ -150,6 +150,16 @@ fileprivate extension GameScene {
             tileMap.rePosition(node)
         }
     }
+
+    func renderFood(food: [MapLocation]) {
+        tileMap.enumerateChildNodes(withName: "food") { node, _ in
+            node.removeFromParent()
+        }
+
+        for loc in food {
+            foodNode(loc: loc)
+        }
+    }
 }
 
 extension GameScene {
@@ -175,6 +185,7 @@ extension GameScene {
             renderChest(mapState: mapState)
             positionThePlayer(playerState: playerState)
             renderMonsters(monsters: to.monsterStates)
+            renderFood(food: to.mapState.foodLocations)
             tileMap.rePosition(player)
             return
         }
@@ -193,6 +204,10 @@ extension GameScene {
 
         if from?.mapState.chestOpened != to.mapState.chestOpened {
             renderChest(mapState: mapState)
+        }
+
+        if from?.mapState.foodLocations ?? [] != to.mapState.foodLocations {
+            renderFood(food: to.mapState.foodLocations)
         }
 
         for monster in monsters {

@@ -68,11 +68,12 @@ private func playerReducer(_ action: PlayerAction,
 
     // Check if hitting monster
     monsters?.modifyWhere({ $0.hp > 0 && $0.loc == next.loc }, to: {
-        // check if blocked or phased
+        // check if blocked
         if Float.random() <= $0.meta.block {
             $0.blocked = true
             next.hitDirection = direction
             next.loc = state.loc
+            // Check if phased - and monster not on wall
         } else if Float.random() <= $0.meta.phase && map.noWallsOrItems.contains($0.loc) {
             $0.loc = state.loc
             $0.phased = true
@@ -82,6 +83,10 @@ private func playerReducer(_ action: PlayerAction,
             $0.hp -= 1
             next.hitDirection = direction
             next.loc = state.loc
+
+            if $0.hp <= 0 {
+                map.foodLocations.append($0.loc)
+            }
         }
     })
 
