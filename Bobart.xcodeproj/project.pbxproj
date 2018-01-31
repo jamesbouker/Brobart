@@ -40,6 +40,8 @@
 		F525B5691FB412A200982E71 /* MapReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5681FB412A200982E71 /* MapReducer.swift */; };
 		F525B56A1FB412A200982E71 /* MapReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5681FB412A200982E71 /* MapReducer.swift */; };
 		F525B56B1FB412A200982E71 /* MapReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B5681FB412A200982E71 /* MapReducer.swift */; };
+		F55BE43F2020226B00CAC0B2 /* ImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BE43E2020226B00CAC0B2 /* ImageView+Extensions.swift */; };
+		F55BE4412020226B00CAC0B2 /* ImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BE43E2020226B00CAC0B2 /* ImageView+Extensions.swift */; };
 		F55C9788B2AF8CFCE6A66F85 /* Pods_Bobart_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11698892DD5A0658D6F1163D /* Pods_Bobart_iOS.framework */; };
 		F55E22CA1FBFD25E00CD68C6 /* MazeThinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E22C81FBFD25D00CD68C6 /* MazeThinner.swift */; };
 		F55E22CB1FBFD25E00CD68C6 /* MazeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E22C91FBFD25D00CD68C6 /* MazeMaker.swift */; };
@@ -289,6 +291,7 @@
 		F518994020071CA900E7F0F8 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		F525B5641FB4128600982E71 /* PlayerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerReducer.swift; sourceTree = "<group>"; };
 		F525B5681FB412A200982E71 /* MapReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReducer.swift; sourceTree = "<group>"; };
+		F55BE43E2020226B00CAC0B2 /* ImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extensions.swift"; sourceTree = "<group>"; };
 		F55E22C81FBFD25D00CD68C6 /* MazeThinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeThinner.swift; sourceTree = "<group>"; };
 		F55E22C91FBFD25D00CD68C6 /* MazeMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeMaker.swift; sourceTree = "<group>"; };
 		F59608471FB295B200F42D2B /* Default.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Default.sks; sourceTree = "<group>"; };
@@ -647,6 +650,7 @@
 			children = (
 				F59608811FB2961300F42D2B /* GameScene.sks */,
 				F5DFCB441FB2932B00DB8195 /* AppDelegate.swift */,
+				F55BE43E2020226B00CAC0B2 /* ImageView+Extensions.swift */,
 				F5DFCB461FB2932B00DB8195 /* GameViewController.swift */,
 				F5DFCB481FB2932B00DB8195 /* Main.storyboard */,
 				F5DFCB4B1FB2932B00DB8195 /* LaunchScreen.storyboard */,
@@ -1241,6 +1245,7 @@
 				F59608CA1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
 				F59608F11FB2A07600F42D2B /* TextureExtensions.swift in Sources */,
 				F5AC79061FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
+				F55BE43F2020226B00CAC0B2 /* ImageView+Extensions.swift in Sources */,
 				F59608F71FB2A07600F42D2B /* Vector3.swift in Sources */,
 				F5E1E12320152BC4004E951C /* NodeFactory.swift in Sources */,
 				F5AE446D1FB4C19000538E98 /* Characters.swift in Sources */,
@@ -1337,6 +1342,7 @@
 				F59608F91FB2A07600F42D2B /* Vector3.swift in Sources */,
 				F59608D81FB2A07600F42D2B /* Int+Extensions.swift in Sources */,
 				F59608CC1FB2A07600F42D2B /* CGFloat+Extensions.swift in Sources */,
+				F55BE4412020226B00CAC0B2 /* ImageView+Extensions.swift in Sources */,
 				F5AC79081FB56DE3000FC8BC /* GameSceneModel.swift in Sources */,
 				F5E1E12520152BC4004E951C /* NodeFactory.swift in Sources */,
 				F59608E71FB2A07600F42D2B /* SKNode+Extensions.swift in Sources */,

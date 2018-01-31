@@ -12,8 +12,14 @@ import Foundation
 var sharedController: InterfaceController!
 class InterfaceController: WKInterfaceController {
 
-    @IBOutlet var skInterface: WKInterfaceSKScene!
+    // Shared
     var scene: GameScene!
+
+    func setHp(current: Int, max: Int) {
+//        self.hp.text = "\(current) / \(max)"
+    }
+
+    @IBOutlet var skInterface: WKInterfaceSKScene!
     var touchDownTime: Date?
 
     override func awake(withContext context: Any?) {

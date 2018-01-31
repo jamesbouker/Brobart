@@ -1,24 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="pixelated.ttf">
+            <string>Pixelated</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Bobart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKz-BR-03f" userLabel="Header">
+                                <rect key="frame" x="0.0" y="20" width="375" height="85"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="FRm-lm-YBz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                        <color key="backgroundColor" red="0.074075184959999998" green="8.7794789110000007e-05" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rhv-Ak-ags">
+                                        <rect key="frame" x="8" y="9.5" width="101.5" height="62"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9TQ-BQ-Va4">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="30"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="SAK-an-aPq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="COs-oz-1rc"/>
+                                                            <constraint firstAttribute="height" constant="30" id="psI-DT-yaz"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="pixelated" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="99/99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcl-1H-SMO">
+                                                        <rect key="frame" x="38" y="0.0" width="63.5" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Pixelated" family="Pixelated" pointSize="23"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4OR-xe-uw6">
+                                                <rect key="frame" x="0.0" y="32" width="49.5" height="30"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stairs" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-oh-b6D">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="3jr-De-KRx"/>
+                                                            <constraint firstAttribute="width" constant="30" id="lCV-7e-NCb"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="pixelated" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-Xo-1Oo">
+                                                        <rect key="frame" x="38" y="0.0" width="11.5" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Pixelated" family="Pixelated" pointSize="23"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbT-7t-r7L">
+                                        <rect key="frame" x="323.5" y="9.5" width="43.5" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-9V-Yek">
+                                                <rect key="frame" x="0.0" y="0.0" width="11.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="Pixelated" family="Pixelated" pointSize="23"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="z6R-bN-K2D">
+                                                <rect key="frame" x="11.5" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="CRh-JN-k4f"/>
+                                                    <constraint firstAttribute="width" constant="32" id="hbX-sH-XPG"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pixelated" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="BFa-tg-cCH"/>
+                                    <constraint firstAttribute="bottom" secondItem="FRm-lm-YBz" secondAttribute="bottom" id="Il4-ZN-wFK"/>
+                                    <constraint firstItem="FRm-lm-YBz" firstAttribute="leading" secondItem="UKz-BR-03f" secondAttribute="leading" id="MTm-iE-6XV"/>
+                                    <constraint firstItem="rhv-Ak-ags" firstAttribute="leading" secondItem="UKz-BR-03f" secondAttribute="leading" constant="8" id="NQg-tA-FBQ"/>
+                                    <constraint firstItem="rhv-Ak-ags" firstAttribute="centerY" secondItem="UKz-BR-03f" secondAttribute="centerY" constant="-2" id="PrL-Iv-DZQ"/>
+                                    <constraint firstItem="XD7-9V-Yek" firstAttribute="top" secondItem="fcl-1H-SMO" secondAttribute="top" id="RJJ-Gb-NR6"/>
+                                    <constraint firstAttribute="trailing" secondItem="XbT-7t-r7L" secondAttribute="trailing" constant="8" id="Ykm-uv-hd7"/>
+                                    <constraint firstAttribute="trailing" secondItem="FRm-lm-YBz" secondAttribute="trailing" id="bsc-Nf-e6D"/>
+                                    <constraint firstItem="FRm-lm-YBz" firstAttribute="top" secondItem="UKz-BR-03f" secondAttribute="top" id="nUj-Iq-cwx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UKz-BR-03f" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="topMargin" id="Lhp-Xx-ZT5"/>
+                            <constraint firstItem="UKz-BR-03f" firstAttribute="leading" secondItem="bNo-s9-wk6" secondAttribute="leading" id="eHw-jW-Orw"/>
+                            <constraint firstItem="bNo-s9-wk6" firstAttribute="trailing" secondItem="UKz-BR-03f" secondAttribute="trailing" id="ume-DU-qlt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bNo-s9-wk6"/>
                     </view>
+                    <connections>
+                        <outlet property="hp" destination="fcl-1H-SMO" id="ukt-Ku-KMA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="56.25" y="34.859154929577464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="food" width="16" height="16"/>
+        <image name="heart" width="16" height="16"/>
+        <image name="menu" width="32" height="96"/>
+        <image name="stairs" width="20" height="19"/>
+    </resources>
 </document>

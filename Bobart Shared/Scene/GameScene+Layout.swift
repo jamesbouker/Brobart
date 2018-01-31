@@ -160,6 +160,8 @@ extension GameScene {
         let noWalls = to.mapState.noWalls
         let grassMax = to.mapState.meta.grass
 
+        sharedController.setHp(current: playerState.hp, max: playerState.maxHp)
+
         if from?.mapState.level != to.mapState.level {
             tileMap.tileSet = SKTileSet(named: to.mapState.environment.rawValue)!
             tileMap.pixelate()

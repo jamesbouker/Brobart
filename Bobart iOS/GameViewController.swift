@@ -13,9 +13,18 @@ import SpriteKit
 var sharedController: GameViewController!
 class GameViewController: UIViewController {
 
+    // Shared
     var scene: GameScene!
+    @IBOutlet weak var hp: UILabel!
+
+    func setHp(current: Int, max: Int) {
+        self.hp.text = "\(current) / \(max)"
+    }
+
     var touchDownLocation: CGPoint?
     var touchDownTime: Date?
+
+    @IBOutlet weak var heartIcon: UIImageView!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
