@@ -35,7 +35,7 @@ extension GameScene {
         let texture = SKTexture.pixelatedImage(file: "food")
         let node = SKSpriteNode(texture: texture, color: .white, size: 0.75 * tileSize)
         node.name = "food"
-        node.position = loc.point * tileLength + CGPoint(x: tileLength/2, y: tileLength/2)
+        node.position = loc.point * tileLength + CGPoint(x: tileLength / 2, y: tileLength / 2)
         node.zPosition = ZPositions.droppedItems
         tileMap.addChild(node)
     }
