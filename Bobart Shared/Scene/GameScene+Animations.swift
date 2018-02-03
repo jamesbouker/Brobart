@@ -113,7 +113,10 @@ private extension GameScene {
 
         // If dying, blink the anim, fade it out, and remove it from the scene
         node.runs([.wait(forDuration: startDelay), .blink(), .run {
-            self.foodNode(loc: to.loc)
+            // Render food if not there
+            if !self.food.hasKey(to.loc) {
+                self.foodNode(loc: to.loc)
+            }
             node.isHidden = true
             node.removeAllActions()
             node.removeFromParent()
@@ -161,11 +164,22 @@ private extension GameScene {
             }
             move = bump(direction: direction)
         } else {
+            let playerLoc = to.playerState.loc
+            let onFood = self.food.hasKey(playerLoc)
+
             move = .sequence([move, .run {
-                let food = self.food[to.playerState.loc]
-                food?.removeFromParent()
+                if let food = self.food[playerLoc] {
+                    self.food.removeValue(forKey: to.playerState.loc)
+                    food.removeFromParent()
+                    let txt = self.showText(node: self.player, text: "+Food", color: .white)
+                    self.player.run(txt)
+                }
                 sharedController.setFood(to.playerState.food)
             }])
+            if onFood {
+                // Add delay for food text
+                move.duration += frameTime * 1.75
+            }
         }
 
         // Idle anim + move
