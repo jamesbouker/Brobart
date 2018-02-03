@@ -38,5 +38,6 @@ extension GameScene {
         node.position = loc.point * tileLength + CGPoint(x: tileLength / 2, y: tileLength / 2)
         node.zPosition = ZPositions.droppedItems
         tileMap.addChild(node)
+        food[loc] = node
     }
 }

@@ -10,7 +10,7 @@ import ReSwift
 
 private func initialPlayerState(_ map: MapState) -> PlayerState {
     let location = map.noWallsOrItems.randomItem()
-    return PlayerState(facing: .l, loc: location!, hitDirection: nil, hp: startingHp, maxHp: startingHp)
+    return PlayerState(facing: .l, loc: location!, hitDirection: nil, hp: startingHp, maxHp: startingHp, food: 0)
 }
 
 private func movePlayer(_ action: PlayerAction, next: inout PlayerState) {
@@ -81,6 +81,12 @@ private func playerReducer(_ action: PlayerAction,
     // Check if player can move!
     if map.walls.contains(next.loc) {
         next.loc = state.loc
+    }
+
+    // Check if stepping on food
+    while let index = map.foodLocations.index(of: next.loc) {
+        map.foodLocations.remove(at: index)
+        next.food += 1
     }
 
     return next

@@ -21,4 +21,6 @@ struct PlayerState: Codable, StateType {
     var hitDirection: Direction?
     var hp: Int
     var maxHp: Int
+
+    var food: Int
 }

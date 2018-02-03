@@ -21,6 +21,7 @@ class GameScene: SKScene {
     var playerSquare: SKShapeNode!
 
     var monsters = [SKSpriteNode]()
+    var food = [MapLocation: SKSpriteNode]()
 
     // MARK: - States
     var viewModel: GameSceneModel!

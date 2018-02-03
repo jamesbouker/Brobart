@@ -151,13 +151,17 @@ fileprivate extension GameScene {
         }
     }
 
-    func renderFood(food: [MapLocation]) {
+    func removeFood() {
         tileMap.enumerateChildNodes(withName: "food") { node, _ in
             node.removeFromParent()
         }
+    }
+
+    func renderFood() {
+        removeFood()
 
         for loc in food {
-            foodNode(loc: loc)
+            foodNode(loc: loc.key)
         }
     }
 }
@@ -176,7 +180,9 @@ extension GameScene {
             tileMap.tileSet = SKTileSet(named: to.mapState.environment.rawValue)!
             tileMap.pixelate()
 
+            sharedController.setFood(playerState.food)
             resizeTheMap(mapState: mapState)
+            removeFood()
             renderWalls(mapState: mapState)
             renderGrass(grassMax: grassMax, noWalls: noWalls)
             renderSwitch(mapState: mapState)
@@ -185,7 +191,7 @@ extension GameScene {
             renderChest(mapState: mapState)
             positionThePlayer(playerState: playerState)
             renderMonsters(monsters: to.monsterStates)
-            renderFood(food: to.mapState.foodLocations)
+            renderFood()
             tileMap.rePosition(player)
             return
         }
@@ -204,10 +210,6 @@ extension GameScene {
 
         if from?.mapState.chestOpened != to.mapState.chestOpened {
             renderChest(mapState: mapState)
-        }
-
-        if from?.mapState.foodLocations ?? [] != to.mapState.foodLocations {
-            renderFood(food: to.mapState.foodLocations)
         }
 
         for monster in monsters {

@@ -16,7 +16,7 @@ extension GameScene {
         let action = SKAction.run {
 
             // Animate the player!
-            let playerDuration = self.playerAnim(to: to)
+            let playerDuration = self.playerAnim(to: to, from: from)
 
             // Find monsters getting hurt
             var hurtMonsters = [MonsterState: MonsterState]()
@@ -113,6 +113,7 @@ private extension GameScene {
 
         // If dying, blink the anim, fade it out, and remove it from the scene
         node.runs([.wait(forDuration: startDelay), .blink(), .run {
+            self.foodNode(loc: to.loc)
             node.isHidden = true
             node.removeAllActions()
             node.removeFromParent()
@@ -123,7 +124,7 @@ private extension GameScene {
 
 // MARK: - Player Animations
 private extension GameScene {
-    func playerAnim(to: GameState) -> TimeInterval {
+    func playerAnim(to: GameState, from: GameState) -> TimeInterval {
         var move = walk(loc: to.playerState.loc)
 
         // Animate right away if changing levels
@@ -146,10 +147,9 @@ private extension GameScene {
 
         // Walk or bump!?
         if let direction = to.playerState.hitDirection {
-            let monsters = to.monsterStates.toDictionary { $0.loc }
+            let monsters = from.monsterStates.filter { $0.hp > 0 }.toDictionary { $0.loc }
             let hitLoc = to.playerState.loc + direction.loc
             if let monster = monsters[hitLoc] {
-
                 let node = self.monsters[monster.index]
                 if monster.blocked {
                     let text = showText(node: node, text: "block", color: .white)
@@ -160,6 +160,12 @@ private extension GameScene {
                 }
             }
             move = bump(direction: direction)
+        } else {
+            move = .sequence([move, .run {
+                let food = self.food[to.playerState.loc]
+                food?.removeFromParent()
+                sharedController.setFood(to.playerState.food)
+            }])
         }
 
         // Idle anim + move

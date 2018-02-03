@@ -19,6 +19,10 @@ class InterfaceController: WKInterfaceController {
         //        self.hp.text = "\(current) / \(max)"
     }
 
+    func setFood(_: Int) {
+        //        self.food.text = "\(food)"
+    }
+
     @IBOutlet var skInterface: WKInterfaceSKScene!
     var touchDownTime: Date?
 
