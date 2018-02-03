@@ -42,8 +42,6 @@ private func playerReducer(_ action: PlayerAction,
         next.hitDirection = direction
         if !map.switchHit {
             map.switchHit = true
-            let stairLoc = map.deadEndsNoItems.randomItem() ?? map.noWallsOrItems.randomItem()
-            map.stairLoc = stairLoc!
         }
         next.loc = state.loc
     }

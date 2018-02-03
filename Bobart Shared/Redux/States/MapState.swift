@@ -13,15 +13,6 @@ enum Environment: String, Codable {
     case vine
     case sand
     case brick
-
-    static var all: [Environment] {
-        return [.stone, .vine, .sand, .brick]
-    }
-
-    static var random: Environment {
-        let all = self.all
-        return all[Int.random(all.count)]
-    }
 }
 
 struct MapState: Codable, StateType {
@@ -78,9 +69,11 @@ struct MapState: Codable, StateType {
         deadEnds.filtered { $0 != switchLoc }
         chestLoc = deadEnds.randomItem()!
         deadEnds.filtered { $0 != chestLoc }
+        stairLoc = deadEnds.randomItem()!
+        deadEnds.filtered { $0 != stairLoc }
 
         // Make a fire
-        if Float.random() <= meta.wood && deadEnds.count > 1 {
+        if Float.random() <= meta.wood && deadEnds.count > 0 {
             fireLoc = deadEnds.randomItem()!
         }
     }
