@@ -165,12 +165,20 @@ private extension GameScene {
             move = bump(direction: direction)
         } else {
             let playerLoc = to.playerState.loc
-            let onFood = self.food.hasKey(playerLoc)
+            let onFood = food.hasKey(playerLoc)
+            let time = frameTime * 1.75
+            let deltaFood = to.playerState.food - from.playerState.food
 
             move = .sequence([move, .run {
                 if let food = self.food[playerLoc] {
                     self.food.removeValue(forKey: to.playerState.loc)
                     food.removeFromParent()
+                    for i in 0 ..< deltaFood {
+                        self.player.afterDelay(Double(i) * time, runBlock: {
+                            let txt = self.showText(node: self.player, text: "+Food", color: .white)
+                            self.player.run(txt)
+                        })
+                    }
                     let txt = self.showText(node: self.player, text: "+Food", color: .white)
                     self.player.run(txt)
                 }
