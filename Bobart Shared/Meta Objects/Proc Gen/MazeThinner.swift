@@ -5,7 +5,6 @@
 //  Created by james bouker on 11/17/17.
 //  Copyright © 2017 JimmyBouker. All rights reserved.
 //
-// swiftlint:disable for_where
 
 import Foundation
 
@@ -80,15 +79,13 @@ fileprivate extension MazeThinner {
         var globalVisited = [Loc: Bool]()
         var groups = [[Loc: Bool]]()
 
-        for w in innerWallMap.keys {
-            if globalVisited[w] == nil {
-                var group = [Loc: Bool]()
-                dfs(wall: w, group: &group)
-                for l in group {
-                    globalVisited[l.key] = true
-                }
-                groups.append(group)
+        for w in innerWallMap.keys where globalVisited[w] == nil {
+            var group = [Loc: Bool]()
+            dfs(wall: w, group: &group)
+            for l in group {
+                globalVisited[l.key] = true
             }
+            groups.append(group)
         }
         return groups
     }

@@ -14,19 +14,9 @@ private func initialPlayerState(_ map: MapState) -> PlayerState {
 }
 
 private func movePlayer(_ action: PlayerAction, next: inout PlayerState) {
-    switch action {
-    case .moveUp:
-        next.loc.y += 1
-    case .moveDown:
-        next.loc.y -= 1
-    case .moveRight:
-        next.loc.x += 1
-        next.facing = .r
-    case .moveLeft:
-        next.loc.x -= 1
-        next.facing = .l
-    default: break
-    }
+    let delta = action.delta
+    next.loc += delta
+    next.facing = Direction(facing: delta)
 }
 
 private func playerReducer(_ action: PlayerAction,

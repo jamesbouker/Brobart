@@ -16,3 +16,20 @@ enum PlayerAction: UInt8, Codable, Action {
     case moveDown
     case loadNextLevel
 }
+
+extension PlayerAction {
+    var delta: MapLocation {
+        switch self {
+        case .moveUp:
+            return MapLocation(x: 0, y: 1)
+        case .moveDown:
+            return MapLocation(x: 0, y: -1)
+        case .moveRight:
+            return MapLocation(x: 1, y: 0)
+        case .moveLeft:
+            return MapLocation(x: -1, y: 0)
+        default:
+            return MapLocation(x: 0, y: 0)
+        }
+    }
+}

@@ -5,6 +5,7 @@
 //  Created by james bouker on 11/7/17.
 //  Copyright © 2017 JimmyBouker. All rights reserved.
 //
+// swiftlint:disable shorthand_operator
 
 import ReSwift
 import UIKit
@@ -69,6 +70,10 @@ extension MapLocation: Equatable, Hashable {
 
     static func + (lhs: MapLocation, rhs: MapLocation) -> MapLocation {
         return MapLocation(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+
+    static func += (lhs: inout MapLocation, rhs: MapLocation) {
+        lhs = lhs + rhs
     }
 
     static func * (lhs: MapLocation, rhs: Int) -> MapLocation {
