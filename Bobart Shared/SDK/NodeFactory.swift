@@ -32,10 +32,11 @@ extension GameScene {
     }
 
     func foodNode(loc: MapLocation) {
-        let texture = SKTexture.pixelatedImage(file: "food")
-        let node = SKSpriteNode(texture: texture, color: .white, size: 0.75 * tileSize)
+        let texture = SKTexture.pixelatedImage(file: "food-1")
+        let node = SKSpriteNode(texture: texture, color: .white, size: tileSize)
         node.name = "food"
-        node.position = loc.point * tileLength + CGPoint(x: tileLength / 2, y: tileLength / 2)
+        node.anchorPoint = .zero
+        node.position = loc.point * tileLength
         node.zPosition = ZPositions.droppedItems
         tileMap.addChild(node)
         food[loc] = node

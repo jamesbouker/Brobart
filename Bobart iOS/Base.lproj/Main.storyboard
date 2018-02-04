@@ -78,20 +78,20 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbT-7t-r7L">
-                                        <rect key="frame" x="323.5" y="9.5" width="43.5" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="XbT-7t-r7L">
+                                        <rect key="frame" x="315.5" y="9.5" width="51.5" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-9V-Yek">
-                                                <rect key="frame" x="0.0" y="0.0" width="11.5" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="11.5" height="48"/>
                                                 <fontDescription key="fontDescription" name="Pixelated" family="Pixelated" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="z6R-bN-K2D">
-                                                <rect key="frame" x="11.5" y="0.0" width="32" height="32"/>
+                                                <rect key="frame" x="3.5" y="0.0" width="48" height="48"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="CRh-JN-k4f"/>
-                                                    <constraint firstAttribute="width" constant="32" id="hbX-sH-XPG"/>
+                                                    <constraint firstAttribute="height" constant="48" id="CRh-JN-k4f"/>
+                                                    <constraint firstAttribute="width" constant="48" id="hbX-sH-XPG"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="pixelated" value="YES"/>
@@ -133,7 +133,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="food" width="16" height="16"/>
+        <image name="food" width="24" height="24"/>
         <image name="heart" width="16" height="16"/>
         <image name="menu" width="32" height="96"/>
         <image name="stairs" width="20" height="19"/>
