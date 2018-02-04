@@ -10,7 +10,8 @@
         "block" : 0,
         "phase" : 0.5,
         "smart" : true,
-        "attack" : 2
+        "attack" : 2,
+        "foodDrop" : 0
     },
     {
         "monsterId" : "brownBear",
@@ -24,7 +25,8 @@
         "block" : 0,
         "phase" : 0,
         "smart" : false,
-        "attack" : 4
+        "attack" : 4,
+        "foodDrop" : 4
 	},
     {
         "monsterId" : "blueArmor",
@@ -38,7 +40,8 @@
         "block" : 0.25,
         "phase" : 0,
         "smart" : true,
-        "attack" : 4
+        "attack" : 4,
+        "foodDrop" : 2
     },
     {
         "monsterId" : "blueSlime",
@@ -51,7 +54,8 @@
         "block" : 0,
         "phase" : 0,
         "smart" : false,
-        "attack" : 1
+        "attack" : 1,
+        "foodDrop" : 0
 	},
     {
         "monsterId" : "blackBat",
@@ -65,7 +69,8 @@
         "block" : 0,
         "phase" : 0,
         "smart" : false,
-        "attack" : 1
+        "attack" : 1,
+        "foodDrop" : 1
 	},
     {
         "monsterId" : "whiteRat",
@@ -79,7 +84,8 @@
         "block" : 0,
         "phase" : 0,
         "smart" : false,
-        "attack" : 2
+        "attack" : 2,
+        "foodDrop" : 1
     },
     {
         "monsterId" : "worm",
@@ -93,7 +99,8 @@
         "block" : 0,
         "phase" : 0,
         "smart" : false,
-        "attack" : 4
+        "attack" : 4,
+        "foodDrop" : 2
     },
     {
         "monsterId" : "skeleton",
@@ -108,7 +115,8 @@
         "block" : 0,
         "phase" : 0,
         "smart" : true,
-        "attack" : 5
+        "attack" : 5,
+        "foodDrop" : 0
     },
     {
         "monsterId" : "redDragon",
@@ -123,6 +131,7 @@
         "block" : 0,
         "phase" : 0,
         "smart" : true,
-        "attack" : 6
+        "attack" : 6,
+        "foodDrop" : 7
     }
 ]

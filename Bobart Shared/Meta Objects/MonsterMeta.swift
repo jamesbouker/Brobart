@@ -20,6 +20,7 @@ class MonsterMeta: Codable {
     let phase: Float
     let smart: Bool
     let attack: Int
+    let foodDrop: Int
 
     // Optionals
     let onDeath: String?

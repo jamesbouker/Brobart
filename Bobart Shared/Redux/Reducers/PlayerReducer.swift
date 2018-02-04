@@ -72,8 +72,10 @@ private func playerReducer(_ action: PlayerAction,
             next.hitDirection = direction
             next.loc = state.loc
 
-            if $0.hp <= 0 {
-                map.foodLocations.append($0.loc)
+            if $0.hp <= 0 && !map.wallItemMap.hasKey($0.loc) {
+                for _ in 0..<$0.meta.foodDrop {
+                    map.foodLocations.append($0.loc)
+                }
             }
         }
     })

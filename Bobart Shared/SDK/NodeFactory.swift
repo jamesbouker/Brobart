@@ -31,8 +31,14 @@ extension GameScene {
         return textNode
     }
 
-    func foodNode(loc: MapLocation) {
-        let texture = SKTexture.pixelatedImage(file: "food-1")
+    func foodNode(loc: MapLocation, count: Int) {
+        food[loc]?.removeFromParent()
+        guard count > 0 else {
+            return
+        }
+
+        let number = count < 5 ? "\(count)" : "xl"
+        let texture = SKTexture.pixelatedImage(file: "food-\(number)")
         let node = SKSpriteNode(texture: texture, color: .white, size: tileSize)
         node.name = "food"
         node.anchorPoint = .zero

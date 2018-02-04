@@ -157,11 +157,13 @@ fileprivate extension GameScene {
         }
     }
 
-    func renderFood() {
+    func renderFood(map: MapState) {
         removeFood()
 
-        for loc in food {
-            foodNode(loc: loc.key)
+        let foodMap = map.foodLocations.toDictionary { $0 }
+        for (loc, _) in foodMap {
+            let foodCount = map.foodLocations.filter { $0 == loc }.count
+            foodNode(loc: loc, count: foodCount)
         }
     }
 }
@@ -182,7 +184,6 @@ extension GameScene {
 
             sharedController.setFood(playerState.food)
             resizeTheMap(mapState: mapState)
-            removeFood()
             renderWalls(mapState: mapState)
             renderGrass(grassMax: grassMax, noWalls: noWalls)
             renderSwitch(mapState: mapState)
@@ -191,7 +192,7 @@ extension GameScene {
             renderChest(mapState: mapState)
             positionThePlayer(playerState: playerState)
             renderMonsters(monsters: to.monsterStates)
-            renderFood()
+            renderFood(map: mapState)
             tileMap.rePosition(player)
             return
         }

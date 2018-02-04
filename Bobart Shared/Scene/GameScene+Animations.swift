@@ -29,7 +29,7 @@ extension GameScene {
             var monsterHurtAnim = 0.0
             for hurt in hurtMonsters.values where hurt.hitDirection == nil {
                 monsterHurtAnim = max(monsterHurtAnim,
-                                      self.monsterAnim(hurt, to.playerState, self.monsters[hurt.index], animDuration))
+                                      self.monsterAnim(hurt, to, self.monsters[hurt.index], animDuration))
             }
             animDuration += monsterHurtAnim
 
@@ -38,14 +38,14 @@ extension GameScene {
             let walking = to.monsterStates.filter { !hurtMonsters.hasKey($0) && $0.hitDirection == nil }
             for w in walking {
                 monsterWalkAnim = max(monsterWalkAnim,
-                                      self.monsterAnim(w, to.playerState, self.monsters[w.index], monsterHurtAnim))
+                                      self.monsterAnim(w, to, self.monsters[w.index], monsterHurtAnim))
             }
             animDuration += max(playerDuration, monsterWalkAnim)
 
             // Animate monsters hurting player!
             let monstersAttacking = to.monsterStates.filter { $0.hitDirection != nil }
             for attacker in monstersAttacking {
-                animDuration += self.monsterAnim(attacker, to.playerState, self.monsters[attacker.index], animDuration)
+                animDuration += self.monsterAnim(attacker, to, self.monsters[attacker.index], animDuration)
             }
 
             self.runs([.wait(forDuration: animDuration), .run {
@@ -61,12 +61,14 @@ private extension GameScene {
 
     @discardableResult
     func monsterAnim(_ to: MonsterState,
-                     _ player: PlayerState,
+                     _ state: GameState,
                      _ node: SKSpriteNode,
                      _ startDelay: TimeInterval) -> TimeInterval {
         guard let previous = self.viewModel.state?.monsterStates, previous.count > to.index else {
             return 0
         }
+        let player = state.playerState
+        let map = state.mapState
         let from = previous[to.index]
         if from.hp <= 0 && to.hp <= 0 {
             node.isHidden = true
@@ -113,10 +115,12 @@ private extension GameScene {
 
         // If dying, blink the anim, fade it out, and remove it from the scene
         node.runs([.wait(forDuration: startDelay), .blink(), .run {
-            // Render food if not there
-            if !self.food.hasKey(to.loc) {
-                self.foodNode(loc: to.loc)
-            }
+
+            // Render food
+            let foodCount = map.foodLocations.filter { $0 == to.loc }.count
+            self.foodNode(loc: to.loc, count: foodCount)
+
+            // Hide this node
             node.isHidden = true
             node.removeAllActions()
             node.removeFromParent()
