@@ -50,6 +50,16 @@ private func playerReducer(_ action: PlayerAction,
         next.hitDirection = direction
         if !map.fireHit {
             map.fireHit = true
+        } else {
+            while next.food > 0 {
+                next.food -= 1
+                if next.hp + 2 <= next.maxHp {
+                    next.hp += 2
+                } else {
+                    next.hp += 1
+                    next.maxHp += 1
+                }
+            }
         }
         next.loc = state.loc
     }
