@@ -56,28 +56,7 @@ private func playerReducer(_ action: PlayerAction,
 
     // Check if hitting monster
     monsters?.modifyWhere({ $0.hp > 0 && $0.loc == next.loc }, to: {
-        // check if blocked
-        if Float.random() <= $0.meta.block {
-            $0.blocked = true
-            next.hitDirection = direction
-            next.loc = state.loc
-            // Check if phased - and monster not on wall
-        } else if Float.random() <= $0.meta.phase && map.noWallsOrItems.contains($0.loc) {
-            $0.loc = state.loc
-            $0.phased = true
-            $0.facing = direction
-            next.facing = direction.reversed
-        } else {
-            $0.hp -= 1
-            next.hitDirection = direction
-            next.loc = state.loc
-
-            if $0.hp <= 0 && !map.wallItemMap.hasKey($0.loc) {
-                for _ in 0..<$0.meta.foodDrop {
-                    map.foodLocations.append($0.loc)
-                }
-            }
-        }
+        handleMonster(&$0, next: &next, state: state, direction: direction, map: &map)
     })
 
     // Check if player can move!
@@ -92,6 +71,36 @@ private func playerReducer(_ action: PlayerAction,
     }
 
     return next
+}
+
+func handleMonster(_ monster: inout MonsterState,
+                   next: inout PlayerState,
+                   state: PlayerState,
+                   direction: Direction,
+                   map: inout MapState) {
+
+    // check if blocked
+    if Float.random() <= monster.meta.block {
+        monster.blocked = true
+        next.hitDirection = direction
+        next.loc = state.loc
+        // Check if phased - and monster not on wall
+    } else if Float.random() <= monster.meta.phase && map.noWallsOrItems.contains(monster.loc) {
+        monster.loc = state.loc
+        monster.phased = true
+        monster.facing = direction
+        next.facing = direction.reversed
+    } else {
+        monster.hp -= 1
+        next.hitDirection = direction
+        next.loc = state.loc
+
+        if monster.hp <= 0 && !map.wallItemMap.hasKey(monster.loc) {
+            for _ in 0 ..< monster.meta.foodDrop {
+                map.foodLocations.append(monster.loc)
+            }
+        }
+    }
 }
 
 func playerReducer(action: Action,

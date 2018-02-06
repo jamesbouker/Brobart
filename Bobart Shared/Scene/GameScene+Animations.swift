@@ -145,8 +145,7 @@ private extension GameScene {
                 self.player.removeAllActions()
                 self.player.texture = SKTexture.pixelatedImage(file: "rip")
             } else if to.playerState.facing != self.viewModel.state?.playerState.facing {
-                let c = Character.wizard
-                let anim = c.animFrames(to.playerState.facing)
+                let anim = Character.wizard.animFrames(to.playerState.facing)
                 self.player.removeAction(forKey: ActionType.idle)
                 self.player.run(anim, type: ActionType.idle)
             }
@@ -170,27 +169,21 @@ private extension GameScene {
         } else {
             let playerLoc = to.playerState.loc
             let onFood = food.hasKey(playerLoc)
-            let time = frameTime * 1.75
+            let baseDelay = frameTime * 0.75
             let deltaFood = to.playerState.food - from.playerState.food
 
             move = .sequence([move, .run {
                 if let food = self.food[playerLoc] {
                     self.food.removeValue(forKey: to.playerState.loc)
                     food.removeFromParent()
-                    for i in 0 ..< deltaFood {
-                        self.player.afterDelay(Double(i) * time, runBlock: {
-                            let txt = self.showText(node: self.player, text: "+Food", color: .white)
-                            self.player.run(txt)
-                        })
-                    }
-                    let txt = self.showText(node: self.player, text: "+Food", color: .white)
+                    let txt = self.showText(node: self.player, text: "\(deltaFood) Food", color: .white)
                     self.player.run(txt)
                 }
                 sharedController.setFood(to.playerState.food)
             }])
             if onFood {
-                // Add delay for food text
-                move.duration += frameTime * 1.75
+                // Add delay for food text - not used (Maybe we will one day)
+                move.duration += baseDelay * Double(deltaFood)
             }
         }
 
