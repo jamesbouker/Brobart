@@ -45,24 +45,7 @@ private func playerReducer(_ action: PlayerAction,
         next.loc = state.loc
     }
 
-    // Check if hitting fire
-    if map.fireLoc == next.loc {
-        next.hitDirection = direction
-        if !map.fireHit {
-            map.fireHit = true
-        } else {
-            while next.food > 0 {
-                next.food -= 1
-                if next.hp + 2 <= next.maxHp {
-                    next.hp += 2
-                } else {
-                    next.hp += 1
-                    next.maxHp += 1
-                }
-            }
-        }
-        next.loc = state.loc
-    }
+    handleFire(map: &map, next: &next, direction: direction, oldLoc: state.loc)
 
     // Check if hitting monster
     monsters?.modifyWhere({ $0.hp > 0 && $0.loc == next.loc }, to: {
@@ -83,11 +66,31 @@ private func playerReducer(_ action: PlayerAction,
     return next
 }
 
-func handleMonster(_ monster: inout MonsterState,
-                   next: inout PlayerState,
-                   state: PlayerState,
-                   direction: Direction,
-                   map: inout MapState) {
+private func handleFire(map: inout MapState, next: inout PlayerState, direction: Direction, oldLoc: MapLocation) {
+    if map.fireLoc == next.loc {
+        next.hitDirection = direction
+        if !map.fireHit {
+            map.fireHit = true
+        } else {
+            while next.food > 0 {
+                next.food -= 1
+                if next.hp + 2 <= next.maxHp {
+                    next.hp += 2
+                } else {
+                    next.hp += 1
+                    next.maxHp += 1
+                }
+            }
+        }
+        next.loc = oldLoc
+    }
+}
+
+private func handleMonster(_ monster: inout MonsterState,
+                           next: inout PlayerState,
+                           state: PlayerState,
+                           direction: Direction,
+                           map: inout MapState) {
 
     // check if blocked
     if Float.random() <= monster.meta.block {

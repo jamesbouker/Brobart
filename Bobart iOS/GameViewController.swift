@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     var scene: GameScene!
     @IBOutlet weak var hp: UILabel!
     @IBOutlet weak var food: UILabel!
+    @IBOutlet weak var floor: UILabel!
 
     func setHp(current: Int, max: Int) {
         hp.text = "\(current) / \(max)"
@@ -24,6 +25,10 @@ class GameViewController: UIViewController {
 
     func setFood(_ food: Int) {
         self.food.text = "\(food)"
+    }
+
+    func setFloor(_ floor: Int) {
+        self.floor.text = "\(floor)"
     }
 
     var touchDownLocation: CGPoint?

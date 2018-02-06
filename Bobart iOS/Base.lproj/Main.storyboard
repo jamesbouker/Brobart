@@ -123,6 +123,7 @@
                         <viewLayoutGuide key="safeArea" id="bNo-s9-wk6"/>
                     </view>
                     <connections>
+                        <outlet property="floor" destination="tPg-Xo-1Oo" id="cjr-xh-TUV"/>
                         <outlet property="food" destination="XD7-9V-Yek" id="14P-cG-yfe"/>
                         <outlet property="hp" destination="fcl-1H-SMO" id="ukt-Ku-KMA"/>
                     </connections>

@@ -23,6 +23,10 @@ class InterfaceController: WKInterfaceController {
         //        self.food.text = "\(food)"
     }
 
+    func setFloor(_ floor: Int) {
+        //        self.floor.text = "\(floor)"
+    }
+
     @IBOutlet var skInterface: WKInterfaceSKScene!
     var touchDownTime: Date?
 

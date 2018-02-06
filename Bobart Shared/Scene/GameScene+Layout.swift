@@ -177,6 +177,7 @@ extension GameScene {
         let grassMax = to.mapState.meta.grass
 
         sharedController.setHp(current: playerState.hp, max: playerState.maxHp)
+        sharedController.setFloor(to.mapState.level)
 
         if from?.mapState.level != to.mapState.level {
             tileMap.tileSet = SKTileSet(named: to.mapState.environment.rawValue)!
